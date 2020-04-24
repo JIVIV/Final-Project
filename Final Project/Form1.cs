@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -29,63 +30,32 @@ namespace Final_Project
             deck.Add(new Card { face = 14});
             deck.Add(new Card { face = 14});
             deck.Shuffle();
-            Draw();
         }
          public void Draw()
         {
             inPlay = deck[0];
             deck.Remove(inPlay);
-            Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];
-            switch (inPlay.face)
-            {
-                case 1:
-                    ace++;
-                    Ace.Text = Convert.ToString(ace);
-                    Draw();
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-
-                    break;
-                case 11:
-                case 12:
-                case 13:
-                    royalPlacement(inPlay);
-                    Draw();
-                    break;
-                case 14:
-                    joker++;
-                    Joker.Text = Convert.ToString(joker);
-                    Draw();
-                    break;
-            }
+            Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];            
         }
         public void royalPlacement(Card royal)
         {
             int highest = 0, highesti = 0, highestj = 0;
             bool suit = false, color = false;
-            for(int i = 1; i < 4; i++)
+            for (int i = 1; i < 4; i++)
             {
-                for(int j = 1; j < 4; j++)
+                for (int j = 1; j < 4; j++)
                 {
-                    if(i != 2 || j != 2)
+                    if (i != 2 || j != 2)
                     {
-                        if(placement[i, j][0].suit == royal.suit)
+                        if (placement[i, j][0].suit == royal.suit)
                             suit = true;
-                        else if(placement[i, j][0].color == royal.color)
+                        else if (placement[i, j][0].color == royal.color)
                             color = true;
-                        if(suit)
+                        if (suit)
                         {
-                            if(placement[i, j][0].suit == royal.suit)
+                            if (placement[i, j][0].suit == royal.suit)
                             {
-                                if(highest > placement[i, j][0].face)
+                                if (highest > placement[i, j][0].face)
                                 {
                                     highest = placement[i, j][0].face;
                                     highesti = i;
@@ -93,7 +63,7 @@ namespace Final_Project
                                 }
                             }
                         }
-                        else if(color)
+                        else if (color)
                         {
                             if (placement[i, j][0].suit == royal.suit)
                             {
@@ -125,24 +95,130 @@ namespace Final_Project
                 p01 = true;
                 p10 = true;
             }
-            else if(highesti == 1 && highestj == 2)
+            else if (highesti == 1 && highestj == 2 && !placed[0,2])
             {
-                placed[0,2] = true;
+                placed[0, 2] = true;
+                placement[0, 2].Add(royal);
             }
-            else if(highesti == 1 && highestj == 3)
+            else if (highesti == 1 && highestj == 3)
             {
                 p03 = true;
                 p14 = true;
+            }
+            else if (highesti == 2 && highestj == 1 && !placed[2, 0])
+            {
+                placed[2,0] = true;
+                placement[2, 0].Add(royal);
+            }
+            else if(highesti == 2 && highestj == 3 && !placed[2,4])
+            {
+                placed[2, 4] = true;
+                placement[2, 4].Add(royal);
             }
             else if(highesti == 3 && highestj == 1)
             {
                 p30 = true;
                 p41 = true;
             }
+            else if(highesti == 3 && highestj == 2 && !placed[4,2])
+            {
+                placed[4, 2] = true;
+                placement[4, 2].Add(royal);
+            }
             else if(highesti == 3 && highestj == 3)
             {
                 p34 = true;
                 p43 = true;
+            }
+        }
+        public void setUp()
+        {
+            int k = 0;
+            Card[] royal = new Card[12];
+            for (int i = 0; i < 5; i++)
+                for (int j = 0; j < 5; j++)
+                {
+                    placed[i, j] = false;
+                    while (placement[i, j].Count != 0)
+                    {
+                        inPlay = placement[i, j][0];
+                        placement[i, j].Remove(inPlay);
+                    }
+                    while(deck.Count != 0)
+                    {
+                        inPlay = deck[0];
+                        deck.Remove(inPlay);
+                    }
+                }
+            fillAndShuffle();
+            while (!placed[3, 3])
+            {
+                Draw();
+                switch (inPlay.face)
+                {
+                    case 1:
+                        ace++;
+                        Ace.Text = Convert.ToString(ace);
+                        Draw();
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+
+                        break;
+                    case 11:
+                    case 12:
+                    case 13:
+                        royal[k] = inPlay;
+                        k++;
+                        break;
+                    case 14:
+                        joker++;
+                        Joker.Text = Convert.ToString(joker);
+                        Draw();
+                        break;
+                }
+            }
+            for (int i = 0; i < k; i++)
+                royalPlacement(royal[i]);
+        }
+        public void Place()
+        {
+            switch (inPlay.face)
+            {
+                case 1:
+                    ace++;
+                    Ace.Text = Convert.ToString(ace);
+                    Draw();
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+
+                    break;
+                case 11:
+                case 12:
+                case 13:
+                    royalPlacement(inPlay);
+                    Draw();
+                    break;
+                case 14:
+                    joker++;
+                    Joker.Text = Convert.ToString(joker);
+                    Draw();
+                    break;
             }
         }
         public Form1()
@@ -151,14 +227,7 @@ namespace Final_Project
             Deck.Image = imageList1.Images[0];
             Ace.Image = imageList1.Images[3];
             Joker.Image = imageList1.Images[54];
-            for (int i = 0; i < 5; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    placed[i, j] = false;
-                }
-            }
-            fillAndShuffle();
+            setUp();
         }
     }
 }
