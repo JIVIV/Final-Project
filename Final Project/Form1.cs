@@ -16,41 +16,54 @@ namespace Final_Project
         static public List<Card> deck = new List<Card>();
         static public List<Card>[,] placement = new List<Card>[5,5];
         static public Card inPlay;
-        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6;
-        static public bool usingAce = false, usingJoker = false, p01 = false, p02 = false, p03 = false, p10 = false,
-            p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false, 
+        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0;
+        static public bool usingAce = false, usingJoker = false, shame = false, armor = false, p01 = false, p02 = false, p03 = false,
+            p10 = false,p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false, 
             p24 =false, p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p42 = false, p43 = false;
 
         private void C20_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void C14_Click(object sender, EventArgs e)
         {
-
+            if (p14 && !armor)
+            {
+                p14 = false;
+                p03 = false;
+                placed[1, 4] = true;
+                placement[1, 4].Add(inPlay);
+            }
+            else if (p14 && armor)
+            {
+                p14 = false;
+                armor = false;
+                placement[1, 4][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C13_Click(object sender, EventArgs e)
         {
-            if (inPlay.face >= placement[2, 1][0].face)
+            if (inPlay.face >= placement[1, 3][0].face)
             {
-                placement[2, 1].Insert(0, inPlay);
+                placement[1, 3].Insert(0, inPlay);
                 C21.Image = Play.Image;
-                if (p24)
+                if (placed[1, 0])
                 {
-                    switch (placement[2, 4][0].face)
+                    switch (placement[1, 0][0].face)
                     {
                         case 11:
-                            if (placement[2, 2][0].face + placement[2, 3][0].face >= 11)
-                                C24.Image = imageList1.Images[0];
+                            if (placement[1, 2][0].face + placement[1, 1][0].face >= 11)
+                                C10.Image = imageList1.Images[0];
                             break;
                         case 12:
-                            if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
+                            if (placement[1, 2][0].color == placement[1, 0][0].color && placement[1, 1][0].color == placement[1, 0][0].color)
                             {
-                                if (placement[2, 2][0].face + placement[2, 3][0].face >= 12)
+                                if (placement[1, 2][0].face + placement[1, 1][0].face >= 12)
                                 {
-                                    C24.Image = imageList1.Images[0];
+                                    C10.Image = imageList1.Images[0];
                                 }
                             }
                             break;
@@ -65,6 +78,35 @@ namespace Final_Project
                             break;
                     }
                 }
+                if (placed[3, 4])
+                {
+                    switch (placement[3, 4][0].face)
+                    {
+                        case 11:
+                            if (placement[3, 2][0].face + placement[3, 3][0].face >= 11)
+                                C14.Image = imageList1.Images[0];
+                            break;
+                        case 12:
+                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= 12)
+                                {
+                                    C34.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= 13)
+                                {
+                                    C34.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
+                }
+                Draw();
                 Draw();
             }
         }
@@ -175,12 +217,38 @@ namespace Final_Project
 
         private void C10_Click(object sender, EventArgs e)
         {
-
+            if (p10 && !armor)
+            {
+                p10 = false;
+                p01 = false;
+                placed[1, 0] = true;
+                placement[1, 0].Add(inPlay);
+            }
+            else if(p10 && armor)
+            {
+                p10 = false;
+                armor = false;
+                placement[1, 0][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C03_Click(object sender, EventArgs e)
         {
-
+            if (p03 && !armor)
+            {
+                p03 = false;
+                p14 = false;
+                placed[0,3] = true;
+                placement[0,3].Add(inPlay);
+            }
+            else if (p03 && armor)
+            {
+                p03 = false;
+                armor = false;
+                placement[0,3][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C02_Click(object sender, EventArgs e)
@@ -190,7 +258,20 @@ namespace Final_Project
 
         private void C01_Click(object sender, EventArgs e)
         {
-
+            if (p01 && !armor)
+            {
+                p10 = false;
+                p01 = false;
+                placed[0,1] = true;
+                placement[0,1].Add(inPlay);
+            }
+            else if (p10 && armor)
+            {
+                p10 = false;
+                armor = false;
+                placement[0,1][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void Help_Click(object sender, EventArgs e)
@@ -200,7 +281,7 @@ namespace Final_Project
 
         private void newGame_Click(object sender, EventArgs e)
         {
-            
+            setUp();
         }
 
         private void C21_Click(object sender, EventArgs e)
@@ -503,17 +584,44 @@ namespace Final_Project
 
         private void Ace_Click(object sender, EventArgs e)
         {
-
+            usingAce = true;
+            ace--;
+            Ace.Text = $"{ace}";
+            p11 = true;
+            p12 = true;
+            p13 = true;
+            p21 = true;
+            p22 = true;
+            p23 = true;
+            p31 = true;
+            p32 = true;
+            p33 = true;
         }
 
         private void Joker_Click(object sender, EventArgs e)
         {
-
+            usingJoker = true;
+            joker--;
+            Joker.Text = $"{joker}";
+            p11 = true;
+            p12 = true;
+            p13 = true;
+            p21 = true;
+            p22 = true;
+            p23 = true;
+            p31 = true;
+            p32 = true;
+            p33 = true;
         }
 
         private void Shame_Click(object sender, EventArgs e)
         {
-
+            if (shame)
+            {
+                shameCount += inPlay.face;
+                Shame.Text = $"{shameCount}";
+                shame = false;
+            }
         }
 
         static public bool[,] placed = new bool[5, 5];
