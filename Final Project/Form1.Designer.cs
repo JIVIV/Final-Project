@@ -60,7 +60,7 @@
             this.Help = new System.Windows.Forms.Button();
             this.Score = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Shame = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Deck)).BeginInit();
@@ -74,6 +74,7 @@
             this.C01.Size = new System.Drawing.Size(75, 90);
             this.C01.TabIndex = 0;
             this.C01.UseVisualStyleBackColor = true;
+            this.C01.Click += new System.EventHandler(this.C01_Click);
             // 
             // C02
             // 
@@ -82,6 +83,7 @@
             this.C02.Size = new System.Drawing.Size(75, 90);
             this.C02.TabIndex = 1;
             this.C02.UseVisualStyleBackColor = true;
+            this.C02.Click += new System.EventHandler(this.C02_Click);
             // 
             // C03
             // 
@@ -90,6 +92,7 @@
             this.C03.Size = new System.Drawing.Size(75, 90);
             this.C03.TabIndex = 2;
             this.C03.UseVisualStyleBackColor = true;
+            this.C03.Click += new System.EventHandler(this.C03_Click);
             // 
             // C10
             // 
@@ -98,6 +101,7 @@
             this.C10.Size = new System.Drawing.Size(75, 90);
             this.C10.TabIndex = 3;
             this.C10.UseVisualStyleBackColor = true;
+            this.C10.Click += new System.EventHandler(this.C10_Click);
             // 
             // C11
             // 
@@ -106,6 +110,7 @@
             this.C11.Size = new System.Drawing.Size(75, 90);
             this.C11.TabIndex = 4;
             this.C11.UseVisualStyleBackColor = true;
+            this.C11.Click += new System.EventHandler(this.C11_Click);
             // 
             // C12
             // 
@@ -114,6 +119,7 @@
             this.C12.Size = new System.Drawing.Size(75, 90);
             this.C12.TabIndex = 5;
             this.C12.UseVisualStyleBackColor = true;
+            this.C12.Click += new System.EventHandler(this.C12_Click);
             // 
             // C13
             // 
@@ -122,6 +128,7 @@
             this.C13.Size = new System.Drawing.Size(75, 90);
             this.C13.TabIndex = 6;
             this.C13.UseVisualStyleBackColor = true;
+            this.C13.Click += new System.EventHandler(this.C13_Click);
             // 
             // C14
             // 
@@ -130,6 +137,7 @@
             this.C14.Size = new System.Drawing.Size(75, 90);
             this.C14.TabIndex = 7;
             this.C14.UseVisualStyleBackColor = true;
+            this.C14.Click += new System.EventHandler(this.C14_Click);
             // 
             // C20
             // 
@@ -138,6 +146,7 @@
             this.C20.Size = new System.Drawing.Size(75, 90);
             this.C20.TabIndex = 8;
             this.C20.UseVisualStyleBackColor = true;
+            this.C20.Click += new System.EventHandler(this.C20_Click);
             // 
             // C21
             // 
@@ -146,6 +155,7 @@
             this.C21.Size = new System.Drawing.Size(75, 90);
             this.C21.TabIndex = 9;
             this.C21.UseVisualStyleBackColor = true;
+            this.C21.Click += new System.EventHandler(this.C21_Click);
             // 
             // C22
             // 
@@ -154,6 +164,7 @@
             this.C22.Size = new System.Drawing.Size(75, 90);
             this.C22.TabIndex = 10;
             this.C22.UseVisualStyleBackColor = true;
+            this.C22.Click += new System.EventHandler(this.C22_Click);
             // 
             // C23
             // 
@@ -162,6 +173,7 @@
             this.C23.Size = new System.Drawing.Size(75, 90);
             this.C23.TabIndex = 11;
             this.C23.UseVisualStyleBackColor = true;
+            this.C23.Click += new System.EventHandler(this.C23_Click);
             // 
             // C24
             // 
@@ -170,6 +182,7 @@
             this.C24.Size = new System.Drawing.Size(75, 90);
             this.C24.TabIndex = 12;
             this.C24.UseVisualStyleBackColor = true;
+            this.C24.Click += new System.EventHandler(this.C24_Click);
             // 
             // C30
             // 
@@ -178,6 +191,7 @@
             this.C30.Size = new System.Drawing.Size(75, 90);
             this.C30.TabIndex = 13;
             this.C30.UseVisualStyleBackColor = true;
+            this.C30.Click += new System.EventHandler(this.C30_Click);
             // 
             // C31
             // 
@@ -186,6 +200,7 @@
             this.C31.Size = new System.Drawing.Size(75, 90);
             this.C31.TabIndex = 14;
             this.C31.UseVisualStyleBackColor = true;
+            this.C31.Click += new System.EventHandler(this.C31_Click);
             // 
             // C32
             // 
@@ -194,6 +209,7 @@
             this.C32.Size = new System.Drawing.Size(75, 90);
             this.C32.TabIndex = 15;
             this.C32.UseVisualStyleBackColor = true;
+            this.C32.Click += new System.EventHandler(this.C32_Click);
             // 
             // C33
             // 
@@ -202,6 +218,7 @@
             this.C33.Size = new System.Drawing.Size(75, 90);
             this.C33.TabIndex = 16;
             this.C33.UseVisualStyleBackColor = true;
+            this.C33.Click += new System.EventHandler(this.C33_Click);
             // 
             // C34
             // 
@@ -210,6 +227,7 @@
             this.C34.Size = new System.Drawing.Size(75, 90);
             this.C34.TabIndex = 17;
             this.C34.UseVisualStyleBackColor = true;
+            this.C34.Click += new System.EventHandler(this.C34_Click);
             // 
             // C41
             // 
@@ -218,6 +236,7 @@
             this.C41.Size = new System.Drawing.Size(75, 90);
             this.C41.TabIndex = 18;
             this.C41.UseVisualStyleBackColor = true;
+            this.C41.Click += new System.EventHandler(this.C41_Click);
             // 
             // C42
             // 
@@ -226,6 +245,7 @@
             this.C42.Size = new System.Drawing.Size(75, 90);
             this.C42.TabIndex = 19;
             this.C42.UseVisualStyleBackColor = true;
+            this.C42.Click += new System.EventHandler(this.C42_Click);
             // 
             // C43
             // 
@@ -234,6 +254,7 @@
             this.C43.Size = new System.Drawing.Size(75, 90);
             this.C43.TabIndex = 20;
             this.C43.UseVisualStyleBackColor = true;
+            this.C43.Click += new System.EventHandler(this.C43_Click);
             // 
             // Ace
             // 
@@ -244,6 +265,7 @@
             this.Ace.TabIndex = 21;
             this.Ace.Text = "0";
             this.Ace.UseVisualStyleBackColor = true;
+            this.Ace.Click += new System.EventHandler(this.Ace_Click);
             // 
             // imageList1
             // 
@@ -333,6 +355,7 @@
             this.Joker.TabIndex = 24;
             this.Joker.Text = "0";
             this.Joker.UseVisualStyleBackColor = true;
+            this.Joker.Click += new System.EventHandler(this.Joker_Click);
             // 
             // newGame
             // 
@@ -342,6 +365,7 @@
             this.newGame.TabIndex = 25;
             this.newGame.Text = "New Game";
             this.newGame.UseVisualStyleBackColor = true;
+            this.newGame.Click += new System.EventHandler(this.newGame_Click);
             // 
             // Help
             // 
@@ -351,6 +375,7 @@
             this.Help.TabIndex = 26;
             this.Help.Text = "Help";
             this.Help.UseVisualStyleBackColor = true;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
             // 
             // Score
             // 
@@ -371,14 +396,15 @@
             this.panel1.Size = new System.Drawing.Size(86, 64);
             this.panel1.TabIndex = 28;
             // 
-            // button1
+            // Shame
             // 
-            this.button1.Location = new System.Drawing.Point(665, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "0";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Shame.Location = new System.Drawing.Point(665, 50);
+            this.Shame.Name = "Shame";
+            this.Shame.Size = new System.Drawing.Size(37, 23);
+            this.Shame.TabIndex = 29;
+            this.Shame.Text = "0";
+            this.Shame.UseVisualStyleBackColor = true;
+            this.Shame.Click += new System.EventHandler(this.Shame_Click);
             // 
             // label1
             // 
@@ -396,7 +422,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(788, 638);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Shame);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.Joker);
@@ -466,7 +492,7 @@
         private System.Windows.Forms.Button Help;
         private System.Windows.Forms.Label Score;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Shame;
         private System.Windows.Forms.Label label1;
     }
 }
