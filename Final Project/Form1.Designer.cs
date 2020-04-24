@@ -294,17 +294,16 @@
             this.imageList1.Images.SetKeyName(42, "jack_of_diamonds2.png");
             this.imageList1.Images.SetKeyName(43, "jack_of_spades2.png");
             this.imageList1.Images.SetKeyName(44, "jack_of_hearts2.png");
-            this.imageList1.Images.SetKeyName(45, "king_of_clubs2.png");
-            this.imageList1.Images.SetKeyName(46, "king_of_diamonds2.png");
-            this.imageList1.Images.SetKeyName(47, "king_of_spades2.png");
-            this.imageList1.Images.SetKeyName(48, "king_of_hearts2.png");
-            this.imageList1.Images.SetKeyName(49, "queen_of_clubs2.png");
-            this.imageList1.Images.SetKeyName(50, "queen_of_diamonds2.png");
-            this.imageList1.Images.SetKeyName(51, "queen_of_spades2.png");
-            this.imageList1.Images.SetKeyName(52, "queen_of_hearts2.png");
+            this.imageList1.Images.SetKeyName(45, "queen_of_clubs2.png");
+            this.imageList1.Images.SetKeyName(46, "queen_of_diamonds2.png");
+            this.imageList1.Images.SetKeyName(47, "queen_of_spades2.png");
+            this.imageList1.Images.SetKeyName(48, "queen_of_hearts2.png");
+            this.imageList1.Images.SetKeyName(49, "king_of_clubs2.png");
+            this.imageList1.Images.SetKeyName(50, "king_of_diamonds2.png");
+            this.imageList1.Images.SetKeyName(51, "king_of_spades2.png");
+            this.imageList1.Images.SetKeyName(52, "king_of_hearts2.png");
             this.imageList1.Images.SetKeyName(53, "red_joker.png");
             this.imageList1.Images.SetKeyName(54, "black_joker.png");
-            this.imageList1.Images.SetKeyName(55, "ffe135.png");
             // 
             // Play
             // 
