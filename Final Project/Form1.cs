@@ -23,7 +23,13 @@ namespace Final_Project
 
         private void C20_Click(object sender, EventArgs e)
         {
-            
+            if(p20 && armor)
+            {
+                p20 = false;
+                armor = false;
+                placement[2, 0][0].armor += inPlay.face;
+                Draw();
+            }
         }
         
         private void C14_Click(object sender, EventArgs e)
