@@ -17,9 +17,9 @@ namespace Final_Project
         static public List<Card>[,] placement = new List<Card>[5,5];
         static public Card inPlay;
         static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6;
-        static public bool usingAce = false, usingJoker = false, p01 = false, p03 = false, p10 = false,
-            p11 = false, p12 = false, p13 = false, p14 = false, p21 = false, p22 = false, p23 = false,
-            p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p43 = false;
+        static public bool usingAce = false, usingJoker = false, p01 = false, p02 = false, p03 = false, p10 = false,
+            p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false, 
+            p24 =false, p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p42 = false, p43 = false;
 
         private void C20_Click(object sender, EventArgs e)
         {
@@ -36,30 +36,34 @@ namespace Final_Project
             if (inPlay.face >= placement[2, 1][0].face)
             {
                 placement[2, 1].Insert(0, inPlay);
-                switch (placement[2, 4][0].face)
+                C21.Image = Play.Image;
+                if (p24)
                 {
-                    case 11:
-                        if (placement[2, 2][0].face + placement[2, 3][0].face >= 11)
-                            C24.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
-                        {
-                            if (placement[2, 2][0].face + placement[2, 3][0].face >= 12)
-                            {
+                    switch (placement[2, 4][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[2, 3][0].face >= 11)
                                 C24.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
-                        {
-                            if (placement[2, 2][0].face + placement[2, 3][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
                             {
-                                C24.Image = imageList1.Images[0];
+                                if (placement[2, 2][0].face + placement[2, 3][0].face >= 12)
+                                {
+                                    C24.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[2, 3][0].face >= 13)
+                                {
+                                    C24.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
@@ -70,30 +74,34 @@ namespace Final_Project
             if (inPlay.face >= placement[1, 2][0].face)
             {
                 placement[1, 2].Insert(0, inPlay);
-                switch (placement[4, 2][0].face)
+                C12.Image = Play.Image;
+                if (p42)
                 {
-                    case 11:
-                        if (placement[2, 2][0].face + placement[3, 2][0].face >= 11)
-                            C42.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 2][0].color == placement[4, 2][0].color && placement[3, 2][0].color == placement[4, 2][0].color)
-                        {
-                            if (placement[2, 2][0].face + placement[3, 2][0].face >= 12)
-                            {
+                    switch (placement[4, 2][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[3, 2][0].face >= 11)
                                 C42.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 2][0].suit == placement[4, 2][0].suit && placement[3, 2][0].suit == placement[4, 2][0].suit)
-                        {
-                            if (placement[2, 2][0].face + placement[3, 2][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[4, 2][0].color && placement[3, 2][0].color == placement[4, 2][0].color)
                             {
-                                C42.Image = imageList1.Images[0];
+                                if (placement[2, 2][0].face + placement[3, 2][0].face >= 12)
+                                {
+                                    C42.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[4, 2][0].suit && placement[3, 2][0].suit == placement[4, 2][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[3, 2][0].face >= 13)
+                                {
+                                    C42.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
@@ -104,55 +112,62 @@ namespace Final_Project
             if (inPlay.face >= placement[1, 1][0].face)
             {
                 placement[1, 1].Insert(0, inPlay);
-                switch (placement[4, 1][0].face)
+                C11.Image = Play.Image;
+                if (p41)
                 {
-                    case 11:
-                        if (placement[2, 1][0].face + placement[3, 1][0].face >= 11)
-                            C41.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 1][0].color == placement[4, 1][0].color && placement[3, 1][0].color == placement[4, 1][0].color)
-                        {
-                            if (placement[2, 1][0].face + placement[3, 1][0].face >= 12)
-                            {
+                    switch (placement[4, 1][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 1][0].face + placement[3, 1][0].face >= 11)
                                 C41.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 1][0].suit == placement[4, 1][0].suit && placement[3, 1][0].suit == placement[4, 1][0].suit)
-                        {
-                            if (placement[2, 1][0].face + placement[3, 1][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 1][0].color == placement[4, 1][0].color && placement[3, 1][0].color == placement[4, 1][0].color)
                             {
-                                C41.Image = imageList1.Images[0];
+                                if (placement[2, 1][0].face + placement[3, 1][0].face >= 12)
+                                {
+                                    C41.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 1][0].suit == placement[4, 1][0].suit && placement[3, 1][0].suit == placement[4, 1][0].suit)
+                            {
+                                if (placement[2, 1][0].face + placement[3, 1][0].face >= 13)
+                                {
+                                    C41.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
-                switch (placement[1, 4][0].face)
+                if (p14)
                 {
-                    case 11:
-                        if (placement[1, 2][0].face + placement[1, 3][0].face >= 11)
-                            C14.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[1, 2][0].color == placement[1, 4][0].color && placement[1, 3][0].color == placement[1, 4][0].color)
-                        {
-                            if (placement[1, 2][0].face + placement[1, 3][0].face >= 12)
-                            {
+                    switch (placement[1, 4][0].face)
+                    {
+                        case 11:
+                            if (placement[1, 2][0].face + placement[1, 3][0].face >= 11)
                                 C14.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[1, 2][0].suit == placement[1, 4][0].suit && placement[1, 3][0].suit == placement[1, 4][0].suit)
-                        {
-                            if (placement[1, 2][0].face + placement[1, 3][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[1, 2][0].color == placement[1, 4][0].color && placement[1, 3][0].color == placement[1, 4][0].color)
                             {
-                                C14.Image = imageList1.Images[0];
+                                if (placement[1, 2][0].face + placement[1, 3][0].face >= 12)
+                                {
+                                    C14.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[1, 2][0].suit == placement[1, 4][0].suit && placement[1, 3][0].suit == placement[1, 4][0].suit)
+                            {
+                                if (placement[1, 2][0].face + placement[1, 3][0].face >= 13)
+                                {
+                                    C14.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
@@ -185,7 +200,7 @@ namespace Final_Project
 
         private void newGame_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void C21_Click(object sender, EventArgs e)
@@ -193,30 +208,36 @@ namespace Final_Project
             if (inPlay.face >= placement[2, 1][0].face)
             {
                 placement[2, 1].Insert(0, inPlay);
-                switch (placement[2, 4][0].face)
+                C21.Image = Play.Image;
+                if (p24)
                 {
-                    case 11:
-                        if (placement[2, 2][0].face + placement[2, 3][0].face >= 11)
-                            C24.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
+                    {
+                        switch (placement[2, 4][0].face)
                         {
-                            if (placement[2, 2][0].face + placement[2, 3][0].face >= 12)
-                            {
-                                C24.Image = imageList1.Images[0];
-                            }
+                            case 11:
+                                if (placement[2, 2][0].face + placement[2, 3][0].face >= 11)
+                                    C24.Image = imageList1.Images[0];
+                                break;
+                            case 12:
+                                if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
+                                {
+                                    if (placement[2, 2][0].face + placement[2, 3][0].face >= 12)
+                                    {
+                                        C24.Image = imageList1.Images[0];
+                                    }
+                                }
+                                break;
+                            case 13:
+                                if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
+                                {
+                                    if (placement[2, 2][0].face + placement[2, 3][0].face >= 13)
+                                    {
+                                        C24.Image = imageList1.Images[0];
+                                    }
+                                }
+                                break;
                         }
-                        break;
-                    case 13:
-                        if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
-                        {
-                            if (placement[2, 2][0].face + placement[2, 3][0].face >= 13)
-                            {
-                                C24.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
+                    }
                 }
                 Draw();
             }
@@ -224,7 +245,22 @@ namespace Final_Project
 
         private void C22_Click(object sender, EventArgs e)
         {
-
+            if (p22)
+            {
+                if (inPlay.face >= placement[2, 2][0].face)
+                {
+                    placement[2, 2].Insert(0, inPlay);
+                    C22.Image = Play.Image;
+                }
+                Draw();
+            }
+            else if (!p22)
+            {
+                placement[2, 2].Insert(0, inPlay);
+                C22.Image = Play.Image;
+                p22 = true;
+                Draw();
+            }
         }
 
         private void C23_Click(object sender, EventArgs e)
@@ -232,30 +268,34 @@ namespace Final_Project
             if (inPlay.face >= placement[2, 3][0].face)
             {
                 placement[2, 3].Insert(0, inPlay);
-                switch (placement[2, 0][0].face)
+                C23.Image = Play.Image;
+                if (p20)
                 {
-                    case 11:
-                        if (placement[2, 2][0].face + placement[2, 1][0].face >= 11)
-                            C20.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 2][0].color == placement[2, 0][0].color && placement[2, 1][0].color == placement[2, 0][0].color)
-                        {
-                            if (placement[2, 2][0].face + placement[2, 1][0].face >= 12)
-                            {
+                    switch (placement[2, 0][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[2, 1][0].face >= 11)
                                 C20.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 2][0].suit == placement[2, 0][0].suit && placement[2, 1][0].suit == placement[2, 0][0].suit)
-                        {
-                            if (placement[2, 2][0].face + placement[2, 1][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[2, 0][0].color && placement[2, 1][0].color == placement[2, 0][0].color)
                             {
-                                C20.Image = imageList1.Images[0];
+                                if (placement[2, 2][0].face + placement[2, 1][0].face >= 12)
+                                {
+                                    C20.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[2, 0][0].suit && placement[2, 1][0].suit == placement[2, 0][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[2, 1][0].face >= 13)
+                                {
+                                    C20.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
@@ -276,55 +316,62 @@ namespace Final_Project
             if (inPlay.face >= placement[3, 1][0].face)
             {
                 placement[3, 1].Insert(0, inPlay);
-                switch (placement[0, 1][0].face)
+                C31.Image = Play.Image;
+                if (p01)
                 {
-                    case 11:
-                        if (placement[2, 1][0].face + placement[1, 1][0].face >= 11)
-                            C01.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 1][0].color == placement[0, 1][0].color && placement[1, 1][0].color == placement[0, 1][0].color)
-                        {
-                            if (placement[2, 1][0].face + placement[1, 1][0].face >= 12)
-                            {
+                    switch (placement[0, 1][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 1][0].face + placement[1, 1][0].face >= 11)
                                 C01.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 1][0].suit == placement[0, 1][0].suit && placement[1, 1][0].suit == placement[0, 1][0].suit)
-                        {
-                            if (placement[2, 1][0].face + placement[1, 1][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 1][0].color == placement[0, 1][0].color && placement[1, 1][0].color == placement[0, 1][0].color)
                             {
-                                C01.Image = imageList1.Images[0];
+                                if (placement[2, 1][0].face + placement[1, 1][0].face >= 12)
+                                {
+                                    C01.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 1][0].suit == placement[0, 1][0].suit && placement[1, 1][0].suit == placement[0, 1][0].suit)
+                            {
+                                if (placement[2, 1][0].face + placement[1, 1][0].face >= 13)
+                                {
+                                    C01.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
-                switch (placement[3, 4][0].face)
+                if (p34)
                 {
-                    case 11:
-                        if (placement[3, 2][0].face + placement[3, 3][0].face >= 11)
-                            C34.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
-                        {
-                            if (placement[3, 2][0].face + placement[3, 3][0].face >= 12)
-                            {
+                    switch (placement[3, 4][0].face)
+                    {
+                        case 11:
+                            if (placement[3, 2][0].face + placement[3, 3][0].face >= 11)
                                 C34.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
-                        {
-                            if (placement[3, 2][0].face + placement[3, 3][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
                             {
-                                C34.Image = imageList1.Images[0];
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= 12)
+                                {
+                                    C34.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= 13)
+                                {
+                                    C34.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
@@ -335,30 +382,34 @@ namespace Final_Project
             if (inPlay.face >= placement[3, 2][0].face)
             {
                 placement[3, 2].Insert(0, inPlay);
-                switch (placement[0, 2][0].face)
+                C32.Image = Play.Image;
+                if (p02)
                 {
-                    case 11:
-                        if (placement[2, 2][0].face + placement[1, 2][0].face >= 11)
-                            C02.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 2][0].color == placement[0, 2][0].color && placement[1, 2][0].color == placement[0, 2][0].color)
-                        {
-                            if (placement[2, 2][0].face + placement[1, 2][0].face >= 12)
-                            {
+                    switch (placement[0, 2][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[1, 2][0].face >= 11)
                                 C02.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 2][0].suit == placement[0, 2][0].suit && placement[1, 2][0].suit == placement[0, 2][0].suit)
-                        {
-                            if (placement[2, 2][0].face + placement[1, 2][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[0, 2][0].color && placement[1, 2][0].color == placement[0, 2][0].color)
                             {
-                                C02.Image = imageList1.Images[0];
+                                if (placement[2, 2][0].face + placement[1, 2][0].face >= 12)
+                                {
+                                    C02.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[0, 2][0].suit && placement[1, 2][0].suit == placement[0, 2][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[1, 2][0].face >= 13)
+                                {
+                                    C02.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
@@ -369,55 +420,62 @@ namespace Final_Project
             if (inPlay.face >= placement[3, 3][0].face)
             {
                 placement[3, 3].Insert(0, inPlay);
-                switch (placement[0, 3][0].face)
+                C33.Image = Play.Image;
+                if (p03)
                 {
-                    case 11:
-                        if (placement[2, 3][0].face + placement[1, 3][0].face >= 11)
-                            C03.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[2, 3][0].color == placement[0, 3][0].color && placement[1, 3][0].color == placement[0, 3][0].color)
-                        {
-                            if (placement[2, 3][0].face + placement[1, 3][0].face >= 12)
-                            {
+                    switch (placement[0, 3][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 3][0].face + placement[1, 3][0].face >= 11)
                                 C03.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[2, 3][0].suit == placement[0, 3][0].suit && placement[1, 3][0].suit == placement[0, 3][0].suit)
-                        {
-                            if (placement[2, 3][0].face + placement[1, 3][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[2, 3][0].color == placement[0, 3][0].color && placement[1, 3][0].color == placement[0, 3][0].color)
                             {
-                                C03.Image = imageList1.Images[0];
+                                if (placement[2, 3][0].face + placement[1, 3][0].face >= 12)
+                                {
+                                    C03.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[2, 3][0].suit == placement[0, 3][0].suit && placement[1, 3][0].suit == placement[0, 3][0].suit)
+                            {
+                                if (placement[2, 3][0].face + placement[1, 3][0].face >= 13)
+                                {
+                                    C03.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
-                switch (placement[3, 0][0].face)
+                if (p30)
                 {
-                    case 11:
-                        if (placement[3, 2][0].face + placement[3, 1][0].face >= 11)
-                            C30.Image = imageList1.Images[0];
-                        break;
-                    case 12:
-                        if (placement[3, 2][0].color == placement[3, 0][0].color && placement[3, 1][0].color == placement[3, 0][0].color)
-                        {
-                            if (placement[3, 2][0].face + placement[3, 1][0].face >= 12)
-                            {
+                    switch (placement[3, 0][0].face)
+                    {
+                        case 11:
+                            if (placement[3, 2][0].face + placement[3, 1][0].face >= 11)
                                 C30.Image = imageList1.Images[0];
-                            }
-                        }
-                        break;
-                    case 13:
-                        if (placement[3, 2][0].suit == placement[3, 0][0].suit && placement[3, 1][0].suit == placement[3, 0][0].suit)
-                        {
-                            if (placement[3, 2][0].face + placement[3, 1][0].face >= 13)
+                            break;
+                        case 12:
+                            if (placement[3, 2][0].color == placement[3, 0][0].color && placement[3, 1][0].color == placement[3, 0][0].color)
                             {
-                                C30.Image = imageList1.Images[0];
+                                if (placement[3, 2][0].face + placement[3, 1][0].face >= 12)
+                                {
+                                    C30.Image = imageList1.Images[0];
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 13:
+                            if (placement[3, 2][0].suit == placement[3, 0][0].suit && placement[3, 1][0].suit == placement[3, 0][0].suit)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 1][0].face >= 13)
+                                {
+                                    C30.Image = imageList1.Images[0];
+                                }
+                            }
+                            break;
+                    }
                 }
                 Draw();
             }
