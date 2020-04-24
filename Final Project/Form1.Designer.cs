@@ -304,6 +304,7 @@
             this.imageList1.Images.SetKeyName(52, "queen_of_hearts2.png");
             this.imageList1.Images.SetKeyName(53, "red_joker.png");
             this.imageList1.Images.SetKeyName(54, "black_joker.png");
+            this.imageList1.Images.SetKeyName(55, "ffe135.png");
             // 
             // Play
             // 
@@ -393,6 +394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(788, 638);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);

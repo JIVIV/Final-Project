@@ -16,7 +16,9 @@ namespace Final_Project
         static public List<Card>[,] placement = new List<Card>[5,5];
         static public Card inPlay;
         static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0;
-        static public bool usingAce = false, usingJoker = false;
+        static public bool usingAce = false, usingJoker = false, p01 = false, p03 = false, p10 = false, 
+            p14 = false, p30 = false, p34 = false, p41 = false, p43 = false;
+        static public bool[,] placed = new bool[5, 5];
         public void fillAndShuffle()
         {
             Card card = new Card();
@@ -67,29 +69,80 @@ namespace Final_Project
         }
         public void royalPlacement(Card royal)
         {
-            int highest = 0;
+            int highest = 0, highesti = 0, highestj = 0;
             bool suit = false, color = false;
             for(int i = 1; i < 4; i++)
             {
-                for(int j = 1; j < 4;)
+                for(int j = 1; j < 4; j++)
                 {
                     if(i != 2 || j != 2)
                     {
-                        if (!suit || !color)
+                        if(placement[i, j][0].suit == royal.suit)
+                            suit = true;
+                        else if(placement[i, j][0].color == royal.color)
+                            color = true;
+                        if(suit)
+                        {
+                            if(placement[i, j][0].suit == royal.suit)
+                            {
+                                if(highest > placement[i, j][0].face)
+                                {
+                                    highest = placement[i, j][0].face;
+                                    highesti = i;
+                                    highestj = j;
+                                }
+                            }
+                        }
+                        else if(color)
                         {
                             if (placement[i, j][0].suit == royal.suit)
                             {
-                                suit = true;
-                            }
-                            else if (placement[i, j][0].color == royal.color)
-                            {
-                                color = true;
-                                if (placement[i, j][0].face > highest)
+                                if (highest > placement[i, j][0].face)
+                                {
                                     highest = placement[i, j][0].face;
+                                    highesti = i;
+                                    highestj = j;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (placement[i, j][0].suit == royal.suit)
+                            {
+                                if (highest > placement[i, j][0].face)
+                                {
+                                    highest = placement[i, j][0].face;
+                                    highesti = i;
+                                    highestj = j;
+                                }
                             }
                         }
                     }
                 }
+            }
+            if (highesti == 1 && highestj == 1)
+            {
+                p01 = true;
+                p10 = true;
+            }
+            else if(highesti == 1 && highestj == 2)
+            {
+                placed[0,2] = true;
+            }
+            else if(highesti == 1 && highestj == 3)
+            {
+                p03 = true;
+                p14 = true;
+            }
+            else if(highesti == 3 && highestj == 1)
+            {
+                p30 = true;
+                p41 = true;
+            }
+            else if(highesti == 3 && highestj == 3)
+            {
+                p34 = true;
+                p43 = true;
             }
         }
         public Form1()
@@ -98,6 +151,13 @@ namespace Final_Project
             Deck.Image = imageList1.Images[0];
             Ace.Image = imageList1.Images[3];
             Joker.Image = imageList1.Images[54];
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    placed[i, j] = false;
+                }
+            }
             fillAndShuffle();
         }
     }
