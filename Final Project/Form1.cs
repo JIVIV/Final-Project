@@ -25,7 +25,7 @@ namespace Final_Project
         {
             
         }
-
+        
         private void C14_Click(object sender, EventArgs e)
         {
             if (p14 && !armor)
