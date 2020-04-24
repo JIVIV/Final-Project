@@ -36,8 +36,8 @@ namespace Final_Project
         {
             inPlay = deck[0];
             deck.Remove(inPlay);
-            if(inPlay.face != 14)
-                Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];            
+            Place();
+            Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];            
         }
         public void royalPlacement(Card royal)
         {
@@ -94,8 +94,10 @@ namespace Final_Project
             }
             if (highesti == 1 && highestj == 1)
             {
-                p01 = true;
-                p10 = true;
+                if(!placed[0,1])
+                    p01 = true;
+                if(!placed[1,0])
+                    p10 = true;
             }
             else if (highesti == 1 && highestj == 2 && !placed[0,2])
             {
@@ -104,8 +106,10 @@ namespace Final_Project
             }
             else if (highesti == 1 && highestj == 3)
             {
-                p03 = true;
-                p14 = true;
+                if(!placed[0,3])
+                    p03 = true;
+                if(!placed[1,4])
+                    p14 = true;
             }
             else if (highesti == 2 && highestj == 1 && !placed[2, 0])
             {
@@ -119,8 +123,10 @@ namespace Final_Project
             }
             else if(highesti == 3 && highestj == 1)
             {
-                p30 = true;
-                p41 = true;
+                if(!placed[3,0])
+                    p30 = true;
+                if(!placed[4,1])
+                    p41 = true;
             }
             else if(highesti == 3 && highestj == 2 && !placed[4,2])
             {
@@ -129,8 +135,14 @@ namespace Final_Project
             }
             else if(highesti == 3 && highestj == 3)
             {
-                p34 = true;
-                p43 = true;
+                if(!placed[3,4])
+                    p34 = true;
+                if(!placed[4,3])
+                    p43 = true;
+            }
+            while(p01 || p03 || p10 || p14 || p30 || p34 || p41 || p43)
+            {
+                Play.Image = imageList1.Images[((royal.face * 4) + 1 - royal.suit)];
             }
         }
         public void setUp()
@@ -159,13 +171,15 @@ namespace Final_Project
             k = 0;
             while (!placed[3, 3])
             {
-                Draw();
+                inPlay = deck[0];
+                deck.Remove(inPlay);
                 switch (inPlay.face)
                 {
                     case 1:
                         ace++;
                         Ace.Text = Convert.ToString(ace);
-                        Draw();
+                        inPlay = deck[0];
+                        deck.Remove(inPlay);
                         break;
                     case 2:
                     case 3:
@@ -198,7 +212,8 @@ namespace Final_Project
                     case 14:
                         joker++;
                         Joker.Text = Convert.ToString(joker);
-                        Draw();
+                        inPlay = deck[0];
+                        deck.Remove(inPlay);
                         break;
                 }
             }
@@ -248,6 +263,7 @@ namespace Final_Project
                             }
                             break;
                     }
+            Draw();
         }
         public void Place()
         {
@@ -275,15 +291,15 @@ namespace Final_Project
                                     switch (j)
                                     {
                                         case 1:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i,j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p11 = true;
                                             break;
                                         case 2:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p12 = true;
                                             break;
                                         case 3:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p13 = true;
                                             break;
                                     }
@@ -292,15 +308,15 @@ namespace Final_Project
                                     switch (j)
                                     {
                                         case 1:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p21 = true;
                                             break;
                                         case 2:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p22 = true;
                                             break;
                                         case 3:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p23 = true;
                                             break;
                                     }
@@ -309,15 +325,15 @@ namespace Final_Project
                                     switch (j)
                                     {
                                         case 1:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p31 = true;
                                             break;
                                         case 2:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p32 = true;
                                             break;
                                         case 3:
-                                            if (inPlay.face > placement[i, j][0].face)
+                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                                 p33 = true;
                                             break;
                                     }
