@@ -16,9 +16,10 @@ namespace Final_Project
         static public List<Card> deck = new List<Card>();
         static public List<Card>[,] placement = new List<Card>[5,5];
         static public Card inPlay;
-        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0;
-        static public bool usingAce = false, usingJoker = false, p01 = false, p03 = false, p10 = false, 
-            p14 = false, p30 = false, p34 = false, p41 = false, p43 = false;
+        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6;
+        static public bool usingAce = false, usingJoker = false, p01 = false, p03 = false, p10 = false,
+            p11 = false, p12 = false, p13 = false, p14 = false, p21 = false, p22 = false, p23 = false,
+            p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p43 = false;
         static public bool[,] placed = new bool[5, 5];
         public void fillAndShuffle()
         {
@@ -35,7 +36,8 @@ namespace Final_Project
         {
             inPlay = deck[0];
             deck.Remove(inPlay);
-            Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];            
+            if(inPlay.face != 14)
+                Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];            
         }
         public void royalPlacement(Card royal)
         {
@@ -53,7 +55,7 @@ namespace Final_Project
                             color = true;
                         if (suit)
                         {
-                            if (placement[i, j][0].suit == royal.suit)
+                            if (placement[i, j][0].suit == royal.suit && !placed[i,j])
                             {
                                 if (highest > placement[i, j][0].face)
                                 {
@@ -65,7 +67,7 @@ namespace Final_Project
                         }
                         else if (color)
                         {
-                            if (placement[i, j][0].suit == royal.suit)
+                            if (placement[i, j][0].suit == royal.suit && !placed[i,j])
                             {
                                 if (highest > placement[i, j][0].face)
                                 {
@@ -77,7 +79,7 @@ namespace Final_Project
                         }
                         else
                         {
-                            if (placement[i, j][0].suit == royal.suit)
+                            if (placement[i, j][0].suit == royal.suit && !placed[i,j])
                             {
                                 if (highest > placement[i, j][0].face)
                                 {
@@ -133,17 +135,18 @@ namespace Final_Project
         }
         public void setUp()
         {
-            int k = 0;
+            int i = 0, j = 0, k = 0;
             Card[] royal = new Card[12];
-            for (int i = 0; i < 5; i++)
-                for (int j = 0; j < 5; j++)
+            for (i = 0; i < 5; i++)
+                for (j = 0; j < 5; j++)
                 {
                     placed[i, j] = false;
-                    while (placement[i, j].Count != 0)
+                    while (placement[i,j] != null)
                     {
                         inPlay = placement[i, j][0];
                         placement[i, j].Remove(inPlay);
                     }
+                    placement[i, j] = new List<Card>();
                     while(deck.Count != 0)
                     {
                         inPlay = deck[0];
@@ -151,6 +154,9 @@ namespace Final_Project
                     }
                 }
             fillAndShuffle();
+            i = 1;
+            j = 1;
+            k = 0;
             while (!placed[3, 3])
             {
                 Draw();
@@ -170,7 +176,18 @@ namespace Final_Project
                     case 8:
                     case 9:
                     case 10:
-
+                        placement[i, j].Add(new Card { face = inPlay.face, suit = inPlay.suit, color = inPlay.color});
+                        placed[i, j] = true;
+                        j++;
+                        if(j == 4)
+                        {
+                            i++;
+                            j = 1;
+                        }
+                        if(i == 2 && j == 2)
+                        {
+                            j++;
+                        }
                         break;
                     case 11:
                     case 12:
@@ -185,8 +202,52 @@ namespace Final_Project
                         break;
                 }
             }
-            for (int i = 0; i < k; i++)
+            for (i = 0; i < k; i++)
                 royalPlacement(royal[i]);
+            for(i = 1; i < 4; i++)
+                for(j = 1; j < 4; j++)
+                    switch (i)
+                    {
+                        case 1:
+                            switch (j)
+                            {
+                                case 1:
+                                    C11.Image = imageList1.Images[((placement[i,j][0].face * 4) + 1 - placement[i,j][0].suit)];
+                                    break;
+                                case 2:
+                                    C12.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                                case 3:
+                                    C13.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (j)
+                            {
+                                case 1:
+                                    C21.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                                case 3:
+                                    C23.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch (j)
+                            {
+                                case 1:
+                                    C31.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                                case 2:
+                                    C32.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                                case 3:
+                                    C33.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    break;
+                            }
+                            break;
+                    }
         }
         public void Place()
         {
@@ -206,7 +267,62 @@ namespace Final_Project
                 case 8:
                 case 9:
                 case 10:
-
+                    for (int i = 1; i < 4; i++)
+                        for (int j = 1; j < 4; j++)
+                            switch (i)
+                            {
+                                case 1:
+                                    switch (j)
+                                    {
+                                        case 1:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p11 = true;
+                                            break;
+                                        case 2:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p12 = true;
+                                            break;
+                                        case 3:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p13 = true;
+                                            break;
+                                    }
+                                    break;
+                                case 2:
+                                    switch (j)
+                                    {
+                                        case 1:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p21 = true;
+                                            break;
+                                        case 2:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p22 = true;
+                                            break;
+                                        case 3:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p23 = true;
+                                            break;
+                                    }
+                                    break;
+                                case 3:
+                                    switch (j)
+                                    {
+                                        case 1:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p31 = true;
+                                            break;
+                                        case 2:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p32 = true;
+                                            break;
+                                        case 3:
+                                            if (inPlay.face > placement[i, j][0].face)
+                                                p33 = true;
+                                            break;
+                                    }
+                                    break;
+                            }
                     break;
                 case 11:
                 case 12:
