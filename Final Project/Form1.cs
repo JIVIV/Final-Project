@@ -95,21 +95,21 @@ namespace Final_Project
             if (inPlay.face >= placement[1, 1][0].face)
             {
                 placement[1, 1].Insert(0, inPlay);
-                C11.Image = Play.Image;
+                C11.BackgroundImage = Play.BackgroundImage;
                 if (placed[4, 1])
                 {
                     switch (placement[4, 1][0].face)
                     {
                         case 11:
                             if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
-                                C41.BackgroundImage = Set(inPlay.image);
+                                C41.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[2, 1][0].color == placement[4, 1][0].color && placement[3, 1][0].color == placement[4, 1][0].color)
                             {
                                 if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                                 {
-                                    C41.BackgroundImage = Set(inPlay.image);
+                                    C41.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -118,7 +118,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                                 {
-                                    C41.BackgroundImage = Set(inPlay.image);
+                                    C41.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -130,14 +130,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
-                                C14.BackgroundImage = Set(inPlay.image);
+                                C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[1, 2][0].color == placement[1, 4][0].color && placement[1, 3][0].color == placement[1, 4][0].color)
                             {
                                 if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                                 {
-                                    C14.BackgroundImage = Set(inPlay.image);
+                                    C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -146,7 +146,7 @@ namespace Final_Project
                             {
                                 if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                                 {
-                                    C14.BackgroundImage = Set(inPlay.image);
+                                    C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -160,21 +160,21 @@ namespace Final_Project
             if (inPlay.face >= placement[1, 2][0].face)
             {
                 placement[1, 2].Insert(0, inPlay);
-                C12.Image = Play.Image;
+                C12.BackgroundImage = Play.BackgroundImage;
                 if (placed[4, 1])
                 {
                     switch (placement[4, 2][0].face)
                     {
                         case 11:
                             if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
-                                C42.BackgroundImage = Set(inPlay.image);
+                                C42.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[2, 2][0].color == placement[4, 2][0].color && placement[3, 2][0].color == placement[4, 2][0].color)
                             {
                                 if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                                 {
-                                    C42.BackgroundImage = Set(inPlay.image);
+                                    C42.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -183,7 +183,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                                 {
-                                    C42.BackgroundImage = Set(inPlay.image);
+                                    C42.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -198,21 +198,21 @@ namespace Final_Project
             if (inPlay.face >= placement[1, 3][0].face)
             {
                 placement[1, 3].Insert(0, inPlay);
-                C13.Image = Play.Image;
+                C13.BackgroundImage = Play.BackgroundImage;
                 if (placed[1, 0])
                 {
                     switch (placement[1, 0][0].face)
                     {
                         case 11:
                             if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
-                                C10.BackgroundImage = Set(inPlay.image);
+                                C10.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[1, 2][0].color == placement[1, 0][0].color && placement[1, 1][0].color == placement[1, 0][0].color)
                             {
                                 if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
-                                    C10.BackgroundImage = Set(inPlay.image);
+                                    C10.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -221,7 +221,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
-                                    C24.BackgroundImage = Set(inPlay.image);
+                                    C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -233,14 +233,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                C14.BackgroundImage = Set(inPlay.image);
+                                C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.BackgroundImage = Set(inPlay.image);
+                                    C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -249,7 +249,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.BackgroundImage = Set(inPlay.image);
+                                    C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -300,7 +300,7 @@ namespace Final_Project
             if (inPlay.face >= placement[2, 1][0].face)
             {
                 placement[2, 1].Insert(0, inPlay);
-                C21.Image = Play.Image;
+                C21.BackgroundImage = Play.BackgroundImage;
                 if (placed[2, 4])
                 {
                     {
@@ -308,14 +308,14 @@ namespace Final_Project
                         {
                             case 11:
                                 if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
-                                    C24.BackgroundImage = Set(inPlay.image);
+                                    C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 break;
                             case 12:
                                 if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
                                 {
                                     if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                     {
-                                        C24.BackgroundImage = Set(inPlay.image);
+                                        C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                     }
                                 }
                                 break;
@@ -324,7 +324,7 @@ namespace Final_Project
                                 {
                                     if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                     {
-                                        C24.BackgroundImage = Set(inPlay.image);
+                                        C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                     }
                                 }
                                 break;
@@ -342,7 +342,7 @@ namespace Final_Project
                 if (inPlay.face >= placement[2, 2][0].face)
                 {
                     placement[2, 2].Insert(0, inPlay);
-                    C22.Image = Play.Image;
+                    C22.BackgroundImage = Play.BackgroundImage;
                     Draw();
                 }
 ;
@@ -350,7 +350,7 @@ namespace Final_Project
             else if (!placement[2, 2].Any())
             {
                 placement[2, 2].Insert(0, inPlay);
-                C22.Image = Play.Image;
+                C22.BackgroundImage = Play.BackgroundImage;
                 placed[2, 2] = true;
                 Draw();
             }
@@ -361,21 +361,21 @@ namespace Final_Project
             if (inPlay.face >= placement[2, 3][0].face)
             {
                 placement[2, 3].Insert(0, inPlay);
-                C23.Image = Play.Image;
+                C23.BackgroundImage = Play.BackgroundImage;
                 if (placed[2, 0])
                 {
                     switch (placement[2, 0][0].face)
                     {
                         case 11:
                             if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
-                                C20.Image = BackgroundImage = Set(inPlay.image);
+                                C20.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[2, 2][0].color == placement[2, 0][0].color && placement[2, 1][0].color == placement[2, 0][0].color)
                             {
                                 if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                                 {
-                                    C20.Image = BackgroundImage = Set(inPlay.image);
+                                    C20.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -384,7 +384,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                                 {
-                                    C20.Image = BackgroundImage = Set(inPlay.image);
+                                    C20.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -436,21 +436,21 @@ namespace Final_Project
             if (inPlay.face >= placement[3, 1][0].face)
             {
                 placement[3, 1].Insert(0, inPlay);
-                C31.Image = Play.Image;
+                C31.BackgroundImage = Play.BackgroundImage;
                 if (placed[0, 1])
                 {
                     switch (placement[0, 1][0].face)
                     {
                         case 11:
                             if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
-                                C01.BackgroundImage = Set(inPlay.image);
+                                C01.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[2, 1][0].color == placement[0, 1][0].color && placement[1, 1][0].color == placement[0, 1][0].color)
                             {
                                 if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                                 {
-                                    C01.BackgroundImage = Set(inPlay.image);
+                                    C01.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -459,7 +459,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                                 {
-                                    C01.BackgroundImage = Set(inPlay.image);
+                                    C01.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -471,14 +471,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                C34.BackgroundImage = Set(inPlay.image);
+                                C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.BackgroundImage = Set(inPlay.image);
+                                    C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -487,7 +487,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.BackgroundImage = Set(inPlay.image);
+                                    C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -502,21 +502,21 @@ namespace Final_Project
             if (inPlay.face >= placement[3, 2][0].face)
             {
                 placement[3, 2].Insert(0, inPlay);
-                C32.Image = Play.Image;
+                C32.BackgroundImage = Play.BackgroundImage;
                 if (placed[0, 2])
                 {
                     switch (placement[0, 2][0].face)
                     {
                         case 11:
                             if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                C02.BackgroundImage = Set(inPlay.image);
+                                C02.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[2, 2][0].color == placement[0, 2][0].color && placement[1, 2][0].color == placement[0, 2][0].color)
                             {
                                 if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C02.BackgroundImage = Set(inPlay.image);
+                                    C02.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -525,7 +525,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C02.BackgroundImage = Set(inPlay.image);
+                                    C02.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -540,21 +540,21 @@ namespace Final_Project
             if (inPlay.face >= placement[3, 3][0].face)
             {
                 placement[3, 3].Insert(0, inPlay);
-                C33.Image = Play.Image;
+                C33.BackgroundImage = Play.BackgroundImage;
                 if (placed[0, 3])
                 {
                     switch (placement[0, 3][0].face)
                     {
                         case 11:
                             if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
-                                C03.BackgroundImage = Set(inPlay.image);
+                                C03.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[2, 3][0].color == placement[0, 3][0].color && placement[1, 3][0].color == placement[0, 3][0].color)
                             {
                                 if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C03.BackgroundImage = Set(inPlay.image);
+                                    C03.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -563,7 +563,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C03.BackgroundImage = Set(inPlay.image);
+                                    C03.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -575,14 +575,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
-                                C30.BackgroundImage = Set(inPlay.image);
+                                C30.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
                             if (placement[3, 2][0].color == placement[3, 0][0].color && placement[3, 1][0].color == placement[3, 0][0].color)
                             {
                                 if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                                 {
-                                    C30.BackgroundImage = Set(inPlay.image);
+                                    C30.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
@@ -591,7 +591,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                                 {
-                                    C30.BackgroundImage = Set(inPlay.image);
+                                    C30.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
