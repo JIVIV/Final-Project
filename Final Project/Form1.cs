@@ -13,14 +13,14 @@ namespace Final_Project
 {
     public partial class Form1 : Form
     {
-        static public List<Card> deck = new List<Card>();            // MA DECK
+        static public List<Card> deck = new List<Card>();            // Deck of Cards
         static public List<Card>[,] placement = new List<Card>[5,5]; //List of Cards in each button
         static public Card inPlay;                                   //Current card in play
         static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0;    //Amounts
-        static public bool usingAce = false, usingJoker = false, shame = false, armor = false, p01 = false, p02 = false, p03 = false,    //Boolean  which matches each button's coordinates on the grid, tells whether or not
-            p10 = false, p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false,         //a card has been placed there
+        static public bool usingAce = false, usingJoker = false, shame = false, armor = false, p01 = false, p02 = false, p03 = false,    //Boolean  which matches each button's coordinates on the grid
+            p10 = false, p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false,         
             p24 = false, p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p42 = false, p43 = false;
-
+        static public bool[,] placed = new bool[5, 5];
 
         private void C01_Click(object sender, EventArgs e) //Places card in (0, 1)
         {
@@ -675,7 +675,7 @@ namespace Final_Project
 
 
 
-        private void Help_Click(object sender, EventArgs e) //Display's instructions for the game to the user
+        private void Help_Click(object sender, EventArgs e) //Display's instructions for the game to the user (works)
         {
             MessageBox.Show("Placement\n " +
             "With the deck face-down, draw cards from the top and lay them out face-up in a 3×3 grid." +
@@ -720,7 +720,7 @@ namespace Final_Project
             "Ploys to use, you’ve lost");
         }
 
-        private void NewGame_Click(object sender, EventArgs e) //Restarts the game
+        private void NewGame_Click(object sender, EventArgs e) //Restarts the game (doesnt work)
         {
             SetUp();
         }
@@ -767,9 +767,7 @@ namespace Final_Project
                 shame = false;
             }
         }
-
-        static public bool[,] placed = new bool[5, 5];
-        public void FillAndShuffle() //Fills the deck with card objects and calls the shuffle function
+        public void FillAndShuffle() //Fills the deck with card objects and calls the shuffle function (works)
         {
             Card card = new Card();
             for(int i=0; i < 52; i++)
@@ -780,14 +778,14 @@ namespace Final_Project
             deck.Add(new Card { face = 14});
             deck.Shuffle();
         }
-         public void Draw()                                 //Draws the top card and then removes it from the list
+         public void Draw()                                 //Draws the top card and then removes it from the list (works)
         {
             inPlay = deck[0];
             deck.Remove(inPlay);
             Place();
             Play.BackgroundImage = Set(inPlay.image);
         }
-        public void RoyalPlacement(Card royal)              //Function for placing royals
+        public void RoyalPlacement(Card royal)              //Function for placing royals (doesn't work)
         {
             int highest = 0, highesti = 0, highestj = 0;
             bool suit = false, color = false;
@@ -851,6 +849,7 @@ namespace Final_Project
             {
                 placed[0, 2] = true;
                 placement[0, 2].Add(royal);
+                C02.BackgroundImage = Set(royal.image);
             }
             else if (highesti == 1 && highestj == 3)
             {
@@ -863,11 +862,13 @@ namespace Final_Project
             {
                 placed[2,0] = true;
                 placement[2, 0].Add(royal);
+                C03.BackgroundImage = Set(royal.image);
             }
             else if(highesti == 2 && highestj == 3 && !placed[2,4])
             {
                 placed[2, 4] = true;
                 placement[2, 4].Add(royal);
+                C24.BackgroundImage = Set(royal.image);
             }
             else if(highesti == 3 && highestj == 1)
             {
@@ -880,6 +881,7 @@ namespace Final_Project
             {
                 placed[4, 2] = true;
                 placement[4, 2].Add(royal);
+                C42.BackgroundImage = Set(royal.image);
             }
             else if(highesti == 3 && highestj == 3)
             {
@@ -1263,7 +1265,7 @@ namespace Final_Project
         }
     }
 }
-public static class CardMixer  //Template for shuffling the card objects
+public static class CardMixer  //Extension to the List class for shuffling a List
 {
     public static void Shuffle<T>(this IList<T> list)
     {
