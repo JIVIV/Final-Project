@@ -782,11 +782,19 @@ namespace Final_Project
         }
          public void Draw()                                 //Draws the top card and then removes it from the list (works)
         {
-            inPlay = deck[0];
-            deck.Remove(inPlay);
-            Place();
-            Play.BackgroundImage = Set(inPlay.image);
-        }
+            if (deck.Count != 0)
+            {
+                inPlay = deck[0];
+                deck.Remove(inPlay);
+                Place();
+                Play.BackgroundImage = Set(inPlay.image);
+            }
+            else
+            {
+                MessageBox.Show("You Lose");
+                Play.BackgroundImage = base.BackgroundImage;
+            }
+        } 
         public void RoyalPlacement(Card royal)              //Function for placing royals (doesn't work)
         {
             int highest = 0, highesti = 0, highestj = 0;
@@ -899,7 +907,8 @@ namespace Final_Project
         }
         public void SetUp() //Restarts the game (works)
         {
-            int i = 0, j = 0, k = 0;
+            C22.BackgroundImage = base.BackgroundImage;
+            int i, j, k;
             Card[] royal = new Card[12];
             deck = new List<Card>();
             for (i = 0; i < 5; i++)
