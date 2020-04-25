@@ -13,7 +13,7 @@ namespace Final_Project
 {
     public partial class Form1 : Form
     {
-        static public List<Card> deck = new List<Card>();
+        static public List<Card> deck = new List<Card>();            // MA DECK
         static public List<Card>[,] placement = new List<Card>[5,5];
         static public Card inPlay;
         static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0;
