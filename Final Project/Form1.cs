@@ -31,9 +31,9 @@ namespace Final_Project
                 placed[0, 1] = true;
                 placement[0, 1].Add(inPlay);
             }
-            else if (p10 && armor)
+            else if (p01 && armor)
             {
-                p10 = false;
+                p01 = false;
                 armor = false;
                 placement[0, 1][0].armor += inPlay.face;
                 Draw();
@@ -41,7 +41,19 @@ namespace Final_Project
         }
         private void C02_Click(object sender, EventArgs e) //Places card in (0, 2)
         {
-
+            if (p02 && !armor)
+            {
+                p20 = false;
+                p02 = false;
+                placed[0, 2] = true;
+                placement[0, 2].Add(inPlay);
+            }
+            else if (p02 && !armor)
+            {
+                p20 = false;
+                armor = false;
+                placement[0, 2][0].armor += inPlay.face;
+            }
         }
         private void C03_Click(object sender, EventArgs e) //Places card in (0, 3)
         {
@@ -267,7 +279,15 @@ namespace Final_Project
 
         private void C20_Click(object sender, EventArgs e) //Places card in (2, 0)
         {
-            if(p20 && armor)
+            if (p20 && !armor)
+            {
+                p10 = false;
+                p20 = false;
+                p30 = false;
+                placed[2, 0] = true;
+                placement[2, 0].Add(inPlay);
+            }
+            else if(p20 && armor)
             {
                 p20 = false;
                 armor = false;
@@ -376,12 +396,39 @@ namespace Final_Project
 
         private void C24_Click(object sender, EventArgs e) //Places card in (2, 4)
         {
-
+            if (p24 && !armor)
+            {
+                p14 = false;
+                p24 = false;
+                p34 = false;
+                placed[2, 4] = true;
+                placement[2, 4].Add(inPlay);
+            }
+            else if (p24 && armor)
+            {
+                p24 = false;
+                armor = false;
+                placement[2, 4][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C30_Click(object sender, EventArgs e) //Places card in (3, 0)
         {
-
+            if (p30 && !armor)
+            {
+                p41 = false;
+                p30 = false;
+                placed[3, 0] = true;
+                placement[3, 0].Add(inPlay);
+            }
+            else if (p30 && armor)
+            {
+                p30 = false;
+                armor = false;
+                placement[3, 0][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C31_Click(object sender, EventArgs e) //Places card in (3, 1)
@@ -556,22 +603,74 @@ namespace Final_Project
 
         private void C34_Click(object sender, EventArgs e) //Places card in (3, 4)
         {
-
+            if (p34 && !armor)
+            {
+                p34 = false;
+                p43 = false;
+                placed[3, 4] = true;
+                placement[3, 4].Add(inPlay);
+            }
+            else if (p34 && armor)
+            {
+                p34 = false;
+                armor = false;
+                placement[3, 4][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C41_Click(object sender, EventArgs e)//Places card in (4, 1)
         {
-
+            if (p41 && !armor)
+            {
+                p41 = false;
+                p30 = false;
+                placed[4, 1] = true;
+                placement[4, 1].Add(inPlay);
+            }
+            else if (p41 && armor)
+            {
+                p41 = false;
+                armor = false;
+                placement[4, 1][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C42_Click(object sender, EventArgs e)//Places card in (4, 2)
         {
-
+            if (p42 && !armor)
+            {
+                p42 = false;
+                p32 = false;
+                placed[4, 2] = true;
+                placement[4, 2].Add(inPlay);
+            }
+            else if (p42 && armor)
+            {
+                p42 = false;
+                armor = false;
+                placement[4, 2][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
         private void C43_Click(object sender, EventArgs e)//Places card in (4, 3)
         {
-
+            if (p43 && !armor)
+            {
+                p43 = false;
+                p34 = false;
+                placed[4, 3] = true;
+                placement[4, 3].Add(inPlay);
+            }
+            else if (p43 && armor)
+            {
+                p43 = false;
+                armor = false;
+                placement[4, 3][0].armor += inPlay.face;
+                Draw();
+            }
         }
 
 
@@ -621,7 +720,7 @@ namespace Final_Project
             "Ploys to use, you’ve lost");
         }
 
-        private void newGame_Click(object sender, EventArgs e) //Restarts the game
+        private void NewGame_Click(object sender, EventArgs e) //Restarts the game
         {
             SetUp();
         }
@@ -1164,7 +1263,6 @@ namespace Final_Project
         }
     }
 }
-
 public static class CardMixer  //Template for shuffling the card objects
 {
     public static void Shuffle<T>(this IList<T> list)
@@ -1181,7 +1279,6 @@ public static class CardMixer  //Template for shuffling the card objects
         }
     }
 }
-
 public class Card       //members of the Card class
 {
     public int face, suit, color, armor = 0, image;
