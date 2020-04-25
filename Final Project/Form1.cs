@@ -938,7 +938,7 @@ namespace Final_Project
                     case 8:
                     case 9:
                     case 10:
-                        placement[i, j].Add(new Card { face = inPlay.face, suit = inPlay.suit, color = inPlay.color});
+                        placement[i, j].Add(new Card { face = inPlay.face, suit = inPlay.suit, color = inPlay.color, image = inPlay.image});
                         placed[i, j] = true;
                         j++;
                         if(j == 4)
@@ -975,13 +975,13 @@ namespace Final_Project
                             switch (j)
                             {
                                 case 1:
-                                    C11.BackgroundImage = Set(inPlay.image);
+                                    C11.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                                 case 2:
-                                    C12.BackgroundImage = Set(inPlay.image);
+                                    C12.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                                 case 3:
-                                    C13.BackgroundImage = Set(inPlay.image);
+                                    C13.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                             }
                             break;
@@ -989,10 +989,10 @@ namespace Final_Project
                             switch (j)
                             {
                                 case 1:
-                                    C21.BackgroundImage = Set(inPlay.image);
+                                    C21.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                                 case 3:
-                                    C23.BackgroundImage = Set(inPlay.image);
+                                    C23.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                             }
                             break;
@@ -1000,13 +1000,13 @@ namespace Final_Project
                             switch (j)
                             {
                                 case 1:
-                                    C31.BackgroundImage = Set(inPlay.image);
+                                    C31.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                                 case 2:
-                                    C32.BackgroundImage = Set(inPlay.image);
+                                    C32.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                                 case 3:
-                                    C33.BackgroundImage = Set(inPlay.image);
+                                    C33.BackgroundImage = Set(placement[i,j][0].image);
                                     break;
                             }
                             break;
