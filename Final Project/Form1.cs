@@ -720,7 +720,7 @@ namespace Final_Project
             "Ploys to use, you’ve lost");
         }
 
-        private void NewGame_Click(object sender, EventArgs e) //Restarts the game (doesnt work)
+        private void NewGame_Click(object sender, EventArgs e) //Restarts the game (works)
         {
             SetUp();
         }
@@ -897,7 +897,7 @@ namespace Final_Project
                 Play.BackgroundImage = Set(inPlay.image);
             }
         }
-        public void SetUp() //Restarts the game
+        public void SetUp() //Restarts the game (works)
         {
             int i = 0, j = 0, k = 0;
             Card[] royal = new Card[12];
