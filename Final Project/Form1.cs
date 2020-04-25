@@ -1159,7 +1159,6 @@ namespace Final_Project
         public Form1()
         {
             InitializeComponent();
-            Deck.BackgroundImage = Set(1); ;
             Ace.BackgroundImage = Properties.Resources.ace_of_spades;
             Joker.BackgroundImage = Properties.Resources.red_joker;
             setUp();

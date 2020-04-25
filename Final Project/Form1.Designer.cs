@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.C01 = new System.Windows.Forms.Button();
             this.C02 = new System.Windows.Forms.Button();
             this.C03 = new System.Windows.Forms.Button();
@@ -288,6 +289,7 @@
             // 
             // Play
             // 
+            this.Play.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Play.InitialImage = null;
             this.Play.Location = new System.Drawing.Point(118, 35);
             this.Play.Name = "Play";
@@ -298,6 +300,9 @@
             // 
             // Deck
             // 
+            this.Deck.BackgroundImage = global::Final_Project.Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+            this.Deck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Deck.InitialImage = ((System.Drawing.Image)(resources.GetObject("Deck.InitialImage")));
             this.Deck.Location = new System.Drawing.Point(37, 35);
             this.Deck.Name = "Deck";
             this.Deck.Size = new System.Drawing.Size(75, 90);

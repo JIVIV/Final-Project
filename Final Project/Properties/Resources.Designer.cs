@@ -473,6 +473,16 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap d594che_212dcb27_a73c_4da5_bccc_6250146355cc {
+            get {
+                object obj = ResourceManager.GetObject("d594che-212dcb27-a73c-4da5-bccc-6250146355cc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jack_of_clubs2 {
             get {
                 object obj = ResourceManager.GetObject("jack_of_clubs2", resourceCulture);
