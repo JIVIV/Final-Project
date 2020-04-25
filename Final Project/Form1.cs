@@ -860,10 +860,23 @@ namespace Final_Project
             }
             if (highesti == 1 && highestj == 1)
             {
-                if(!placed[0,1])
+                if (!placed[0, 1] && !placed[1, 0])
+                {
                     p01 = true;
-                if(!placed[1,0])
                     p10 = true;
+                }
+                else if (placed[0, 1])
+                {
+                    placed[1, 0] = true;
+                    placement[1, 0].Add(royal);
+                    C10.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[1, 0])
+                {
+                    placed[0, 1] = true;
+                    placement[0, 1].Add(royal);
+                    C01.BackgroundImage = Set(royal.image);
+                }
             }
             else if (highesti == 1 && highestj == 2 && !placed[0,2])
             {
@@ -873,10 +886,23 @@ namespace Final_Project
             }
             else if (highesti == 1 && highestj == 3)
             {
-                if(!placed[0,3])
+                if (!placed[0, 3] && !placed[1, 4])
+                {
                     p03 = true;
-                if(!placed[1,4])
                     p14 = true;
+                }
+                else if(placed[0, 3])
+                {
+                    placed[1, 4] = true;
+                    placement[1, 4].Add(royal);
+                    C14.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[1, 4])
+                {
+                    placed[0, 3] = true;
+                    placement[0, 3].Add(royal);
+                    C03.BackgroundImage = Set(royal.image);
+                }
             }
             else if (highesti == 2 && highestj == 1 && !placed[2, 0])
             {
@@ -892,10 +918,23 @@ namespace Final_Project
             }
             else if(highesti == 3 && highestj == 1)
             {
-                if(!placed[3,0])
+                if (!placed[3, 0] && !placed[4, 1])
+                {
                     p30 = true;
-                if(!placed[4,1])
                     p41 = true;
+                }
+                else if (placed[3, 0])
+                {
+                    placed[4, 1] = true;
+                    placement[4, 1].Add(royal);
+                    C41.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[4, 1])
+                {
+                    placed[3, 0] = true;
+                    placement[3, 0].Add(royal);
+                    C03.BackgroundImage = Set(royal.image);
+                }
             }
             else if(highesti == 3 && highestj == 2 && !placed[4,2])
             {
@@ -905,10 +944,23 @@ namespace Final_Project
             }
             else if(highesti == 3 && highestj == 3)
             {
-                if(!placed[3,4])
+                if (!placed[3, 4] && !placed[4, 3])
+                {
                     p34 = true;
-                if(!placed[4,3])
                     p43 = true;
+                }
+                else if (placed[4, 3])
+                {
+                    placed[3, 4] = true;
+                    placement[3, 4].Add(royal);
+                    C34.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[3, 4])
+                {
+                    placed[4, 3] = true;
+                    placement[4, 3].Add(royal);
+                    C43.BackgroundImage = Set(royal.image);
+                }
             }
         }
         public void SetUp() //Restarts the game (works)
