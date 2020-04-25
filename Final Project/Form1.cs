@@ -55,7 +55,7 @@ namespace Final_Project
             if (inPlay.face >= placement[1, 3][0].face)
             {
                 placement[1, 3].Insert(0, inPlay);
-                C21.Image = Play.Image;
+                C13.Image = Play.Image;
                 if (placed[1, 0])
                 {
                     switch (placement[1, 0][0].face)
@@ -112,7 +112,6 @@ namespace Final_Project
                             break;
                     }
                 }
-                Draw();
                 Draw();
             }
         }
@@ -332,20 +331,21 @@ namespace Final_Project
 
         private void C22_Click(object sender, EventArgs e)
         {
-            if (p22)
+            if (placed[2,2])
             {
                 if (inPlay.face >= placement[2, 2][0].face)
                 {
                     placement[2, 2].Insert(0, inPlay);
                     C22.Image = Play.Image;
+                    Draw();
                 }
-                Draw();
+;
             }
             else if (!placement[2,2].Any())
             {
                 placement[2, 2].Insert(0, inPlay);
                 C22.Image = Play.Image;
-                p22 = true;
+                placed[2,2] = true;
                 Draw();
             }
         }
