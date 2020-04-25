@@ -161,7 +161,7 @@ namespace Final_Project
             {
                 placement[1, 2].Insert(0, inPlay);
                 C12.BackgroundImage = Play.BackgroundImage;
-                if (placed[4, 1] && placed[2,2])
+                if (placed[4, 2] && placed[2,2])
                 {
                     switch (placement[4, 2][0].face)
                     {
