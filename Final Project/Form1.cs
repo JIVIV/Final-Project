@@ -764,7 +764,9 @@ namespace Final_Project
             {
                 shameCount += inPlay.face;
                 Shame.Text = $"{shameCount}";
+                armor = false;
                 shame = false;
+                Draw();
             }
         }
         public void FillAndShuffle() //Fills the deck with card objects and calls the shuffle function (works)
@@ -1017,6 +1019,8 @@ namespace Final_Project
         }
         public void Place()
         {
+            shame = true;
+            armor = true;
             switch (inPlay.face)
             {
                 case 1:
@@ -1041,16 +1045,28 @@ namespace Final_Project
                                     switch (j)
                                     {
                                         case 1:
-                                            if(placement[i,j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p11 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 2:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p12 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 3:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p13 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                     }
                                     break;
@@ -1058,16 +1074,28 @@ namespace Final_Project
                                     switch (j)
                                     {
                                         case 1:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p21 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 2:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p22 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 3:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p23 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                     }
                                     break;
@@ -1075,16 +1103,28 @@ namespace Final_Project
                                     switch (j)
                                     {
                                         case 1:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p31 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 2:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p32 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 3:
-                                            if(placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
+                                            {
                                                 p33 = true;
+                                                shame = false;
+                                                armor = false;
+                                            }
                                             break;
                                     }
                                     break;
