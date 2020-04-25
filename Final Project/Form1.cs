@@ -874,6 +874,9 @@ namespace Final_Project
                             break;
                     }
             Draw();
+            //Test to show the new picture resolution
+            Play.Image = Properties.Resources.ace_of_clubs;
+            //
         }
         public void Place()
         {
