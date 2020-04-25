@@ -14,153 +14,77 @@ namespace Final_Project
     public partial class Form1 : Form
     {
         static public List<Card> deck = new List<Card>();            // MA DECK
-        static public List<Card>[,] placement = new List<Card>[5,5];
-        static public Card inPlay;
-        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0;
-        static public bool usingAce = false, usingJoker = false, shame = false, armor = false, p01 = false, p02 = false, p03 = false,
-            p10 = false, p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false, 
+        static public List<Card>[,] placement = new List<Card>[5,5]; //List of Cards in each button
+        static public Card inPlay;                                   //Current card in play
+        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0;    //Amounts
+        static public bool usingAce = false, usingJoker = false, shame = false, armor = false, p01 = false, p02 = false, p03 = false,    //Boolean  which matches each button's coordinates on the grid, tells whether or not
+            p10 = false, p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false,         //a card has been placed there
             p24 = false, p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p42 = false, p43 = false;
 
-        private void C20_Click(object sender, EventArgs e)
+
+        private void C01_Click(object sender, EventArgs e) //Places card in (0, 1)
         {
-            if(p20 && armor)
+            if (p01 && !armor)
             {
-                p20 = false;
+                p10 = false;
+                p01 = false;
+                placed[0, 1] = true;
+                placement[0, 1].Add(inPlay);
+            }
+            else if (p10 && armor)
+            {
+                p10 = false;
                 armor = false;
-                placement[2, 0][0].armor += inPlay.face;
+                placement[0, 1][0].armor += inPlay.face;
                 Draw();
             }
         }
-        
-        private void C14_Click(object sender, EventArgs e)
+        private void C02_Click(object sender, EventArgs e) //Places card in (0, 2)
         {
-            if (p14 && !armor)
+
+        }
+        private void C03_Click(object sender, EventArgs e) //Places card in (0, 3)
+        {
+            if (p03 && !armor)
             {
-                p14 = false;
                 p03 = false;
-                placed[1, 4] = true;
-                placement[1, 4].Add(inPlay);
-            }
-            else if (p14 && armor)
-            {
                 p14 = false;
+                placed[0, 3] = true;
+                placement[0, 3].Add(inPlay);
+            }
+            else if (p03 && armor)
+            {
+                p03 = false;
                 armor = false;
-                placement[1, 4][0].armor += inPlay.face;
+                placement[0, 3][0].armor += inPlay.face;
                 Draw();
             }
         }
 
-        private void C13_Click(object sender, EventArgs e)
+        private void C10_Click(object sender, EventArgs e) //Places card in (1, 0)
         {
-            if (inPlay.face >= placement[1, 3][0].face)
+            if (p10 && !armor)
             {
-                placement[1, 3].Insert(0, inPlay);
-                C13.Image = Play.Image;
-                if (placed[1, 0])
-                {
-                    switch (placement[1, 0][0].face)
-                    {
-                        case 11:
-                            if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
-                                C10.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[1, 2][0].color == placement[1, 0][0].color && placement[1, 1][0].color == placement[1, 0][0].color)
-                            {
-                                if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1,0][0].face + placement[1,0][0].armor)
-                                {
-                                    C10.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
-                            {
-                                if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
-                                {
-                                    C24.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                if (placed[3, 4])
-                {
-                    switch (placement[3, 4][0].face)
-                    {
-                        case 11:
-                            if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3,4][0].face + placement[3,4][0].armor)
-                                C14.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
-                            {
-                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                {
-                                    C34.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
-                            {
-                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                {
-                                    C34.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
+                p10 = false;
+                p01 = false;
+                placed[1, 0] = true;
+                placement[1, 0].Add(inPlay);
+            }
+            else if (p10 && armor)
+            {
+                p10 = false;
+                armor = false;
+                placement[1, 0][0].armor += inPlay.face;
                 Draw();
             }
         }
-
-        private void C12_Click(object sender, EventArgs e)
-        {
-            if (inPlay.face >= placement[1, 2][0].face)
-            {
-                placement[1, 2].Insert(0, inPlay);
-                C12.Image = Play.Image;
-                if (placed[4,1])
-                {
-                    switch (placement[4, 2][0].face)
-                    {
-                        case 11:
-                            if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4,2][0].face + placement[4,2][0].armor)
-                                C42.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[2, 2][0].color == placement[4, 2][0].color && placement[3, 2][0].color == placement[4, 2][0].color)
-                            {
-                                if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
-                                {
-                                    C42.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[2, 2][0].suit == placement[4, 2][0].suit && placement[3, 2][0].suit == placement[4, 2][0].suit)
-                            {
-                                if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
-                                {
-                                    C42.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                Draw();
-            }
-        }
-
-        private void C11_Click(object sender, EventArgs e)
+        private void C11_Click(object sender, EventArgs e) //Places card in (1, 1)
         {
             if (inPlay.face >= placement[1, 1][0].face)
             {
                 placement[1, 1].Insert(0, inPlay);
                 C11.Image = Play.Image;
-                if (placed[4,1])
+                if (placed[4, 1])
                 {
                     switch (placement[4, 1][0].face)
                     {
@@ -188,7 +112,7 @@ namespace Final_Project
                             break;
                     }
                 }
-                if (placed[1,4])
+                if (placed[1, 4])
                 {
                     switch (placement[1, 4][0].face)
                     {
@@ -219,67 +143,440 @@ namespace Final_Project
                 Draw();
             }
         }
-
-        private void C10_Click(object sender, EventArgs e)
+        private void C12_Click(object sender, EventArgs e) //Places card in (1, 2)
         {
-            if (p10 && !armor)
+            if (inPlay.face >= placement[1, 2][0].face)
             {
-                p10 = false;
-                p01 = false;
-                placed[1, 0] = true;
-                placement[1, 0].Add(inPlay);
-            }
-            else if(p10 && armor)
-            {
-                p10 = false;
-                armor = false;
-                placement[1, 0][0].armor += inPlay.face;
+                placement[1, 2].Insert(0, inPlay);
+                C12.Image = Play.Image;
+                if (placed[4, 1])
+                {
+                    switch (placement[4, 2][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
+                                C42.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[4, 2][0].color && placement[3, 2][0].color == placement[4, 2][0].color)
+                            {
+                                if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
+                                {
+                                    C42.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[4, 2][0].suit && placement[3, 2][0].suit == placement[4, 2][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
+                                {
+                                    C42.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
                 Draw();
             }
         }
 
-        private void C03_Click(object sender, EventArgs e)
+        private void C13_Click(object sender, EventArgs e) //Places card in (1, 3)
         {
-            if (p03 && !armor)
+            if (inPlay.face >= placement[1, 3][0].face)
             {
-                p03 = false;
+                placement[1, 3].Insert(0, inPlay);
+                C13.Image = Play.Image;
+                if (placed[1, 0])
+                {
+                    switch (placement[1, 0][0].face)
+                    {
+                        case 11:
+                            if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
+                                C10.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[1, 2][0].color == placement[1, 0][0].color && placement[1, 1][0].color == placement[1, 0][0].color)
+                            {
+                                if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
+                                {
+                                    C10.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
+                                {
+                                    C24.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                if (placed[3, 4])
+                {
+                    switch (placement[3, 4][0].face)
+                    {
+                        case 11:
+                            if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                C14.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                {
+                                    C34.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                {
+                                    C34.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                Draw();
+            }
+        }
+
+        private void C14_Click(object sender, EventArgs e) //Places card in (1, 4)
+        {
+            if (p14 && !armor)
+            {
                 p14 = false;
-                placed[0,3] = true;
-                placement[0,3].Add(inPlay);
-            }
-            else if (p03 && armor)
-            {
                 p03 = false;
+                placed[1, 4] = true;
+                placement[1, 4].Add(inPlay);
+            }
+            else if (p14 && armor)
+            {
+                p14 = false;
                 armor = false;
-                placement[0,3][0].armor += inPlay.face;
+                placement[1, 4][0].armor += inPlay.face;
                 Draw();
             }
         }
 
-        private void C02_Click(object sender, EventArgs e)
+        private void C20_Click(object sender, EventArgs e) //Places card in (2, 0)
         {
-
-        }
-
-        private void C01_Click(object sender, EventArgs e)
-        {
-            if (p01 && !armor)
+            if(p20 && armor)
             {
-                p10 = false;
-                p01 = false;
-                placed[0,1] = true;
-                placement[0,1].Add(inPlay);
-            }
-            else if (p10 && armor)
-            {
-                p10 = false;
+                p20 = false;
                 armor = false;
-                placement[0,1][0].armor += inPlay.face;
+                placement[2, 0][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+        private void C21_Click(object sender, EventArgs e) //Places card in (2, 1)
+        {
+            if (inPlay.face >= placement[2, 1][0].face)
+            {
+                placement[2, 1].Insert(0, inPlay);
+                C21.Image = Play.Image;
+                if (placed[2, 4])
+                {
+                    {
+                        switch (placement[2, 4][0].face)
+                        {
+                            case 11:
+                                if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
+                                    C24.BackgroundImage = Set(inPlay.image);
+                                break;
+                            case 12:
+                                if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
+                                {
+                                    if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
+                                    {
+                                        C24.BackgroundImage = Set(inPlay.image);
+                                    }
+                                }
+                                break;
+                            case 13:
+                                if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
+                                {
+                                    if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
+                                    {
+                                        C24.BackgroundImage = Set(inPlay.image);
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                }
                 Draw();
             }
         }
 
-        private void Help_Click(object sender, EventArgs e)
+        private void C22_Click(object sender, EventArgs e) //Places card in (2, 2)
+        {
+            if (placed[2, 2])
+            {
+                if (inPlay.face >= placement[2, 2][0].face)
+                {
+                    placement[2, 2].Insert(0, inPlay);
+                    C22.Image = Play.Image;
+                    Draw();
+                }
+;
+            }
+            else if (!placement[2, 2].Any())
+            {
+                placement[2, 2].Insert(0, inPlay);
+                C22.Image = Play.Image;
+                placed[2, 2] = true;
+                Draw();
+            }
+        }
+
+        private void C23_Click(object sender, EventArgs e) //Places card in (2, 3)
+        {
+            if (inPlay.face >= placement[2, 3][0].face)
+            {
+                placement[2, 3].Insert(0, inPlay);
+                C23.Image = Play.Image;
+                if (placed[2, 0])
+                {
+                    switch (placement[2, 0][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
+                                C20.Image = BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[2, 0][0].color && placement[2, 1][0].color == placement[2, 0][0].color)
+                            {
+                                if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
+                                {
+                                    C20.Image = BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[2, 0][0].suit && placement[2, 1][0].suit == placement[2, 0][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
+                                {
+                                    C20.Image = BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                Draw();
+            }
+        }
+
+        private void C24_Click(object sender, EventArgs e) //Places card in (2, 4)
+        {
+
+        }
+
+        private void C30_Click(object sender, EventArgs e) //Places card in (3, 0)
+        {
+
+        }
+
+        private void C31_Click(object sender, EventArgs e) //Places card in (3, 1)
+        {
+            if (inPlay.face >= placement[3, 1][0].face)
+            {
+                placement[3, 1].Insert(0, inPlay);
+                C31.Image = Play.Image;
+                if (placed[0, 1])
+                {
+                    switch (placement[0, 1][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
+                                C01.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[2, 1][0].color == placement[0, 1][0].color && placement[1, 1][0].color == placement[0, 1][0].color)
+                            {
+                                if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
+                                {
+                                    C01.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[2, 1][0].suit == placement[0, 1][0].suit && placement[1, 1][0].suit == placement[0, 1][0].suit)
+                            {
+                                if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
+                                {
+                                    C01.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                if (placed[3, 4])
+                {
+                    switch (placement[3, 4][0].face)
+                    {
+                        case 11:
+                            if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                C34.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                {
+                                    C34.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                {
+                                    C34.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                Draw();
+            }
+        }
+
+        private void C32_Click(object sender, EventArgs e) //Places card in (3, 2)
+        {
+            if (inPlay.face >= placement[3, 2][0].face)
+            {
+                placement[3, 2].Insert(0, inPlay);
+                C32.Image = Play.Image;
+                if (placed[0, 2])
+                {
+                    switch (placement[0, 2][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
+                                C02.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[2, 2][0].color == placement[0, 2][0].color && placement[1, 2][0].color == placement[0, 2][0].color)
+                            {
+                                if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
+                                {
+                                    C02.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[2, 2][0].suit == placement[0, 2][0].suit && placement[1, 2][0].suit == placement[0, 2][0].suit)
+                            {
+                                if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
+                                {
+                                    C02.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                Draw();
+            }
+        }
+
+        private void C33_Click(object sender, EventArgs e) //Places card in (3, 3)
+        {
+            if (inPlay.face >= placement[3, 3][0].face)
+            {
+                placement[3, 3].Insert(0, inPlay);
+                C33.Image = Play.Image;
+                if (placed[0, 3])
+                {
+                    switch (placement[0, 3][0].face)
+                    {
+                        case 11:
+                            if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
+                                C03.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[2, 3][0].color == placement[0, 3][0].color && placement[1, 3][0].color == placement[0, 3][0].color)
+                            {
+                                if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
+                                {
+                                    C03.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[2, 3][0].suit == placement[0, 3][0].suit && placement[1, 3][0].suit == placement[0, 3][0].suit)
+                            {
+                                if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
+                                {
+                                    C03.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                if (placed[3, 0])
+                {
+                    switch (placement[3, 0][0].face)
+                    {
+                        case 11:
+                            if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
+                                C30.BackgroundImage = Set(inPlay.image);
+                            break;
+                        case 12:
+                            if (placement[3, 2][0].color == placement[3, 0][0].color && placement[3, 1][0].color == placement[3, 0][0].color)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
+                                {
+                                    C30.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                        case 13:
+                            if (placement[3, 2][0].suit == placement[3, 0][0].suit && placement[3, 1][0].suit == placement[3, 0][0].suit)
+                            {
+                                if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
+                                {
+                                    C30.BackgroundImage = Set(inPlay.image);
+                                }
+                            }
+                            break;
+                    }
+                }
+                Draw();
+            }
+        }
+
+        private void C34_Click(object sender, EventArgs e) //Places card in (3, 4)
+        {
+
+        }
+
+        private void C41_Click(object sender, EventArgs e)//Places card in (4, 1)
+        {
+
+        }
+
+        private void C42_Click(object sender, EventArgs e)//Places card in (4, 2)
+        {
+
+        }
+
+        private void C43_Click(object sender, EventArgs e)//Places card in (4, 3)
+        {
+
+        }
+
+
+
+        private void Help_Click(object sender, EventArgs e) //Display's instructions for the game to the user
         {
             MessageBox.Show("Placement\n " +
             "With the deck face-down, draw cards from the top and lay them out face-up in a 3×3 grid." +
@@ -324,309 +621,11 @@ namespace Final_Project
             "Ploys to use, you’ve lost");
         }
 
-        private void newGame_Click(object sender, EventArgs e)
+        private void newGame_Click(object sender, EventArgs e) //Restarts the game
         {
-            setUp();
+            SetUp();
         }
 
-        private void C21_Click(object sender, EventArgs e)
-        {
-            if (inPlay.face >= placement[2, 1][0].face)
-            {
-                placement[2, 1].Insert(0, inPlay);
-                C21.Image = Play.Image;
-                if (placed[2,4])
-                {
-                    {
-                        switch (placement[2, 4][0].face)
-                        {
-                            case 11:
-                                if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
-                                    C24.BackgroundImage = Set(inPlay.image);
-                                break;
-                            case 12:
-                                if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
-                                {
-                                    if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
-                                    {
-                                        C24.BackgroundImage = Set(inPlay.image);
-                                    }
-                                }
-                                break;
-                            case 13:
-                                if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
-                                {
-                                    if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
-                                    {
-                                        C24.BackgroundImage = Set(inPlay.image);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                }
-                Draw();
-            }
-        }
-
-        private void C22_Click(object sender, EventArgs e)
-        {
-            if (placed[2,2])
-            {
-                if (inPlay.face >= placement[2, 2][0].face)
-                {
-                    placement[2, 2].Insert(0, inPlay);
-                    C22.Image = Play.Image;
-                    Draw();
-                }
-;
-            }
-            else if (!placement[2,2].Any())
-            {
-                placement[2, 2].Insert(0, inPlay);
-                C22.Image = Play.Image;
-                placed[2,2] = true;
-                Draw();
-            }
-        }
-
-        private void C23_Click(object sender, EventArgs e)
-        {
-            if (inPlay.face >= placement[2, 3][0].face)
-            {
-                placement[2, 3].Insert(0, inPlay);
-                C23.Image = Play.Image;
-                if (placed[2,0])
-                {
-                    switch (placement[2, 0][0].face)
-                    {
-                        case 11:
-                            if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
-                                C20.Image = BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[2, 2][0].color == placement[2, 0][0].color && placement[2, 1][0].color == placement[2, 0][0].color)
-                            {
-                                if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
-                                {
-                                    C20.Image = BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[2, 2][0].suit == placement[2, 0][0].suit && placement[2, 1][0].suit == placement[2, 0][0].suit)
-                            {
-                                if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
-                                {
-                                    C20.Image = BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                Draw();
-            }
-        }
-
-        private void C24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void C30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void C31_Click(object sender, EventArgs e)
-        {
-            if (inPlay.face >= placement[3, 1][0].face)
-            {
-                placement[3, 1].Insert(0, inPlay);
-                C31.Image = Play.Image;
-                if (placed[0,1])
-                {
-                    switch (placement[0, 1][0].face)
-                    {
-                        case 11:
-                            if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
-                                C01.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[2, 1][0].color == placement[0, 1][0].color && placement[1, 1][0].color == placement[0, 1][0].color)
-                            {
-                                if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
-                                {
-                                    C01.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[2, 1][0].suit == placement[0, 1][0].suit && placement[1, 1][0].suit == placement[0, 1][0].suit)
-                            {
-                                if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
-                                {
-                                    C01.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                if (placed[3,4])
-                {
-                    switch (placement[3, 4][0].face)
-                    {
-                        case 11:
-                            if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                C34.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
-                            {
-                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                {
-                                    C34.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
-                            {
-                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                {
-                                    C34.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                Draw();
-            }
-        }
-
-        private void C32_Click(object sender, EventArgs e)
-        {
-            if (inPlay.face >= placement[3, 2][0].face)
-            {
-                placement[3, 2].Insert(0, inPlay);
-                C32.Image = Play.Image;
-                if (placed[0,2])
-                {
-                    switch (placement[0, 2][0].face)
-                    {
-                        case 11:
-                            if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                C02.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[2, 2][0].color == placement[0, 2][0].color && placement[1, 2][0].color == placement[0, 2][0].color)
-                            {
-                                if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                {
-                                    C02.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[2, 2][0].suit == placement[0, 2][0].suit && placement[1, 2][0].suit == placement[0, 2][0].suit)
-                            {
-                                if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                {
-                                    C02.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                Draw();
-            }
-        }
-
-        private void C33_Click(object sender, EventArgs e)
-        {
-            if (inPlay.face >= placement[3, 3][0].face)
-            {
-                placement[3, 3].Insert(0, inPlay);
-                C33.Image = Play.Image;
-                if (placed[0,3])
-                {
-                    switch (placement[0, 3][0].face)
-                    {
-                        case 11:
-                            if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
-                                C03.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[2, 3][0].color == placement[0, 3][0].color && placement[1, 3][0].color == placement[0, 3][0].color)
-                            {
-                                if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                {
-                                    C03.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[2, 3][0].suit == placement[0, 3][0].suit && placement[1, 3][0].suit == placement[0, 3][0].suit)
-                            {
-                                if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                {
-                                    C03.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                if (placed[3,0])
-                {
-                    switch (placement[3, 0][0].face)
-                    {
-                        case 11:
-                            if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
-                                C30.BackgroundImage = Set(inPlay.image);
-                            break;
-                        case 12:
-                            if (placement[3, 2][0].color == placement[3, 0][0].color && placement[3, 1][0].color == placement[3, 0][0].color)
-                            {
-                                if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
-                                {
-                                    C30.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                        case 13:
-                            if (placement[3, 2][0].suit == placement[3, 0][0].suit && placement[3, 1][0].suit == placement[3, 0][0].suit)
-                            {
-                                if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
-                                {
-                                    C30.BackgroundImage = Set(inPlay.image);
-                                }
-                            }
-                            break;
-                    }
-                }
-                Draw();
-            }
-        }
-
-        private void C34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void C41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void C42_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void C43_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Ace_Click(object sender, EventArgs e)
         {
@@ -671,7 +670,7 @@ namespace Final_Project
         }
 
         static public bool[,] placed = new bool[5, 5];
-        public void fillAndShuffle()
+        public void FillAndShuffle() //Fills the deck with card objects and calls the shuffle function
         {
             Card card = new Card();
             for(int i=0; i < 52; i++)
@@ -682,14 +681,14 @@ namespace Final_Project
             deck.Add(new Card { face = 14});
             deck.Shuffle();
         }
-         public void Draw()
+         public void Draw()                                 //Draws the top card and then removes it from the list
         {
             inPlay = deck[0];
             deck.Remove(inPlay);
             Place();
             Play.BackgroundImage = Set(inPlay.image);
         }
-        public void royalPlacement(Card royal)
+        public void RoyalPlacement(Card royal)              //Function for placing royals
         {
             int highest = 0, highesti = 0, highestj = 0;
             bool suit = false, color = false;
@@ -795,7 +794,7 @@ namespace Final_Project
                 Play.BackgroundImage = Set(inPlay.image);
             }
         }
-        public void setUp()
+        public void SetUp() //Restarts the game
         {
             int i = 0, j = 0, k = 0;
             Card[] royal = new Card[12];
@@ -815,7 +814,7 @@ namespace Final_Project
                         deck.Remove(inPlay);
                     }
                 }
-            fillAndShuffle();
+            FillAndShuffle();
             i = 1;
             j = 1;
             k = 0;
@@ -868,7 +867,7 @@ namespace Final_Project
                 }
             }
             for (i = 0; i < k; i++)
-                royalPlacement(royal[i]);
+                RoyalPlacement(royal[i]);
             for(i = 1; i < 4; i++)
                 for(j = 1; j < 4; j++)
                     switch (i)
@@ -993,7 +992,7 @@ namespace Final_Project
                 case 11:
                 case 12:
                 case 13:
-                    royalPlacement(inPlay);
+                    RoyalPlacement(inPlay);
                     Draw();
                     break;
                 case 14:
@@ -1161,12 +1160,12 @@ namespace Final_Project
             InitializeComponent();
             Ace.BackgroundImage = Properties.Resources.ace_of_spades;
             Joker.BackgroundImage = Properties.Resources.red_joker;
-            setUp();
+            SetUp();
         }
     }
 }
 
-public static class CardMixer
+public static class CardMixer  //Template for shuffling the card objects
 {
     public static void Shuffle<T>(this IList<T> list)
     {
@@ -1183,7 +1182,7 @@ public static class CardMixer
     }
 }
 
-public class Card
+public class Card       //members of the Card class
 {
     public int face, suit, color, armor = 0, image;
 }
