@@ -724,8 +724,16 @@ namespace Final_Project
         {
             SetUp();
         }
-
-
+        public void TillRoyal(object sender, EventArgs e)
+        {
+            inPlay = deck[0];
+            while (inPlay.face < 11)
+            {
+                deck.Remove(inPlay);
+                deck.Add(inPlay);
+                inPlay = deck[0];
+            }
+        }
         private void Ace_Click(object sender, EventArgs e)
         {
             usingAce = true;
@@ -780,7 +788,7 @@ namespace Final_Project
             deck.Add(new Card { face = 14});
             deck.Shuffle();
         }
-         public void Draw()                                 //Draws the top card and then removes it from the list (works)
+         public void Draw()                         //Draws the top card and then removes it from the list (works)
         {
             if (deck.Count != 0)
             {
@@ -795,7 +803,7 @@ namespace Final_Project
                 Play.BackgroundImage = base.BackgroundImage;
             }
         } 
-        public void RoyalPlacement(Card royal)              //Function for placing royals (doesn't work)
+        public void RoyalPlacement(Card royal)      //Function for placing royals (doesn't work)
         {
             int highest = 0, highesti = 0, highestj = 0;
             bool suit = false, color = false;
@@ -1086,6 +1094,8 @@ namespace Final_Project
                             }
                             break;
                     }
+            shameCount = 0;
+            Shame.Text = "0";
             Draw();
         }
         public void Place()
