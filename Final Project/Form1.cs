@@ -901,11 +901,15 @@ namespace Final_Project
         {
             int i = 0, j = 0, k = 0;
             Card[] royal = new Card[12];
+            FillAndShuffle();
+            for (i = 0; i < 5; i++)
+                for (j = 0; j < 5; j++)
+                    placement[i, j] = new List<Card>();
             for (i = 0; i < 5; i++)
                 for (j = 0; j < 5; j++)
                 {
                     placed[i, j] = false;
-                    while (placement[i,j] != null)
+                    while (placement[i,j].Count != 0)
                     {
                         inPlay = placement[i, j][0];
                         placement[i, j].Remove(inPlay);
