@@ -161,7 +161,7 @@ namespace Final_Project
             {
                 placement[1, 2].Insert(0, inPlay);
                 C12.BackgroundImage = Play.BackgroundImage;
-                if (placed[4, 1])
+                if (placed[4, 1] && placed[2,2])
                 {
                     switch (placement[4, 2][0].face)
                     {
@@ -301,7 +301,7 @@ namespace Final_Project
             {
                 placement[2, 1].Insert(0, inPlay);
                 C21.BackgroundImage = Play.BackgroundImage;
-                if (placed[2, 4])
+                if (placed[2, 4] && placed[2,2])
                 {
                     {
                         switch (placement[2, 4][0].face)
@@ -362,7 +362,7 @@ namespace Final_Project
             {
                 placement[2, 3].Insert(0, inPlay);
                 C23.BackgroundImage = Play.BackgroundImage;
-                if (placed[2, 0])
+                if (placed[2, 0] && placed[2,2])
                 {
                     switch (placement[2, 0][0].face)
                     {
@@ -503,7 +503,7 @@ namespace Final_Project
             {
                 placement[3, 2].Insert(0, inPlay);
                 C32.BackgroundImage = Play.BackgroundImage;
-                if (placed[0, 2])
+                if (placed[0, 2] && placed[2,2])
                 {
                     switch (placement[0, 2][0].face)
                     {
