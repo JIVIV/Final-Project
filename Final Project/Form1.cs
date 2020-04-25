@@ -812,18 +812,18 @@ namespace Final_Project
                             highesti = 0;
                             highestj = 0;
                         }
-                        else if (placement[i, j][0].color == royal.color && !color)
+                        else if (placement[i, j][0].color == royal.color && !color && !suit)
                         {
                             color = true;
                             highest = 0;
                             highesti = 0;
                             highestj = 0;
                         }
-                            if (suit)
+                        if (suit)
                         {
-                            if (placement[i, j][0].suit == royal.suit && !placed[i,j])
+                            if (placement[i, j][0].suit == royal.suit && placed[i,j])
                             {
-                                if (highest > placement[i, j][0].face)
+                                if (highest < placement[i, j][0].face)
                                 {
                                     highest = placement[i, j][0].face;
                                     highesti = i;
@@ -833,9 +833,9 @@ namespace Final_Project
                         }
                         else if (color)
                         {
-                            if (placement[i, j][0].suit == royal.suit && !placed[i,j])
+                            if (placement[i, j][0].color == royal.color && placed[i,j])
                             {
-                                if (highest > placement[i, j][0].face)
+                                if (highest < placement[i, j][0].face)
                                 {
                                     highest = placement[i, j][0].face;
                                     highesti = i;
@@ -845,9 +845,9 @@ namespace Final_Project
                         }
                         else
                         {
-                            if (placement[i, j][0].suit == royal.suit && !placed[i,j])
+                            if (placed[i,j])
                             {
-                                if (highest > placement[i, j][0].face)
+                                if (highest < placement[i, j][0].face)
                                 {
                                     highest = placement[i, j][0].face;
                                     highesti = i;
@@ -882,7 +882,7 @@ namespace Final_Project
             {
                 placed[2,0] = true;
                 placement[2, 0].Add(royal);
-                C03.BackgroundImage = Set(royal.image);
+                C20.BackgroundImage = Set(royal.image);
             }
             else if(highesti == 2 && highestj == 3 && !placed[2,4])
             {
@@ -910,14 +910,23 @@ namespace Final_Project
                 if(!placed[4,3])
                     p43 = true;
             }
-            while(p01 || p03 || p10 || p14 || p30 || p34 || p41 || p43)
-            {
-                Play.BackgroundImage = Set(inPlay.image);
-            }
         }
         public void SetUp() //Restarts the game (works)
         {
+            C01.BackgroundImage = base.BackgroundImage;
+            C02.BackgroundImage = base.BackgroundImage;
+            C03.BackgroundImage = base.BackgroundImage;
+            C10.BackgroundImage = base.BackgroundImage;
+            C14.BackgroundImage = base.BackgroundImage;
+            C20.BackgroundImage = base.BackgroundImage;
             C22.BackgroundImage = base.BackgroundImage;
+            C24.BackgroundImage = base.BackgroundImage;
+            C30.BackgroundImage = base.BackgroundImage; 
+            C34.BackgroundImage = base.BackgroundImage;
+            C41.BackgroundImage = base.BackgroundImage; 
+            C42.BackgroundImage = base.BackgroundImage;
+            C43.BackgroundImage = base.BackgroundImage;
+
             int i, j, k;
             Card[] royal = new Card[12];
             deck = new List<Card>();
