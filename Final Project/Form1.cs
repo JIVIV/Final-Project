@@ -724,7 +724,7 @@ namespace Final_Project
         {
             SetUp();
         }
-        public void TillRoyal(object sender, EventArgs e)
+        public void TillRoyal()
         {
             inPlay = deck[0];
             while (inPlay.face < 11)
@@ -792,6 +792,9 @@ namespace Final_Project
         {
             if (deck.Count != 0)
             {
+                if (RoyalCheck())
+                    TillRoyal();
+
                 inPlay = deck[0];
                 deck.Remove(inPlay);
                 Place();
@@ -803,6 +806,48 @@ namespace Final_Project
                 Play.BackgroundImage = base.BackgroundImage;
             }
         } 
+        public bool RoyalCheck()
+        {
+            bool needRoyals = true;
+
+            if (placed[0, 1] && C01.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[0, 2] && C02.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[0, 3] && C03.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[1, 0] && C10.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[1, 4] && C14.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[2, 0] && C20.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[2, 4] && C24.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[3, 0] && C30.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[3, 4] && C34.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[4, 1] && C41.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[4, 2] && C42.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            if (placed[4, 3] && C43.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+                needRoyals = false;
+
+            return needRoyals;
+        }
         public void RoyalPlacement(Card royal)      //Function for placing royals (doesn't work)
         {
             int highest = 0, highesti = 0, highestj = 0;
@@ -1096,6 +1141,8 @@ namespace Final_Project
                     }
             shameCount = 0;
             Shame.Text = "0";
+            if (RoyalCheck())
+                TillRoyal();
             Draw();
         }
         public void Place()
