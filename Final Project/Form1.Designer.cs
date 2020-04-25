@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.C01 = new System.Windows.Forms.Button();
             this.C02 = new System.Windows.Forms.Button();
             this.C03 = new System.Windows.Forms.Button();
@@ -52,7 +50,6 @@
             this.C42 = new System.Windows.Forms.Button();
             this.C43 = new System.Windows.Forms.Button();
             this.Ace = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Play = new System.Windows.Forms.PictureBox();
             this.Deck = new System.Windows.Forms.PictureBox();
             this.Joker = new System.Windows.Forms.Button();
@@ -289,66 +286,6 @@
             this.Ace.UseVisualStyleBackColor = true;
             this.Ace.Click += new System.EventHandler(this.Ace_Click);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "d594che-212dcb27-a73c-4da5-bccc-6250146355cc.png");
-            this.imageList1.Images.SetKeyName(1, "ace_of_clubs.png");
-            this.imageList1.Images.SetKeyName(2, "ace_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(3, "ace_of_spades.png");
-            this.imageList1.Images.SetKeyName(4, "ace_of_hearts.png");
-            this.imageList1.Images.SetKeyName(5, "2_of_clubs.png");
-            this.imageList1.Images.SetKeyName(6, "2_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(7, "2_of_spades.png");
-            this.imageList1.Images.SetKeyName(8, "2_of_hearts.png");
-            this.imageList1.Images.SetKeyName(9, "3_of_clubs.png");
-            this.imageList1.Images.SetKeyName(10, "3_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(11, "3_of_spades.png");
-            this.imageList1.Images.SetKeyName(12, "3_of_hearts.png");
-            this.imageList1.Images.SetKeyName(13, "4_of_clubs.png");
-            this.imageList1.Images.SetKeyName(14, "4_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(15, "4_of_spades.png");
-            this.imageList1.Images.SetKeyName(16, "4_of_hearts.png");
-            this.imageList1.Images.SetKeyName(17, "5_of_clubs.png");
-            this.imageList1.Images.SetKeyName(18, "5_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(19, "5_of_spades.png");
-            this.imageList1.Images.SetKeyName(20, "5_of_hearts.png");
-            this.imageList1.Images.SetKeyName(21, "6_of_clubs.png");
-            this.imageList1.Images.SetKeyName(22, "6_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(23, "6_of_spades.png");
-            this.imageList1.Images.SetKeyName(24, "6_of_hearts.png");
-            this.imageList1.Images.SetKeyName(25, "7_of_clubs.png");
-            this.imageList1.Images.SetKeyName(26, "7_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(27, "7_of_spades.png");
-            this.imageList1.Images.SetKeyName(28, "7_of_hearts.png");
-            this.imageList1.Images.SetKeyName(29, "8_of_clubs.png");
-            this.imageList1.Images.SetKeyName(30, "8_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(31, "8_of_spades.png");
-            this.imageList1.Images.SetKeyName(32, "8_of_hearts.png");
-            this.imageList1.Images.SetKeyName(33, "9_of_clubs.png");
-            this.imageList1.Images.SetKeyName(34, "9_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(35, "9_of_spades.png");
-            this.imageList1.Images.SetKeyName(36, "9_of_hearts.png");
-            this.imageList1.Images.SetKeyName(37, "10_of_clubs.png");
-            this.imageList1.Images.SetKeyName(38, "10_of_diamonds.png");
-            this.imageList1.Images.SetKeyName(39, "10_of_spades.png");
-            this.imageList1.Images.SetKeyName(40, "10_of_hearts.png");
-            this.imageList1.Images.SetKeyName(41, "jack_of_clubs2.png");
-            this.imageList1.Images.SetKeyName(42, "jack_of_diamonds2.png");
-            this.imageList1.Images.SetKeyName(43, "jack_of_spades2.png");
-            this.imageList1.Images.SetKeyName(44, "jack_of_hearts2.png");
-            this.imageList1.Images.SetKeyName(45, "queen_of_clubs2.png");
-            this.imageList1.Images.SetKeyName(46, "queen_of_diamonds2.png");
-            this.imageList1.Images.SetKeyName(47, "queen_of_spades2.png");
-            this.imageList1.Images.SetKeyName(48, "queen_of_hearts2.png");
-            this.imageList1.Images.SetKeyName(49, "king_of_clubs2.png");
-            this.imageList1.Images.SetKeyName(50, "king_of_diamonds2.png");
-            this.imageList1.Images.SetKeyName(51, "king_of_spades2.png");
-            this.imageList1.Images.SetKeyName(52, "king_of_hearts2.png");
-            this.imageList1.Images.SetKeyName(53, "red_joker.png");
-            this.imageList1.Images.SetKeyName(54, "black_joker.png");
-            // 
             // Play
             // 
             this.Play.InitialImage = null;
@@ -507,7 +444,6 @@
         private System.Windows.Forms.Button C42;
         private System.Windows.Forms.Button C43;
         private System.Windows.Forms.Button Ace;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox Play;
         private System.Windows.Forms.PictureBox Deck;
         private System.Windows.Forms.Button Joker;

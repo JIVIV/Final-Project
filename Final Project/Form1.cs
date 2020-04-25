@@ -62,14 +62,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
-                                C10.Image = imageList1.Images[0];
+                                C10.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[1, 2][0].color == placement[1, 0][0].color && placement[1, 1][0].color == placement[1, 0][0].color)
                             {
                                 if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1,0][0].face + placement[1,0][0].armor)
                                 {
-                                    C10.Image = imageList1.Images[0];
+                                    C10.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -78,7 +78,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
-                                    C24.Image = imageList1.Images[0];
+                                    C24.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -90,14 +90,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3,4][0].face + placement[3,4][0].armor)
-                                C14.Image = imageList1.Images[0];
+                                C14.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.Image = imageList1.Images[0];
+                                    C34.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -106,7 +106,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.Image = imageList1.Images[0];
+                                    C34.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -128,14 +128,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4,2][0].face + placement[4,2][0].armor)
-                                C42.Image = imageList1.Images[0];
+                                C42.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[2, 2][0].color == placement[4, 2][0].color && placement[3, 2][0].color == placement[4, 2][0].color)
                             {
                                 if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                                 {
-                                    C42.Image = imageList1.Images[0];
+                                    C42.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -144,7 +144,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                                 {
-                                    C42.Image = imageList1.Images[0];
+                                    C42.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -166,14 +166,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
-                                C41.Image = imageList1.Images[0];
+                                C41.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[2, 1][0].color == placement[4, 1][0].color && placement[3, 1][0].color == placement[4, 1][0].color)
                             {
                                 if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                                 {
-                                    C41.Image = imageList1.Images[0];
+                                    C41.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -182,7 +182,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                                 {
-                                    C41.Image = imageList1.Images[0];
+                                    C41.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -194,14 +194,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
-                                C14.Image = imageList1.Images[0];
+                                C14.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[1, 2][0].color == placement[1, 4][0].color && placement[1, 3][0].color == placement[1, 4][0].color)
                             {
                                 if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                                 {
-                                    C14.Image = imageList1.Images[0];
+                                    C14.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -210,7 +210,7 @@ namespace Final_Project
                             {
                                 if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                                 {
-                                    C14.Image = imageList1.Images[0];
+                                    C14.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -281,7 +281,47 @@ namespace Final_Project
 
         private void Help_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Placement\n " +
+            "With the deck face-down, draw cards from the top and lay them out face-up in a 3×3 grid." +
+            " If you draw any royals, aces or jokers during this, put them on a separate pile and " +
+            "keep drawing til you’ve made the grid of just number cards\n" +
+            "If you did draw some royals, you now place them the same way we will when playing:" +
+            " put it outside the grid, adjacent to the grid card it’s most similar to. ‘Most similar’ means:\n" +
+            "1. Highest value card of the same suit\n" +
+            "2. If none, highest value card of the same colour\n" +
+            "3. If none, highest value card\n" +
+            "4. If there’s a tie, or most similar card is on a corner," +
+            " you can choose between the equally valid positions" +
+            "\n\nThe Goal\n" +
+            "kill all the royals\n\n" +
+            "\nPlay\n" +
+            "If it’s a royal: use placement rule above.\n" +
+            "If it has value 2 - 10: you must place it on the grid.It can go on any card with the same or lower value, regardless of suit.\n" +
+            "If it’s an ace or joker: keep it to one side\n\n" +
+            "Killing royals: if you’re able to place a card on the grid opposite a royal – so there are two cards between – those two cards Attack the royal. The sum of their values is the must be at least as much as health of the royal to kill them: if it’s not, you can still place the card, but the royal is unaffected. The value of the card you just placed is not part of the Attack, only the two between." +
+            "\n\nJacks: 11 health.The cards Attacking can be any suit." +
+            "\nQueens: 12 health.The cards Attacking must match the colour of the queen to count." +
+            "\nKings: 13 health.The cards Attacking must match the suit of the king to count\n\n"
+            + "Ploys:\n " +
+            "Aces are Extractions: at any time you can use up one of the aces you’ve drawn to pick up one " +
+            "stack of cards from the grid and put them face - down at the bottom of your draw pile.\n" +
+            "You can do this even after drawing a card and before placing it. Turn the ace face-down to remember you’ve used it.\n" +
+            "Jokers are Reassignments: at any time you can use up one you’ve drawn to move the top card of one " +
+            "stack on the grid to another position. The place you move it to must be a valid spot to play " +
+            "the card, and placing it can trigger an Attack the same way a normal play can. " +
+            "Turn the joker face-down to remember you’ve used it.\n" +
+            "If you cannot place a card: and you have no Ploys to use, " +
+            "you must add the card as Armour to the royal it’s most similar to(lowest value royal of same suit, failing " +
+            "that lowest of same colour, etc). It increases their health by the value of " +
+            "the card. So a King with a 3 as armour now has 13 + 3 = 16 health.You can add armour to a" +
+            " royal that already has armour – it stacks. If a royal ends up with 20 + health(or 19 + for a King)" +
+            ", you are naturally boned.)\n" +
+            "If there are no living royals on the table: if every spot around the grid has a dead " +
+            "royal on it – all 12 – you’ve won!If not, just keep drawing cards until you find a royal," +
+            " placing the cards in a face-up pile as you go.Once you find a royal, place it, " +
+            "then add the cards you cycled through to the bottom of your deck.\n" +
+            "If the draw pile runs out: and you haven’t killed all the royals, and have no " +
+            "Ploys to use, you’ve lost");
         }
 
         private void newGame_Click(object sender, EventArgs e)
@@ -302,14 +342,14 @@ namespace Final_Project
                         {
                             case 11:
                                 if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
-                                    C24.Image = imageList1.Images[0];
+                                    C24.BackgroundImage = Set(inPlay.image);
                                 break;
                             case 12:
                                 if (placement[2, 2][0].color == placement[2, 4][0].color && placement[2, 3][0].color == placement[2, 4][0].color)
                                 {
                                     if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                     {
-                                        C24.Image = imageList1.Images[0];
+                                        C24.BackgroundImage = Set(inPlay.image);
                                     }
                                 }
                                 break;
@@ -318,7 +358,7 @@ namespace Final_Project
                                 {
                                     if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                     {
-                                        C24.Image = imageList1.Images[0];
+                                        C24.BackgroundImage = Set(inPlay.image);
                                     }
                                 }
                                 break;
@@ -362,14 +402,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
-                                C20.Image = imageList1.Images[0];
+                                C20.Image = BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[2, 2][0].color == placement[2, 0][0].color && placement[2, 1][0].color == placement[2, 0][0].color)
                             {
                                 if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                                 {
-                                    C20.Image = imageList1.Images[0];
+                                    C20.Image = BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -378,7 +418,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                                 {
-                                    C20.Image = imageList1.Images[0];
+                                    C20.Image = BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -410,14 +450,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
-                                C01.Image = imageList1.Images[0];
+                                C01.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[2, 1][0].color == placement[0, 1][0].color && placement[1, 1][0].color == placement[0, 1][0].color)
                             {
                                 if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                                 {
-                                    C01.Image = imageList1.Images[0];
+                                    C01.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -426,7 +466,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                                 {
-                                    C01.Image = imageList1.Images[0];
+                                    C01.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -438,14 +478,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
-                                C34.Image = imageList1.Images[0];
+                                C34.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.Image = imageList1.Images[0];
+                                    C34.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -454,7 +494,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.Image = imageList1.Images[0];
+                                    C34.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -476,14 +516,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
-                                C02.Image = imageList1.Images[0];
+                                C02.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[2, 2][0].color == placement[0, 2][0].color && placement[1, 2][0].color == placement[0, 2][0].color)
                             {
                                 if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C02.Image = imageList1.Images[0];
+                                    C02.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -492,7 +532,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C02.Image = imageList1.Images[0];
+                                    C02.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -514,14 +554,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
-                                C03.Image = imageList1.Images[0];
+                                C03.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[2, 3][0].color == placement[0, 3][0].color && placement[1, 3][0].color == placement[0, 3][0].color)
                             {
                                 if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C03.Image = imageList1.Images[0];
+                                    C03.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -530,7 +570,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C03.Image = imageList1.Images[0];
+                                    C03.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -542,14 +582,14 @@ namespace Final_Project
                     {
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
-                                C30.Image = imageList1.Images[0];
+                                C30.BackgroundImage = Set(inPlay.image);
                             break;
                         case 12:
                             if (placement[3, 2][0].color == placement[3, 0][0].color && placement[3, 1][0].color == placement[3, 0][0].color)
                             {
                                 if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                                 {
-                                    C30.Image = imageList1.Images[0];
+                                    C30.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -558,7 +598,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                                 {
-                                    C30.Image = imageList1.Images[0];
+                                    C30.BackgroundImage = Set(inPlay.image);
                                 }
                             }
                             break;
@@ -636,7 +676,7 @@ namespace Final_Project
             Card card = new Card();
             for(int i=0; i < 52; i++)
             {
-                deck.Add(new Card { face = (i % 13) + 1, suit = (i % 4) + 1, color = (i % 2) + 1});
+                deck.Add(new Card { face = (i % 13) + 1, suit = (i % 4) + 1, color = (i % 2) + 1, image = i});
             }
             deck.Add(new Card { face = 14});
             deck.Add(new Card { face = 14});
@@ -647,7 +687,7 @@ namespace Final_Project
             inPlay = deck[0];
             deck.Remove(inPlay);
             Place();
-            Play.Image = imageList1.Images[((inPlay.face * 4) + 1 - inPlay.suit)];            
+            Play.BackgroundImage = Set(inPlay.image);
         }
         public void royalPlacement(Card royal)
         {
@@ -752,7 +792,7 @@ namespace Final_Project
             }
             while(p01 || p03 || p10 || p14 || p30 || p34 || p41 || p43)
             {
-                Play.Image = imageList1.Images[((royal.face * 4) + 1 - royal.suit)];
+                Play.BackgroundImage = Set(inPlay.image);
             }
         }
         public void setUp()
@@ -837,13 +877,13 @@ namespace Final_Project
                             switch (j)
                             {
                                 case 1:
-                                    C11.Image = imageList1.Images[((placement[i,j][0].face * 4) + 1 - placement[i,j][0].suit)];
+                                    C11.BackgroundImage = Set(inPlay.image);
                                     break;
                                 case 2:
-                                    C12.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C12.BackgroundImage = Set(inPlay.image);
                                     break;
                                 case 3:
-                                    C13.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C13.BackgroundImage = Set(inPlay.image);
                                     break;
                             }
                             break;
@@ -851,10 +891,10 @@ namespace Final_Project
                             switch (j)
                             {
                                 case 1:
-                                    C21.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C21.BackgroundImage = Set(inPlay.image);
                                     break;
                                 case 3:
-                                    C23.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C23.BackgroundImage = Set(inPlay.image);
                                     break;
                             }
                             break;
@@ -862,21 +902,18 @@ namespace Final_Project
                             switch (j)
                             {
                                 case 1:
-                                    C31.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C31.BackgroundImage = Set(inPlay.image);
                                     break;
                                 case 2:
-                                    C32.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C32.BackgroundImage = Set(inPlay.image);
                                     break;
                                 case 3:
-                                    C33.Image = imageList1.Images[((placement[i, j][0].face * 4) + 1 - placement[i, j][0].suit)];
+                                    C33.BackgroundImage = Set(inPlay.image);
                                     break;
                             }
                             break;
                     }
             Draw();
-            //Test to show the new picture resolution
-            Play.Image = Properties.Resources.ace_of_clubs;
-            //
         }
         public void Place()
         {
@@ -966,12 +1003,165 @@ namespace Final_Project
                     break;
             }
         }
+        public Image Set(int image)
+        {
+            Image picture;
+            picture = Properties.Resources._2_of_clubs;
+            switch (image)
+            {
+                case 1:
+                    picture = Properties.Resources._2_of_diamonds;
+                    break;
+                case 2:
+                    picture = Properties.Resources._3_of_clubs;
+                    break;
+                case 3:
+                    picture = Properties.Resources._4_of_hearts;
+                    break;
+                case 4:
+                    picture = Properties.Resources._5_of_spades;
+                    break;
+                case 5:
+                    picture = Properties.Resources._6_of_diamonds;
+                    break;
+                case 6:
+                    picture = Properties.Resources._7_of_clubs;
+                    break;
+                case 7:
+                    picture = Properties.Resources._8_of_hearts;
+                    break;
+                case 8:
+                    picture = Properties.Resources._9_of_spades;
+                    break;
+                case 9:
+                    picture = Properties.Resources._10_of_diamonds;
+                    break;
+                case 10:
+                    picture = Properties.Resources.jack_of_clubs2;
+                    break;
+                case 11:
+                    picture = Properties.Resources.queen_of_hearts2;
+                    break;
+                case 12:
+                    picture = Properties.Resources.king_of_spades2;
+                    break;
+                case 14:
+                    picture = Properties.Resources._2_of_clubs;
+                    break;
+                case 15:
+                    picture = Properties.Resources._3_of_hearts;
+                    break;
+                case 16:
+                    picture = Properties.Resources._4_of_spades;
+                    break;
+                case 17:
+                    picture = Properties.Resources._5_of_diamonds;
+                    break;
+                case 18:
+                    picture = Properties.Resources._6_of_clubs;
+                    break;
+                case 19:
+                    picture = Properties.Resources._7_of_hearts;
+                    break;
+                case 20:
+                    picture = Properties.Resources._8_of_spades;
+                    break;
+                case 21:
+                    picture = Properties.Resources._9_of_diamonds;
+                    break;
+                case 22:
+                    picture = Properties.Resources._10_of_clubs;
+                    break;
+                case 23:
+                    picture = Properties.Resources.jack_of_hearts2;
+                    break;
+                case 24:
+                    picture = Properties.Resources.queen_of_spades2;
+                    break;
+                case 25:
+                    picture = Properties.Resources.king_of_diamonds2;
+                    break;
+                case 27:
+                    picture = Properties.Resources._2_of_hearts;
+                    break;
+                case 28:
+                    picture = Properties.Resources._3_of_spades;
+                    break;
+                case 29:
+                    picture = Properties.Resources._4_of_diamonds;
+                    break;
+                case 30:
+                    picture = Properties.Resources._5_of_clubs;
+                    break;
+                case 31:
+                    picture = Properties.Resources._6_of_hearts;
+                    break;
+                case 32:
+                    picture = Properties.Resources._7_of_spades;
+                    break;
+                case 33:
+                    picture = Properties.Resources._8_of_diamonds;
+                    break;
+                case 34:
+                    picture = Properties.Resources._9_of_clubs;
+                    break;
+                case 35:
+                    picture = Properties.Resources._10_of_hearts;
+                    break;
+                case 36:
+                    picture = Properties.Resources.jack_of_spades2;
+                    break;
+                case 37:
+                    picture = Properties.Resources.queen_of_diamonds2;
+                    break;
+                case 38:
+                    picture = Properties.Resources.king_of_clubs2;
+                    break;
+                case 40:
+                    picture = Properties.Resources._2_of_spades;
+                    break;
+                case 41:
+                    picture = Properties.Resources._3_of_diamonds;
+                    break;
+                case 42:
+                    picture = Properties.Resources._4_of_clubs;
+                    break;
+                case 43:
+                    picture = Properties.Resources._5_of_hearts;
+                    break;
+                case 44:
+                    picture = Properties.Resources._6_of_spades;
+                    break;
+                case 45:
+                    picture = Properties.Resources._7_of_diamonds;
+                    break;
+                case 46:
+                    picture = Properties.Resources._8_of_clubs;
+                    break;
+                case 47:
+                    picture = Properties.Resources._9_of_hearts;
+                    break;
+                case 48:
+                    picture = Properties.Resources._10_of_spades;
+                    break;
+                case 49:
+                    picture = Properties.Resources.jack_of_diamonds2;
+                    break;
+                case 50:
+                    picture = Properties.Resources.queen_of_clubs2;
+                    break;
+                case 51:
+                    picture = Properties.Resources.king_of_hearts2;
+                    break;
+            }
+            return picture;
+        }
         public Form1()
         {
             InitializeComponent();
-            Deck.Image = imageList1.Images[0];
-            Ace.Image = imageList1.Images[3];
-            Joker.Image = imageList1.Images[54];
+            Deck.BackgroundImage = Set(1); ;
+            Ace.BackgroundImage = Properties.Resources.ace_of_spades;
+            Joker.BackgroundImage = Properties.Resources.red_joker;
             setUp();
         }
     }
@@ -996,5 +1186,5 @@ public static class CardMixer
 
 public class Card
 {
-    public int face, suit, color, armor = 0;
+    public int face, suit, color, armor = 0, image;
 }
