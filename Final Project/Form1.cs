@@ -22,6 +22,9 @@ namespace Final_Project
             p24 = false, p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p42 = false, p43 = false;
         static public bool[,] placed = new bool[5, 5];
 
+
+        /* ------------------------------------------------------------------------------------------ */ 
+        /* ----------------------- Royals ----------------------------------------------------------- */
         private void C01_Click(object sender, EventArgs e) //Places card in (0, 1)
         {
             if (p01 && !armor)
@@ -90,6 +93,154 @@ namespace Final_Project
                 Draw();
             }
         }
+        private void C14_Click(object sender, EventArgs e) //Places card in (1, 4)
+        {
+            if (p14 && !armor)
+            {
+                p14 = false;
+                p03 = false;
+                placed[1, 4] = true;
+                placement[1, 4].Add(inPlay);
+            }
+            else if (p14 && armor)
+            {
+                p14 = false;
+                armor = false;
+                placement[1, 4][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+
+        private void C20_Click(object sender, EventArgs e) //Places card in (2, 0)
+        {
+            if (p20 && !armor)
+            {
+                p10 = false;
+                p20 = false;
+                p30 = false;
+                placed[2, 0] = true;
+                placement[2, 0].Add(inPlay);
+            }
+            else if (p20 && armor)
+            {
+                p20 = false;
+                armor = false;
+                placement[2, 0][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+        private void C24_Click(object sender, EventArgs e) //Places card in (2, 4)
+        {
+            if (p24 && !armor)
+            {
+                p14 = false;
+                p24 = false;
+                p34 = false;
+                placed[2, 4] = true;
+                placement[2, 4].Add(inPlay);
+            }
+            else if (p24 && armor)
+            {
+                p24 = false;
+                armor = false;
+                placement[2, 4][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+
+        private void C30_Click(object sender, EventArgs e) //Places card in (3, 0)
+        {
+            if (p30 && !armor)
+            {
+                p41 = false;
+                p30 = false;
+                placed[3, 0] = true;
+                placement[3, 0].Add(inPlay);
+            }
+            else if (p30 && armor)
+            {
+                p30 = false;
+                armor = false;
+                placement[3, 0][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+        private void C34_Click(object sender, EventArgs e) //Places card in (3, 4)
+        {
+            if (p34 && !armor)
+            {
+                p34 = false;
+                p43 = false;
+                placed[3, 4] = true;
+                placement[3, 4].Add(inPlay);
+            }
+            else if (p34 && armor)
+            {
+                p34 = false;
+                armor = false;
+                placement[3, 4][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+
+        private void C41_Click(object sender, EventArgs e)//Places card in (4, 1)
+        {
+            if (p41 && !armor)
+            {
+                p41 = false;
+                p30 = false;
+                placed[4, 1] = true;
+                placement[4, 1].Add(inPlay);
+            }
+            else if (p41 && armor)
+            {
+                p41 = false;
+                armor = false;
+                placement[4, 1][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+        private void C42_Click(object sender, EventArgs e)//Places card in (4, 2)
+        {
+            if (p42 && !armor)
+            {
+                p42 = false;
+                p32 = false;
+                placed[4, 2] = true;
+                placement[4, 2].Add(inPlay);
+            }
+            else if (p42 && armor)
+            {
+                p42 = false;
+                armor = false;
+                placement[4, 2][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+
+        private void C43_Click(object sender, EventArgs e)//Places card in (4, 3)
+        {
+            if (p43 && !armor)
+            {
+                p43 = false;
+                p34 = false;
+                placed[4, 3] = true;
+                placement[4, 3].Add(inPlay);
+            }
+            else if (p43 && armor)
+            {
+                p43 = false;
+                armor = false;
+                placement[4, 3][0].armor += inPlay.face;
+                Draw();
+            }
+        }
+
+
+        /* ------------------------------------------------------------------------------------------ */
+        /* ----------------------- Placement -------------------------------------------------------- */
+
+
         private void C11_Click(object sender, EventArgs e) //Places card in (1, 1)
         {
             if (inPlay.face >= placement[1, 1][0].face)
@@ -259,42 +410,7 @@ namespace Final_Project
             }
         }
 
-        private void C14_Click(object sender, EventArgs e) //Places card in (1, 4)
-        {
-            if (p14 && !armor)
-            {
-                p14 = false;
-                p03 = false;
-                placed[1, 4] = true;
-                placement[1, 4].Add(inPlay);
-            }
-            else if (p14 && armor)
-            {
-                p14 = false;
-                armor = false;
-                placement[1, 4][0].armor += inPlay.face;
-                Draw();
-            }
-        }
-
-        private void C20_Click(object sender, EventArgs e) //Places card in (2, 0)
-        {
-            if (p20 && !armor)
-            {
-                p10 = false;
-                p20 = false;
-                p30 = false;
-                placed[2, 0] = true;
-                placement[2, 0].Add(inPlay);
-            }
-            else if(p20 && armor)
-            {
-                p20 = false;
-                armor = false;
-                placement[2, 0][0].armor += inPlay.face;
-                Draw();
-            }
-        }
+        
         private void C21_Click(object sender, EventArgs e) //Places card in (2, 1)
         {
             if (inPlay.face >= placement[2, 1][0].face)
@@ -362,7 +478,7 @@ namespace Final_Project
             {
                 placement[2, 3].Insert(0, inPlay);
                 C23.BackgroundImage = Play.BackgroundImage;
-                if (placed[2, 0] && placed[2,2])
+                if (placed[2, 0] && placed[2, 2])
                 {
                     switch (placement[2, 0][0].face)
                     {
@@ -390,43 +506,6 @@ namespace Final_Project
                             break;
                     }
                 }
-                Draw();
-            }
-        }
-
-        private void C24_Click(object sender, EventArgs e) //Places card in (2, 4)
-        {
-            if (p24 && !armor)
-            {
-                p14 = false;
-                p24 = false;
-                p34 = false;
-                placed[2, 4] = true;
-                placement[2, 4].Add(inPlay);
-            }
-            else if (p24 && armor)
-            {
-                p24 = false;
-                armor = false;
-                placement[2, 4][0].armor += inPlay.face;
-                Draw();
-            }
-        }
-
-        private void C30_Click(object sender, EventArgs e) //Places card in (3, 0)
-        {
-            if (p30 && !armor)
-            {
-                p41 = false;
-                p30 = false;
-                placed[3, 0] = true;
-                placement[3, 0].Add(inPlay);
-            }
-            else if (p30 && armor)
-            {
-                p30 = false;
-                armor = false;
-                placement[3, 0][0].armor += inPlay.face;
                 Draw();
             }
         }
@@ -601,78 +680,8 @@ namespace Final_Project
             }
         }
 
-        private void C34_Click(object sender, EventArgs e) //Places card in (3, 4)
-        {
-            if (p34 && !armor)
-            {
-                p34 = false;
-                p43 = false;
-                placed[3, 4] = true;
-                placement[3, 4].Add(inPlay);
-            }
-            else if (p34 && armor)
-            {
-                p34 = false;
-                armor = false;
-                placement[3, 4][0].armor += inPlay.face;
-                Draw();
-            }
-        }
-
-        private void C41_Click(object sender, EventArgs e)//Places card in (4, 1)
-        {
-            if (p41 && !armor)
-            {
-                p41 = false;
-                p30 = false;
-                placed[4, 1] = true;
-                placement[4, 1].Add(inPlay);
-            }
-            else if (p41 && armor)
-            {
-                p41 = false;
-                armor = false;
-                placement[4, 1][0].armor += inPlay.face;
-                Draw();
-            }
-        }
-
-        private void C42_Click(object sender, EventArgs e)//Places card in (4, 2)
-        {
-            if (p42 && !armor)
-            {
-                p42 = false;
-                p32 = false;
-                placed[4, 2] = true;
-                placement[4, 2].Add(inPlay);
-            }
-            else if (p42 && armor)
-            {
-                p42 = false;
-                armor = false;
-                placement[4, 2][0].armor += inPlay.face;
-                Draw();
-            }
-        }
-
-        private void C43_Click(object sender, EventArgs e)//Places card in (4, 3)
-        {
-            if (p43 && !armor)
-            {
-                p43 = false;
-                p34 = false;
-                placed[4, 3] = true;
-                placement[4, 3].Add(inPlay);
-            }
-            else if (p43 && armor)
-            {
-                p43 = false;
-                armor = false;
-                placement[4, 3][0].armor += inPlay.face;
-                Draw();
-            }
-        }
-
+       /* ------------------------------------------------------------------------------------------ */
+       /* ----------------------- Help Print ------------------------------------------------------- */
 
 
         private void Help_Click(object sender, EventArgs e) //Display's instructions for the game to the user (works)
@@ -720,6 +729,9 @@ namespace Final_Project
             "Ploys to use, you’ve lost");
         }
 
+        /* ------------------------------------------------------------------------------------------ */
+        /* ----------------------- New Game & Setup ------------------------------------------------- */
+
         private void NewGame_Click(object sender, EventArgs e) //Restarts the game (works)
         {
             SetUp();
@@ -734,6 +746,169 @@ namespace Final_Project
                 inPlay = deck[0];
             }
         }
+        public void FillAndShuffle() //Fills the deck with card objects and calls the shuffle function (works)
+        {
+            Card card = new Card();
+            for (int i = 0; i < 52; i++)
+            {
+                deck.Add(new Card { face = (i % 13) + 1, suit = (i % 4) + 1, color = (i % 2) + 1, image = i });
+            }
+            deck.Add(new Card { face = 14 });
+            deck.Add(new Card { face = 14 });
+            deck.Shuffle();
+        }
+        public void Draw()                         //Draws the top card and then removes it from the list (works)
+        {
+            if (deck.Count != 0)
+            {
+                if (RoyalCheck())
+                    TillRoyal();
+
+                inPlay = deck[0];
+                deck.Remove(inPlay);
+                Place();
+                Play.BackgroundImage = Set(inPlay.image);
+            }
+            else
+            {
+                MessageBox.Show("You Lose");
+                Play.BackgroundImage = base.BackgroundImage;
+            }
+        }
+
+        public void SetUp() //Restarts the game (works)
+        {
+            C01.BackgroundImage = base.BackgroundImage;
+            C02.BackgroundImage = base.BackgroundImage;
+            C03.BackgroundImage = base.BackgroundImage;
+            C10.BackgroundImage = base.BackgroundImage;
+            C14.BackgroundImage = base.BackgroundImage;
+            C20.BackgroundImage = base.BackgroundImage;
+            C22.BackgroundImage = base.BackgroundImage;
+            C24.BackgroundImage = base.BackgroundImage;
+            C30.BackgroundImage = base.BackgroundImage;
+            C34.BackgroundImage = base.BackgroundImage;
+            C41.BackgroundImage = base.BackgroundImage;
+            C42.BackgroundImage = base.BackgroundImage;
+            C43.BackgroundImage = base.BackgroundImage;
+
+            int i, j, k;
+            Card[] royal = new Card[12];
+            deck = new List<Card>();
+            for (i = 0; i < 5; i++)
+                for (j = 0; j < 5; j++)
+                {
+                    placed[i, j] = false;
+                    placement[i, j] = new List<Card>();
+                }
+            FillAndShuffle();
+            i = 1;
+            j = 1;
+            k = 0;
+            while (!placed[3, 3])
+            {
+                inPlay = deck[0];
+                deck.Remove(inPlay);
+                switch (inPlay.face)
+                {
+                    case 1:
+                        ace++;
+                        Ace.Text = Convert.ToString(ace);
+                        inPlay = deck[0];
+                        deck.Remove(inPlay);
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                        placement[i, j].Add(new Card { face = inPlay.face, suit = inPlay.suit, color = inPlay.color, image = inPlay.image });
+                        placed[i, j] = true;
+                        j++;
+                        if (j == 4)
+                        {
+                            i++;
+                            j = 1;
+                        }
+                        if (i == 2 && j == 2)
+                        {
+                            j++;
+                        }
+                        break;
+                    case 11:
+                    case 12:
+                    case 13:
+                        royal[k] = inPlay;
+                        k++;
+                        break;
+                    case 14:
+                        joker++;
+                        Joker.Text = Convert.ToString(joker);
+                        inPlay = deck[0];
+                        deck.Remove(inPlay);
+                        break;
+                }
+            }
+            for (i = 0; i < k; i++)
+                RoyalPlacement(royal[i]);
+            for (i = 1; i < 4; i++)
+                for (j = 1; j < 4; j++)
+                    switch (i)
+                    {
+                        case 1:
+                            switch (j)
+                            {
+                                case 1:
+                                    C11.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                                case 2:
+                                    C12.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                                case 3:
+                                    C13.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (j)
+                            {
+                                case 1:
+                                    C21.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                                case 3:
+                                    C23.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch (j)
+                            {
+                                case 1:
+                                    C31.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                                case 2:
+                                    C32.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                                case 3:
+                                    C33.BackgroundImage = Set(placement[i, j][0].image);
+                                    break;
+                            }
+                            break;
+                    }
+            shameCount = 0;
+            Shame.Text = "0";
+            if (RoyalCheck())
+                TillRoyal();
+            Draw();
+        }
+
+        /* ------------------------------------------------------------------------------------------ */
+        /* ----------------------- Ace & Joker ------------------------------------------------------ */
+
         private void Ace_Click(object sender, EventArgs e)
         {
             usingAce = true;
@@ -777,35 +952,9 @@ namespace Final_Project
                 Draw();
             }
         }
-        public void FillAndShuffle() //Fills the deck with card objects and calls the shuffle function (works)
-        {
-            Card card = new Card();
-            for(int i=0; i < 52; i++)
-            {
-                deck.Add(new Card { face = (i % 13) + 1, suit = (i % 4) + 1, color = (i % 2) + 1, image = i});
-            }
-            deck.Add(new Card { face = 14});
-            deck.Add(new Card { face = 14});
-            deck.Shuffle();
-        }
-         public void Draw()                         //Draws the top card and then removes it from the list (works)
-        {
-            if (deck.Count != 0)
-            {
-                if (RoyalCheck())
-                    TillRoyal();
 
-                inPlay = deck[0];
-                deck.Remove(inPlay);
-                Place();
-                Play.BackgroundImage = Set(inPlay.image);
-            }
-            else
-            {
-                MessageBox.Show("You Lose");
-                Play.BackgroundImage = base.BackgroundImage;
-            }
-        } 
+        /* ------------------------------------------------------------------------------------------ */
+        /* ----------------------- Royal Functions -------------------------------------------------- */
         public bool RoyalCheck()
         {
             bool needRoyals = true;
@@ -1016,135 +1165,9 @@ namespace Final_Project
                 }
             }
         }
-        public void SetUp() //Restarts the game (works)
-        {
-            C01.BackgroundImage = base.BackgroundImage;
-            C02.BackgroundImage = base.BackgroundImage;
-            C03.BackgroundImage = base.BackgroundImage;
-            C10.BackgroundImage = base.BackgroundImage;
-            C14.BackgroundImage = base.BackgroundImage;
-            C20.BackgroundImage = base.BackgroundImage;
-            C22.BackgroundImage = base.BackgroundImage;
-            C24.BackgroundImage = base.BackgroundImage;
-            C30.BackgroundImage = base.BackgroundImage; 
-            C34.BackgroundImage = base.BackgroundImage;
-            C41.BackgroundImage = base.BackgroundImage; 
-            C42.BackgroundImage = base.BackgroundImage;
-            C43.BackgroundImage = base.BackgroundImage;
 
-            int i, j, k;
-            Card[] royal = new Card[12];
-            deck = new List<Card>();
-            for (i = 0; i < 5; i++)
-                for (j = 0; j < 5; j++)
-                {
-                    placed[i, j] = false;
-                    placement[i, j] = new List<Card>();
-                }
-            FillAndShuffle();
-            i = 1;
-            j = 1;
-            k = 0;
-            while (!placed[3, 3])
-            {
-                inPlay = deck[0];
-                deck.Remove(inPlay);
-                switch (inPlay.face)
-                {
-                    case 1:
-                        ace++;
-                        Ace.Text = Convert.ToString(ace);
-                        inPlay = deck[0];
-                        deck.Remove(inPlay);
-                        break;
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    case 10:
-                        placement[i, j].Add(new Card { face = inPlay.face, suit = inPlay.suit, color = inPlay.color, image = inPlay.image});
-                        placed[i, j] = true;
-                        j++;
-                        if(j == 4)
-                        {
-                            i++;
-                            j = 1;
-                        }
-                        if(i == 2 && j == 2)
-                        {
-                            j++;
-                        }
-                        break;
-                    case 11:
-                    case 12:
-                    case 13:
-                        royal[k] = inPlay;
-                        k++;
-                        break;
-                    case 14:
-                        joker++;
-                        Joker.Text = Convert.ToString(joker);
-                        inPlay = deck[0];
-                        deck.Remove(inPlay);
-                        break;
-                }
-            }
-            for (i = 0; i < k; i++)
-                RoyalPlacement(royal[i]);
-            for(i = 1; i < 4; i++)
-                for(j = 1; j < 4; j++)
-                    switch (i)
-                    {
-                        case 1:
-                            switch (j)
-                            {
-                                case 1:
-                                    C11.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                                case 2:
-                                    C12.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                                case 3:
-                                    C13.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                            }
-                            break;
-                        case 2:
-                            switch (j)
-                            {
-                                case 1:
-                                    C21.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                                case 3:
-                                    C23.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                            }
-                            break;
-                        case 3:
-                            switch (j)
-                            {
-                                case 1:
-                                    C31.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                                case 2:
-                                    C32.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                                case 3:
-                                    C33.BackgroundImage = Set(placement[i,j][0].image);
-                                    break;
-                            }
-                            break;
-                    }
-            shameCount = 0;
-            Shame.Text = "0";
-            if (RoyalCheck())
-                TillRoyal();
-            Draw();
-        }
+        /* ------------------------------------------------------------------------------------------ */
+        /* ------------------------ Card Functions -------------------------------------------------- */
         public void Place()
         {
             shame = true;
@@ -1433,6 +1456,9 @@ namespace Final_Project
         }
     }
 }
+
+/* ------------------------------------------------------------------------------------------ */
+/* -------------------------- Game Classes -------------------------------------------------- */
 public static class CardMixer  //Extension to the List class for shuffling a List
 {
     public static void Shuffle<T>(this IList<T> list)
