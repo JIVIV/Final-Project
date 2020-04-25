@@ -805,11 +805,21 @@ namespace Final_Project
                 {
                     if (i != 2 || j != 2)
                     {
-                        if (placement[i, j][0].suit == royal.suit)
+                        if (placement[i, j][0].suit == royal.suit && !suit)
+                        {
                             suit = true;
-                        else if (placement[i, j][0].color == royal.color)
+                            highest = 0;
+                            highesti = 0;
+                            highestj = 0;
+                        }
+                        else if (placement[i, j][0].color == royal.color && !color)
+                        {
                             color = true;
-                        if (suit)
+                            highest = 0;
+                            highesti = 0;
+                            highestj = 0;
+                        }
+                            if (suit)
                         {
                             if (placement[i, j][0].suit == royal.suit && !placed[i,j])
                             {
