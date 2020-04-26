@@ -36,7 +36,7 @@ namespace Final_Project
                 C10.Enabled = false;
                 RoyalPlacement();
             }
-            else;
+            else
             {
                 if (armor)
                 {
@@ -56,6 +56,7 @@ namespace Final_Project
                 C10.Enabled = false;
             }
         }
+
         private void C02_Click(object sender, EventArgs e) //Places card in (0, 2)
         {
             armor = false;
@@ -65,6 +66,7 @@ namespace Final_Project
             Shame.Enabled = false;
             Draw();
         }
+
         private void C03_Click(object sender, EventArgs e) //Places card in (0, 3)
         {
             if (l < k)
@@ -77,7 +79,7 @@ namespace Final_Project
                 C14.Enabled = false;
                 RoyalPlacement();
             }
-            else;
+            else
             {
                 if (armor)
                 {
@@ -111,7 +113,7 @@ namespace Final_Project
                 C10.Enabled = false;
                 RoyalPlacement();
             }
-            else;
+            else
             {
                 if (armor)
                 {
@@ -132,19 +134,20 @@ namespace Final_Project
                 C10.Enabled = false;
             }
         }
+
         private void C14_Click(object sender, EventArgs e) //Places card in (1, 4)
         {
             if (l < k)
             {
-                placed[0, 3] = true;
-                placement[0, 3].Add(royal[l]);
+                placed[1, 4] = true;
+                placement[1, 4].Add(royal[l]);
                 C03.BackgroundImage = Set(royal[l].image);
                 l++;
                 C03.Enabled = false;
                 C14.Enabled = false;
                 RoyalPlacement();
             }
-            else;
+            else
             {
                 if (armor)
                 {
@@ -158,7 +161,7 @@ namespace Final_Project
                 {
                     placed[1, 4] = true;
                     placement[1, 4].Add(inPlay);
-                    C03.BackgroundImage = Set(inPlay.image);
+                    C14.BackgroundImage = Set(inPlay.image);
                     Draw();
                 }
                 C03.Enabled = false;
@@ -168,126 +171,167 @@ namespace Final_Project
 
         private void C20_Click(object sender, EventArgs e) //Places card in (2, 0)
         {
-            if (p20 && !armor)
-            {
-                p10 = false;
-                p20 = false;
-                p30 = false;
-                placed[2, 0] = true;
-                placement[2, 0].Add(inPlay);
-            }
-            else if (p20 && armor)
-            {
-                p20 = false;
-                armor = false;
-                placement[2, 0][0].armor += inPlay.face;
-                Draw();
-            }
+            armor = false;
+            placement[2, 0][0].armor += inPlay.face;
+            C20.Text = $"{placement[2, 0][0].face + placement[2, 0][0].armor}";
+            C20.Enabled = false;
+            Shame.Enabled = false;
+            Draw();
         }
+
         private void C24_Click(object sender, EventArgs e) //Places card in (2, 4)
         {
-            if (p24 && !armor)
-            {
-                p14 = false;
-                p24 = false;
-                p34 = false;
-                placed[2, 4] = true;
-                placement[2, 4].Add(inPlay);
-            }
-            else if (p24 && armor)
-            {
-                p24 = false;
-                armor = false;
-                placement[2, 4][0].armor += inPlay.face;
-                Draw();
-            }
+            armor = false;
+            placement[2, 4][0].armor += inPlay.face;
+            C24.Text = $"{placement[2, 4][0].face + placement[2, 4][0].armor}";
+            C24.Enabled = false;
+            Shame.Enabled = false;
+            Draw();
         }
 
         private void C30_Click(object sender, EventArgs e) //Places card in (3, 0)
         {
-            if (p30 && !armor)
+            if (l < k)
             {
-                p41 = false;
-                p30 = false;
                 placed[3, 0] = true;
-                placement[3, 0].Add(inPlay);
+                placement[3, 0].Add(royal[l]);
+                C30.BackgroundImage = Set(royal[l].image);
+                l++;
+                C30.Enabled = false;
+                C41.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p30 && armor)
+            else
             {
-                p30 = false;
-                armor = false;
-                placement[3, 0][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[3, 0][0].armor += inPlay.face;
+                    C30.Text = $"{placement[3, 0][0].face + placement[3, 0][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[3, 0] = true;
+                    placement[3, 0].Add(inPlay);
+                    C30.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C41.Enabled = false;
+                C30.Enabled = false;
             }
         }
+
         private void C34_Click(object sender, EventArgs e) //Places card in (3, 4)
         {
-            if (p34 && !armor)
+            if (l < k)
             {
-                p34 = false;
-                p43 = false;
                 placed[3, 4] = true;
-                placement[3, 4].Add(inPlay);
+                placement[3, 4].Add(royal[l]);
+                C34.BackgroundImage = Set(royal[l].image);
+                l++;
+                C34.Enabled = false;
+                C43.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p34 && armor)
+            else
             {
-                p34 = false;
-                armor = false;
-                placement[3, 4][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[3, 4][0].armor += inPlay.face;
+                    C34.Text = $"{placement[3, 4][0].face + placement[3, 4][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[3, 4] = true;
+                    placement[3, 4].Add(inPlay);
+                    C34.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C43.Enabled = false;
+                C34.Enabled = false;
             }
         }
 
         private void C41_Click(object sender, EventArgs e)//Places card in (4, 1)
         {
-            if (p41 && !armor)
+            if (l < k)
             {
-                p41 = false;
-                p30 = false;
                 placed[4, 1] = true;
-                placement[4, 1].Add(inPlay);
+                placement[4, 1].Add(royal[l]);
+                C41.BackgroundImage = Set(royal[l].image);
+                l++;
+                C30.Enabled = false;
+                C41.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p41 && armor)
+            else
             {
-                p41 = false;
-                armor = false;
-                placement[4, 1][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[4, 1][0].armor += inPlay.face;
+                    C41.Text = $"{placement[4, 1][0].face + placement[4, 1][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[4, 1] = true;
+                    placement[4, 1].Add(inPlay);
+                    C41.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C41.Enabled = false;
+                C30.Enabled = false;
             }
         }
+
         private void C42_Click(object sender, EventArgs e)//Places card in (4, 2)
         {
-            if (p42 && !armor)
-            {
-                p42 = false;
-                p32 = false;
-                placed[4, 2] = true;
-                placement[4, 2].Add(inPlay);
-            }
-            else if (p42 && armor)
-            {
-                p42 = false;
-                armor = false;
-                placement[4, 2][0].armor += inPlay.face;
-                Draw();
-            }
+            armor = false;
+            placement[4, 2][0].armor += inPlay.face;
+            C42.Text = $"{placement[4, 2][0].face + placement[4, 2][0].armor}";
+            C42.Enabled = false;
+            Shame.Enabled = false;
+            Draw();
         }
 
         private void C43_Click(object sender, EventArgs e)//Places card in (4, 3)
         {
-            if (p43 && !armor)
+            if (l < k)
             {
-                p43 = false;
-                p34 = false;
                 placed[4, 3] = true;
-                placement[4, 3].Add(inPlay);
+                placement[4, 3].Add(royal[l]);
+                C43.BackgroundImage = Set(royal[l].image);
+                l++;
+                C34.Enabled = false;
+                C43.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p43 && armor)
+            else
             {
-                p43 = false;
-                armor = false;
-                placement[4, 3][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[4, 3][0].armor += inPlay.face;
+                    C43.Text = $"{placement[4, 3][0].face + placement[4, 3][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[4, 3] = true;
+                    placement[4, 3].Add(inPlay);
+                    C43.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C43.Enabled = false;
+                C34.Enabled = false;
             }
         }
 
@@ -910,7 +954,7 @@ namespace Final_Project
             if (l < k)
                 RoyalPlacement();
             else
-                TillRoyal;
+                TillRoyal();
             for (i = 1; i < 4; i++)
                 for (j = 1; j < 4; j++)
                     switch (i)
@@ -970,15 +1014,15 @@ namespace Final_Project
             usingAce = true;
             ace--;
             Ace.Text = $"{ace}";
-            p11 = true;
-            p12 = true;
-            p13 = true;
-            p21 = true;
-            p22 = true;
-            p23 = true;
-            p31 = true;
-            p32 = true;
-            p33 = true;
+            C11.Enabled = true;
+            C12.Enabled = true;
+            C13.Enabled = true;
+            C21.Enabled = true;
+            C22.Enabled = true;
+            C23.Enabled = true;
+            C31.Enabled = true;
+            C32.Enabled = true;
+            C33.Enabled = true;
         }
 
         private void Joker_Click(object sender, EventArgs e)
@@ -986,39 +1030,38 @@ namespace Final_Project
             usingJoker = true;
             joker--;
             Joker.Text = $"{joker}";
-            p11 = true;
-            p12 = true;
-            p13 = true;
-            p21 = true;
-            p22 = true;
-            p23 = true;
-            p31 = true;
-            p32 = true;
-            p33 = true;
+            C11.Enabled = true;
+            C12.Enabled = true;
+            C13.Enabled = true;
+            C21.Enabled = true;
+            C22.Enabled = true;
+            C23.Enabled = true;
+            C31.Enabled = true;
+            C32.Enabled = true;
+            C33.Enabled = true;
         }
 
         private void Shame_Click(object sender, EventArgs e)
         {
-            if (shame)
-            {
-                shameCount += inPlay.face;
-                Shame.Text = $"{shameCount}";
-                armor = false;
-                Draw();
-                Shame.Enabled = false;
-                C01.Enabled = false;
-                C02.Enabled = false;
-                C03.Enabled = false;
-                C10.Enabled = false;
-                C14.Enabled = false;
-                C20.Enabled = false;
-                C24.Enabled = false;
-                C30.Enabled = false;
-                C34.Enabled = false;
-                C41.Enabled = false;
-                C42.Enabled = false;
-                C43.Enabled = false;
-            }
+            
+            shameCount += inPlay.face;
+            Shame.Text = $"{shameCount}";
+            armor = false;
+            Draw();
+            Shame.Enabled = false;
+            C01.Enabled = false;
+            C02.Enabled = false;
+            C03.Enabled = false;
+            C10.Enabled = false;
+            C14.Enabled = false;
+            C20.Enabled = false;
+            C24.Enabled = false;
+            C30.Enabled = false;
+            C34.Enabled = false;
+            C41.Enabled = false;
+            C42.Enabled = false;
+            C43.Enabled = false;
+            
         }
 
         /* ------------------------------------------------------------------------------------------ */
@@ -1132,20 +1175,22 @@ namespace Final_Project
             {
                 if (!placed[0, 1] && !placed[1, 0])
                 {
-                    p01 = true;
-                    p10 = true;
+                    C01.Enabled = true;
+                    C10.Enabled = true;
                 }
                 else if (placed[0, 1])
                 {
                     placed[1, 0] = true;
                     placement[1, 0].Add(royal);
                     C10.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
                 else if (placed[1, 0])
                 {
                     placed[0, 1] = true;
                     placement[0, 1].Add(royal);
                     C01.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
             }
             else if (highesti == 1 && highestj == 2 && !placed[0,2])
@@ -1153,25 +1198,28 @@ namespace Final_Project
                 placed[0, 2] = true;
                 placement[0, 2].Add(royal);
                 C02.BackgroundImage = Set(royal.image);
+                Draw();
             }
             else if (highesti == 1 && highestj == 3)
             {
                 if (!placed[0, 3] && !placed[1, 4])
                 {
-                    p03 = true;
-                    p14 = true;
+                    C03.Enabled = true;
+                    C14.Enabled = true;
                 }
                 else if(placed[0, 3])
                 {
                     placed[1, 4] = true;
                     placement[1, 4].Add(royal);
                     C14.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
                 else if (placed[1, 4])
                 {
                     placed[0, 3] = true;
                     placement[0, 3].Add(royal);
                     C03.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
             }
             else if (highesti == 2 && highestj == 1 && !placed[2, 0])
@@ -1179,31 +1227,35 @@ namespace Final_Project
                 placed[2,0] = true;
                 placement[2, 0].Add(royal);
                 C20.BackgroundImage = Set(royal.image);
+                Draw();
             }
             else if(highesti == 2 && highestj == 3 && !placed[2,4])
             {
                 placed[2, 4] = true;
                 placement[2, 4].Add(royal);
                 C24.BackgroundImage = Set(royal.image);
+                Draw();
             }
             else if(highesti == 3 && highestj == 1)
             {
                 if (!placed[3, 0] && !placed[4, 1])
                 {
-                    p30 = true;
-                    p41 = true;
+                    C30.Enabled = true;
+                    C41.Enabled = true;
                 }
                 else if (placed[3, 0])
                 {
                     placed[4, 1] = true;
                     placement[4, 1].Add(royal);
                     C41.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
                 else if (placed[4, 1])
                 {
                     placed[3, 0] = true;
                     placement[3, 0].Add(royal);
                     C03.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
             }
             else if(highesti == 3 && highestj == 2 && !placed[4,2])
@@ -1211,25 +1263,28 @@ namespace Final_Project
                 placed[4, 2] = true;
                 placement[4, 2].Add(royal);
                 C42.BackgroundImage = Set(royal.image);
+                Draw();
             }
             else if(highesti == 3 && highestj == 3)
             {
                 if (!placed[3, 4] && !placed[4, 3])
                 {
-                    p34 = true;
-                    p43 = true;
+                    C34.Enabled = true;
+                    C43.Enabled = true;
                 }
                 else if (placed[4, 3])
                 {
                     placed[3, 4] = true;
                     placement[3, 4].Add(royal);
                     C34.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
                 else if (placed[3, 4])
                 {
                     placed[4, 3] = true;
                     placement[4, 3].Add(royal);
                     C43.BackgroundImage = Set(royal.image);
+                    Draw();
                 }
             }
         }
@@ -1244,14 +1299,14 @@ namespace Final_Project
                 {
                     if (i != 2 || j != 2)
                     {
-                        if (placement[i, j][0].suit == royal.suit && !suit)
+                        if (placement[i, j][0].suit == royal[l].suit && !suit)
                         {
                             suit = true;
                             highest = 0;
                             highesti = 0;
                             highestj = 0;
                         }
-                        else if (placement[i, j][0].color == royal.color && !color && !suit)
+                        else if (placement[i, j][0].color == royal[l].color && !color && !suit)
                         {
                             color = true;
                             highest = 0;
@@ -1260,7 +1315,7 @@ namespace Final_Project
                         }
                         if (suit)
                         {
-                            if (placement[i, j][0].suit == royal.suit && placed[i, j])
+                            if (placement[i, j][0].suit == royal[l].suit && placed[i, j])
                             {
                                 if (highest < placement[i, j][0].face)
                                 {
@@ -1272,7 +1327,7 @@ namespace Final_Project
                         }
                         else if (color)
                         {
-                            if (placement[i, j][0].color == royal.color && placed[i, j])
+                            if (placement[i, j][0].color == royal[l].color && placed[i, j])
                             {
                                 if (highest < placement[i, j][0].face)
                                 {
@@ -1301,104 +1356,128 @@ namespace Final_Project
             {
                 if (!placed[0, 1] && !placed[1, 0])
                 {
-                    p01 = true;
-                    p10 = true;
+                    C01.Enabled = true;
+                    C10.Enabled = true;
                 }
                 else if (placed[0, 1])
                 {
                     placed[1, 0] = true;
-                    placement[1, 0].Add(royal);
-                    C10.BackgroundImage = Set(royal.image);
+                    placement[1, 0].Add(royal[l]);
+                    C10.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
                 else if (placed[1, 0])
                 {
                     placed[0, 1] = true;
-                    placement[0, 1].Add(royal);
-                    C01.BackgroundImage = Set(royal.image);
+                    placement[0, 1].Add(royal[l]);
+                    C01.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
             }
             else if (highesti == 1 && highestj == 2 && !placed[0, 2])
             {
                 placed[0, 2] = true;
-                placement[0, 2].Add(royal);
-                C02.BackgroundImage = Set(royal.image);
+                placement[0, 2].Add(royal[l]);
+                C02.BackgroundImage = Set(royal[l].image);
+                l++;
+                RoyalPlacement();
             }
             else if (highesti == 1 && highestj == 3)
             {
                 if (!placed[0, 3] && !placed[1, 4])
                 {
-                    p03 = true;
-                    p14 = true;
+                    C03.Enabled = true;
+                    C14.Enabled = true;
                 }
                 else if (placed[0, 3])
                 {
                     placed[1, 4] = true;
-                    placement[1, 4].Add(royal);
-                    C14.BackgroundImage = Set(royal.image);
+                    placement[1, 4].Add(royal[l]);
+                    C14.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
                 else if (placed[1, 4])
                 {
                     placed[0, 3] = true;
-                    placement[0, 3].Add(royal);
-                    C03.BackgroundImage = Set(royal.image);
+                    placement[0, 3].Add(royal[l]);
+                    C03.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
             }
             else if (highesti == 2 && highestj == 1 && !placed[2, 0])
             {
                 placed[2, 0] = true;
-                placement[2, 0].Add(royal);
-                C20.BackgroundImage = Set(royal.image);
+                placement[2, 0].Add(royal[l]);
+                C20.BackgroundImage = Set(royal[l].image);
+                l++;
+                RoyalPlacement();
             }
             else if (highesti == 2 && highestj == 3 && !placed[2, 4])
             {
                 placed[2, 4] = true;
-                placement[2, 4].Add(royal);
-                C24.BackgroundImage = Set(royal.image);
+                placement[2, 4].Add(royal[l]);
+                C24.BackgroundImage = Set(royal[l].image);
+                l++;
+                RoyalPlacement();
             }
             else if (highesti == 3 && highestj == 1)
             {
                 if (!placed[3, 0] && !placed[4, 1])
                 {
-                    p30 = true;
-                    p41 = true;
+                    C30.Enabled = true;
+                    C41.Enabled = true;
                 }
                 else if (placed[3, 0])
                 {
                     placed[4, 1] = true;
-                    placement[4, 1].Add(royal);
-                    C41.BackgroundImage = Set(royal.image);
+                    placement[4, 1].Add(royal[l]);
+                    C41.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
                 else if (placed[4, 1])
                 {
                     placed[3, 0] = true;
-                    placement[3, 0].Add(royal);
-                    C03.BackgroundImage = Set(royal.image);
+                    placement[3, 0].Add(royal[l]);
+                    C03.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
             }
             else if (highesti == 3 && highestj == 2 && !placed[4, 2])
             {
                 placed[4, 2] = true;
-                placement[4, 2].Add(royal);
-                C42.BackgroundImage = Set(royal.image);
+                placement[4, 2].Add(royal[l]);
+                C42.BackgroundImage = Set(royal[l].image);
+                l++;
+                RoyalPlacement();
             }
             else if (highesti == 3 && highestj == 3)
             {
                 if (!placed[3, 4] && !placed[4, 3])
                 {
-                    p34 = true;
-                    p43 = true;
+                    C34.Enabled = true;
+                    C43.Enabled = true;
                 }
                 else if (placed[4, 3])
                 {
                     placed[3, 4] = true;
-                    placement[3, 4].Add(royal);
-                    C34.BackgroundImage = Set(royal.image);
+                    placement[3, 4].Add(royal[l]);
+                    C34.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
                 else if (placed[3, 4])
                 {
                     placed[4, 3] = true;
-                    placement[4, 3].Add(royal);
-                    C43.BackgroundImage = Set(royal.image);
+                    placement[4, 3].Add(royal[l]);
+                    C43.BackgroundImage = Set(royal[l].image);
+                    l++;
+                    RoyalPlacement();
                 }
             }
         }
@@ -1407,7 +1486,7 @@ namespace Final_Project
         /* ------------------------ Card Functions -------------------------------------------------- */
         public void Place()
         {
-            shame = true;
+            Shame.Enabled = true;
             armor = true;
             switch (inPlay.face)
             {
@@ -1435,24 +1514,24 @@ namespace Final_Project
                                         case 1:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p11 = true;
-                                                shame = false;
+                                                C11.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
                                         case 2:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p12 = true;
-                                                shame = false;
+                                                C12.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
                                         case 3:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p13 = true;
-                                                shame = false;
+                                                C13.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
@@ -1464,24 +1543,24 @@ namespace Final_Project
                                         case 1:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p21 = true;
-                                                shame = false;
+                                                C21.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
                                         case 2:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p22 = true;
-                                                shame = false;
+                                                C22.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
                                         case 3:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p23 = true;
-                                                shame = false;
+                                                C23.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
@@ -1493,24 +1572,24 @@ namespace Final_Project
                                         case 1:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p31 = true;
-                                                shame = false;
+                                                C31.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
                                         case 2:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p32 = true;
-                                                shame = false;
+                                                C32.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
                                         case 3:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
                                             {
-                                                p33 = true;
-                                                shame = false;
+                                                C33.Enabled = true;
+                                                Shame.Enabled = false;
                                                 armor = false;
                                             }
                                             break;
@@ -1522,7 +1601,6 @@ namespace Final_Project
                 case 12:
                 case 13:
                     RoyalPlacement(inPlay);
-                    Draw();
                     break;
                 case 14:
                     joker++;
