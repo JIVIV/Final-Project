@@ -342,7 +342,7 @@ namespace Final_Project
 
         private void C11_Click(object sender, EventArgs e) //Places card in (1, 1)
         {
-            if (inPlay.face >= placement[1, 1][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[1, 1].Insert(0, inPlay);
                 C11.BackgroundImage = Play.BackgroundImage;
@@ -402,12 +402,59 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[1,1][0];
+                placement[1,1].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while(placement[1,1].Any())
+                {
+                    deck.Add(placement[1,1][0]);
+                    placement[1, 1].Remove(placement[1, 1][0]);
+                }
+                placement[1,1].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C11.BackgroundImage = Set(placement[1, 1][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
         private void C12_Click(object sender, EventArgs e) //Places card in (1, 2)
         {
-            if (inPlay.face >= placement[1, 2][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[1, 2].Insert(0, inPlay);
                 C12.BackgroundImage = Play.BackgroundImage;
@@ -439,13 +486,60 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[1,2][0];
+                placement[1,2].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[1,2].Any())
+                {
+                    deck.Add(placement[1,2][0]);
+                    placement[1, 2].Remove(placement[1, 2][0]);
+                }
+                placement[1,2].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C12.BackgroundImage = Set(placement[1, 2][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
         private void C13_Click(object sender, EventArgs e) //Places card in (1, 3)
         {
-            if (inPlay.face >= placement[1, 3][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[1, 3].Insert(0, inPlay);
                 C13.BackgroundImage = Play.BackgroundImage;
@@ -505,14 +599,61 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[1,3][0];
+                placement[1,3].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[1,3].Any())
+                {
+                    deck.Add(placement[1,3][0]);
+                    placement[1, 3].Remove(placement[1,3][0]);
+                }
+                placement[1,3].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C13.BackgroundImage = Set(placement[1, 3][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
         
         private void C21_Click(object sender, EventArgs e) //Places card in (2, 1)
         {
-            if (inPlay.face >= placement[2, 1][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[2, 1].Insert(0, inPlay);
                 C21.BackgroundImage = Play.BackgroundImage;
@@ -546,7 +687,54 @@ namespace Final_Project
                         }
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[2,1][0];
+                placement[2,1].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[2,1].Any())
+                {
+                    deck.Add(placement[2,1][0]);
+                    placement[2, 1].Remove(placement[2, 1][0]);
+                }
+                placement[2,1].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C21.BackgroundImage = Set(placement[2, 1][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
@@ -554,26 +742,80 @@ namespace Final_Project
         {
             if (placed[2, 2])
             {
-                if (inPlay.face >= placement[2, 2][0].face)
+                if (!(usingAce || usingJoker))
                 {
                     placement[2, 2].Insert(0, inPlay);
                     C22.BackgroundImage = Play.BackgroundImage;
+                    C11.Enabled = false;
+                    C12.Enabled = false;
+                    C13.Enabled = false;
+                    C21.Enabled = false;
+                    C22.Enabled = false;
+                    C23.Enabled = false;
+                    C31.Enabled = false;
+                    C32.Enabled = false;
+                    C33.Enabled = false;
                     Draw();
                 }
-;
+                else if (usingJoker)
+                {
+                    deck.Add(inPlay);
+                    inPlay = placement[2,2][0];
+                    placement[2,2].Remove(inPlay);
+                    usingJoker = false;
+                    C11.Enabled = false;
+                    C12.Enabled = false;
+                    C13.Enabled = false;
+                    C21.Enabled = false;
+                    C22.Enabled = false;
+                    C23.Enabled = false;
+                    C31.Enabled = false;
+                    C32.Enabled = false;
+                    C33.Enabled = false;
+                    Place();
+                }
+                else if (usingAce)
+                {
+                    while (placement[2,2].Any())
+                    {
+                        deck.Add(placement[2,2][0]);
+                        placement[2,2].Remove(placement[2,2][0]);
+                    }
+                    placement[2,2].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                    C22.BackgroundImage = Set(placement[2,2][0].image);
+                    C11.Enabled = false;
+                    C12.Enabled = false;
+                    C13.Enabled = false;
+                    C21.Enabled = false;
+                    C22.Enabled = false;
+                    C23.Enabled = false;
+                    C31.Enabled = false;
+                    C32.Enabled = false;
+                    C33.Enabled = false;
+                    Place();
+                }                 
             }
             else if (!placement[2, 2].Any())
             {
                 placement[2, 2].Insert(0, inPlay);
                 C22.BackgroundImage = Play.BackgroundImage;
                 placed[2, 2] = true;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
             }
         }
 
         private void C23_Click(object sender, EventArgs e) //Places card in (2, 3)
         {
-            if (inPlay.face >= placement[2, 3][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[2, 3].Insert(0, inPlay);
                 C23.BackgroundImage = Play.BackgroundImage;
@@ -605,13 +847,60 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[2,3][0];
+                placement[2, 3].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[2, 3].Any())
+                {
+                    deck.Add(placement[2, 3][0]);
+                    placement[2, 3].Remove(placement[2, 3][0]);
+                }
+                placement[2, 3].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C23.BackgroundImage = Set(placement[2, 3][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
         private void C31_Click(object sender, EventArgs e) //Places card in (3, 1)
         {
-            if (inPlay.face >= placement[3, 1][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[3, 1].Insert(0, inPlay);
                 C31.BackgroundImage = Play.BackgroundImage;
@@ -671,13 +960,60 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[3, 1][0];
+                placement[3, 1].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[3, 1].Any())
+                {
+                    deck.Add(placement[3, 1][0]);
+                    placement[3, 1].Remove(placement[3, 1][0]);
+                }
+                placement[3, 1].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C31.BackgroundImage = Set(placement[3, 1][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
         private void C32_Click(object sender, EventArgs e) //Places card in (3, 2)
         {
-            if (inPlay.face >= placement[3, 2][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[3, 2].Insert(0, inPlay);
                 C32.BackgroundImage = Play.BackgroundImage;
@@ -709,13 +1045,60 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[3, 2][0];
+                placement[3, 2].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[3, 2].Any())
+                {
+                    deck.Add(placement[3, 2][0]);
+                    placement[3, 2].Remove(placement[3,2][0]);
+                }
+                placement[3, 2].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C32.BackgroundImage = Set(placement[3, 2][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
         private void C33_Click(object sender, EventArgs e) //Places card in (3, 3)
         {
-            if (inPlay.face >= placement[3, 3][0].face)
+            if (!(usingAce || usingJoker))
             {
                 placement[3, 3].Insert(0, inPlay);
                 C33.BackgroundImage = Play.BackgroundImage;
@@ -775,7 +1158,54 @@ namespace Final_Project
                             break;
                     }
                 }
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
                 Draw();
+            }
+            else if (usingJoker)
+            {
+                deck.Add(inPlay);
+                inPlay = placement[3, 3][0];
+                placement[3, 3].Remove(inPlay);
+                usingJoker = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
+            }
+            else if (usingAce)
+            {
+                usingAce = false;
+                while (placement[3, 3].Any())
+                {
+                    deck.Add(placement[3, 3][0]);
+                    placement[3, 3].Remove(placement[3, 3][0]);
+                }
+                placement[3, 3].Add(new Card { face = 1, suit = 1, color = 1, image = 0 });
+                C33.BackgroundImage = Set(placement[3, 3][0].image);
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                Place();
             }
         }
 
@@ -893,6 +1323,8 @@ namespace Final_Project
 
             int i, j;
             deck = new List<Card>();
+            score = 0;
+            Score.Text = $"Jokers used + Aces used: 0";
             for (i = 0; i < 5; i++)
                 for (j = 0; j < 5; j++)
                 {
@@ -1011,34 +1443,44 @@ namespace Final_Project
 
         private void Ace_Click(object sender, EventArgs e)
         {
-            usingAce = true;
-            ace--;
-            Ace.Text = $"{ace}";
-            C11.Enabled = true;
-            C12.Enabled = true;
-            C13.Enabled = true;
-            C21.Enabled = true;
-            C22.Enabled = true;
-            C23.Enabled = true;
-            C31.Enabled = true;
-            C32.Enabled = true;
-            C33.Enabled = true;
+            if (ace > 0)
+            {
+                usingAce = true;
+                ace--;
+                Ace.Text = $"{ace}";
+                C11.Enabled = true;
+                C12.Enabled = true;
+                C13.Enabled = true;
+                C21.Enabled = true;
+                C22.Enabled = true;
+                C23.Enabled = true;
+                C31.Enabled = true;
+                C32.Enabled = true;
+                C33.Enabled = true;
+                score++;
+                Score.Text = $"Jokers used + Aces used: {score}";
+            }
         }
 
         private void Joker_Click(object sender, EventArgs e)
         {
-            usingJoker = true;
-            joker--;
-            Joker.Text = $"{joker}";
-            C11.Enabled = true;
-            C12.Enabled = true;
-            C13.Enabled = true;
-            C21.Enabled = true;
-            C22.Enabled = true;
-            C23.Enabled = true;
-            C31.Enabled = true;
-            C32.Enabled = true;
-            C33.Enabled = true;
+            if (joker > 0)
+            {
+                usingJoker = true;
+                joker--;
+                Joker.Text = $"{joker}";
+                C11.Enabled = true;
+                C12.Enabled = true;
+                C13.Enabled = true;
+                C21.Enabled = true;
+                C22.Enabled = true;
+                C23.Enabled = true;
+                C31.Enabled = true;
+                C32.Enabled = true;
+                C33.Enabled = true;
+                score++;
+                Score.Text = $"Jokers used + Aces used: {score}";
+            }
         }
 
         private void Shame_Click(object sender, EventArgs e)
@@ -1069,42 +1511,70 @@ namespace Final_Project
         public bool RoyalCheck()
         {
             bool needRoyals = true;
+            int numDeadRoyals = 0;
 
             if (placed[0, 1] && C01.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[0, 1])
+                numDeadRoyals++;
 
             if (placed[0, 2] && C02.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[0, 2])
+                numDeadRoyals++;
 
             if (placed[0, 3] && C03.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[0, 3])
+                numDeadRoyals++;
 
             if (placed[1, 0] && C10.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[1, 0])
+                numDeadRoyals++;
 
             if (placed[1, 4] && C14.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[1, 4])
+                numDeadRoyals++;
 
             if (placed[2, 0] && C20.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[2, 0])
+                numDeadRoyals++;
 
             if (placed[2, 4] && C24.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[2, 4])
+                numDeadRoyals++;
 
             if (placed[3, 0] && C30.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[3, 0])
+                numDeadRoyals++;
 
             if (placed[3, 4] && C34.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[3, 4])
+                numDeadRoyals++;
 
             if (placed[4, 1] && C41.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[4, 1])
+                numDeadRoyals++;
 
             if (placed[4, 2] && C42.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[4, 2])
+                numDeadRoyals++;
 
             if (placed[4, 3] && C43.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                 needRoyals = false;
+            else if (placed[4, 3])
+                numDeadRoyals++;
+
+            if (numDeadRoyals == 12)
+                MessageBox.Show("You Win!");
 
             return needRoyals;
         }
@@ -1555,6 +2025,12 @@ namespace Final_Project
                                                 Shame.Enabled = false;
                                                 armor = false;
                                             }
+                                            else if(!placement[i,j].Any())
+                                            {
+                                                C22.Enabled = true;
+                                                Shame.Enabled = false;
+                                                armor = false;
+                                            }
                                             break;
                                         case 3:
                                             if (placement[i, j].Any() && inPlay.face >= placement[i, j][0].face)
@@ -1609,12 +2085,16 @@ namespace Final_Project
                     break;
             }
         }
+
         public Image Set(int image)
         {
             Image picture;
             picture = Properties.Resources._2_of_clubs;
             switch (image)
             {
+                case 0:
+                    picture = Properties.Resources.ace_of_spades;
+                    break;
                 case 1:
                     picture = Properties.Resources._2_of_diamonds;
                     break;

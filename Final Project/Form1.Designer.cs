@@ -178,6 +178,7 @@
             // C22
             // 
             this.C22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.C22.Enabled = false;
             this.C22.Location = new System.Drawing.Point(361, 323);
             this.C22.Name = "C22";
             this.C22.Size = new System.Drawing.Size(75, 90);
@@ -365,11 +366,11 @@
             // Score
             // 
             this.Score.AutoSize = true;
-            this.Score.Location = new System.Drawing.Point(375, 9);
+            this.Score.Location = new System.Drawing.Point(332, 60);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(47, 13);
+            this.Score.Size = new System.Drawing.Size(138, 13);
             this.Score.TabIndex = 27;
-            this.Score.Text = "Score: 6";
+            this.Score.Text = "Jokers used + Aces used: 0";
             // 
             // panel1
             // 
