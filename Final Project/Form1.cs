@@ -16,10 +16,9 @@ namespace Final_Project
         static public List<Card> deck = new List<Card>();            // Deck of Cards
         static public List<Card>[,] placement = new List<Card>[5,5]; //List of Cards in each button
         static public Card inPlay;                                   //Current card in play
-        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0;    //Amounts
-        static public bool usingAce = false, usingJoker = false, shame = false, armor = false, p01 = false, p02 = false, p03 = false,    //Boolean  which matches each button's coordinates on the grid
-            p10 = false, p11 = false, p12 = false, p13 = false, p14 = false, p20 = false, p21 = false, p22 = false, p23 = false,         
-            p24 = false, p30 = false, p31 = false, p32 = false, p33 = false, p34 = false, p41 = false, p42 = false, p43 = false;
+        static public Card[] royal = new Card[12];
+        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0, l, k;    //Amounts
+        static public bool usingAce = false, usingJoker = false, armor = false;
         static public bool[,] placed = new bool[5, 5];
 
 
@@ -27,87 +26,143 @@ namespace Final_Project
         /* ----------------------- Royals ----------------------------------------------------------- */
         private void C01_Click(object sender, EventArgs e) //Places card in (0, 1)
         {
-            if (p01 && !armor)
+            if (l < k)
             {
-                p10 = false;
-                p01 = false;
                 placed[0, 1] = true;
-                placement[0, 1].Add(inPlay);
+                placement[0, 1].Add(royal[l]);
+                C01.BackgroundImage = Set(royal[l].image);
+                l++;
+                C01.Enabled = false;
+                C10.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p01 && armor)
+            else;
             {
-                p01 = false;
-                armor = false;
-                placement[0, 1][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[0, 1][0].armor += inPlay.face;
+                    C01.Text = $"{placement[0, 1][0].face + placement[0, 1][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[0, 1] = true;
+                    placement[0, 1].Add(inPlay);
+                    C01.BackgroundImage = Set(inPlay.image);
+                }
+                C01.Enabled = false;
+                C10.Enabled = false;
             }
         }
         private void C02_Click(object sender, EventArgs e) //Places card in (0, 2)
         {
-            if (p02 && !armor)
-            {
-                p20 = false;
-                p02 = false;
-                placed[0, 2] = true;
-                placement[0, 2].Add(inPlay);
-            }
-            else if (p02 && !armor)
-            {
-                p20 = false;
-                armor = false;
-                placement[0, 2][0].armor += inPlay.face;
-            }
+            armor = false;
+            placement[0, 2][0].armor += inPlay.face;
+            C02.Text = $"{placement[0, 2][0].face + placement[0, 2][0].armor}";
+            C02.Enabled = false;
+            Shame.Enabled = false;
+            Draw();
         }
         private void C03_Click(object sender, EventArgs e) //Places card in (0, 3)
         {
-            if (p03 && !armor)
+            if (l < k)
             {
-                p03 = false;
-                p14 = false;
                 placed[0, 3] = true;
-                placement[0, 3].Add(inPlay);
+                placement[0, 3].Add(royal[l]);
+                C03.BackgroundImage = Set(royal[l].image);
+                l++;
+                C03.Enabled = false;
+                C14.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p03 && armor)
+            else;
             {
-                p03 = false;
-                armor = false;
-                placement[0, 3][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[0, 3][0].armor += inPlay.face;
+                    C03.Text = $"{placement[0, 3][0].face + placement[0, 3][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[0, 3] = true;
+                    placement[0, 3].Add(inPlay);
+                    C03.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C03.Enabled = false;
+                C14.Enabled = false;
             }
         }
 
         private void C10_Click(object sender, EventArgs e) //Places card in (1, 0)
         {
-            if (p10 && !armor)
+            if (l < k)
             {
-                p10 = false;
-                p01 = false;
                 placed[1, 0] = true;
-                placement[1, 0].Add(inPlay);
+                placement[1, 0].Add(royal[l]);
+                C03.BackgroundImage = Set(royal[l].image);
+                l++;
+                C01.Enabled = false;
+                C10.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p10 && armor)
+            else;
             {
-                p10 = false;
-                armor = false;
-                placement[1, 0][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[1, 0][0].armor += inPlay.face;
+                    C10.Text = $"{placement[1, 0][0].face + placement[1, 0][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[1, 0] = true;
+                    placement[1, 0].Add(inPlay);
+                    C10.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C01.Enabled = false;
+                C10.Enabled = false;
             }
         }
         private void C14_Click(object sender, EventArgs e) //Places card in (1, 4)
         {
-            if (p14 && !armor)
+            if (l < k)
             {
-                p14 = false;
-                p03 = false;
-                placed[1, 4] = true;
-                placement[1, 4].Add(inPlay);
+                placed[0, 3] = true;
+                placement[0, 3].Add(royal[l]);
+                C03.BackgroundImage = Set(royal[l].image);
+                l++;
+                C03.Enabled = false;
+                C14.Enabled = false;
+                RoyalPlacement();
             }
-            else if (p14 && armor)
+            else;
             {
-                p14 = false;
-                armor = false;
-                placement[1, 4][0].armor += inPlay.face;
-                Draw();
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[1, 4][0].armor += inPlay.face;
+                    C14.Text = $"{placement[1, 4][0].face + placement[1, 4][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[1, 4] = true;
+                    placement[1, 4].Add(inPlay);
+                    C03.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C03.Enabled = false;
+                C14.Enabled = false;
             }
         }
 
@@ -792,8 +847,7 @@ namespace Final_Project
             C42.BackgroundImage = base.BackgroundImage;
             C43.BackgroundImage = base.BackgroundImage;
 
-            int i, j, k;
-            Card[] royal = new Card[12];
+            int i, j;
             deck = new List<Card>();
             for (i = 0; i < 5; i++)
                 for (j = 0; j < 5; j++)
@@ -853,8 +907,10 @@ namespace Final_Project
                         break;
                 }
             }
-            for (i = 0; i < k; i++)
-                RoyalPlacement(royal[i]);
+            if (l < k)
+                RoyalPlacement();
+            else
+                TillRoyal;
             for (i = 1; i < 4; i++)
                 for (j = 1; j < 4; j++)
                     switch (i)
@@ -948,8 +1004,20 @@ namespace Final_Project
                 shameCount += inPlay.face;
                 Shame.Text = $"{shameCount}";
                 armor = false;
-                shame = false;
                 Draw();
+                Shame.Enabled = false;
+                C01.Enabled = false;
+                C02.Enabled = false;
+                C03.Enabled = false;
+                C10.Enabled = false;
+                C14.Enabled = false;
+                C20.Enabled = false;
+                C24.Enabled = false;
+                C30.Enabled = false;
+                C34.Enabled = false;
+                C41.Enabled = false;
+                C42.Enabled = false;
+                C43.Enabled = false;
             }
         }
 
@@ -1145,6 +1213,175 @@ namespace Final_Project
                 C42.BackgroundImage = Set(royal.image);
             }
             else if(highesti == 3 && highestj == 3)
+            {
+                if (!placed[3, 4] && !placed[4, 3])
+                {
+                    p34 = true;
+                    p43 = true;
+                }
+                else if (placed[4, 3])
+                {
+                    placed[3, 4] = true;
+                    placement[3, 4].Add(royal);
+                    C34.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[3, 4])
+                {
+                    placed[4, 3] = true;
+                    placement[4, 3].Add(royal);
+                    C43.BackgroundImage = Set(royal.image);
+                }
+            }
+        }
+
+        public void RoyalPlacement()
+        {
+            int highest = 0, highesti = 0, highestj = 0;
+            bool suit = false, color = false;
+            for (int i = 1; i < 4; i++)
+            {
+                for (int j = 1; j < 4; j++)
+                {
+                    if (i != 2 || j != 2)
+                    {
+                        if (placement[i, j][0].suit == royal.suit && !suit)
+                        {
+                            suit = true;
+                            highest = 0;
+                            highesti = 0;
+                            highestj = 0;
+                        }
+                        else if (placement[i, j][0].color == royal.color && !color && !suit)
+                        {
+                            color = true;
+                            highest = 0;
+                            highesti = 0;
+                            highestj = 0;
+                        }
+                        if (suit)
+                        {
+                            if (placement[i, j][0].suit == royal.suit && placed[i, j])
+                            {
+                                if (highest < placement[i, j][0].face)
+                                {
+                                    highest = placement[i, j][0].face;
+                                    highesti = i;
+                                    highestj = j;
+                                }
+                            }
+                        }
+                        else if (color)
+                        {
+                            if (placement[i, j][0].color == royal.color && placed[i, j])
+                            {
+                                if (highest < placement[i, j][0].face)
+                                {
+                                    highest = placement[i, j][0].face;
+                                    highesti = i;
+                                    highestj = j;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (placed[i, j])
+                            {
+                                if (highest < placement[i, j][0].face)
+                                {
+                                    highest = placement[i, j][0].face;
+                                    highesti = i;
+                                    highestj = j;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (highesti == 1 && highestj == 1)
+            {
+                if (!placed[0, 1] && !placed[1, 0])
+                {
+                    p01 = true;
+                    p10 = true;
+                }
+                else if (placed[0, 1])
+                {
+                    placed[1, 0] = true;
+                    placement[1, 0].Add(royal);
+                    C10.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[1, 0])
+                {
+                    placed[0, 1] = true;
+                    placement[0, 1].Add(royal);
+                    C01.BackgroundImage = Set(royal.image);
+                }
+            }
+            else if (highesti == 1 && highestj == 2 && !placed[0, 2])
+            {
+                placed[0, 2] = true;
+                placement[0, 2].Add(royal);
+                C02.BackgroundImage = Set(royal.image);
+            }
+            else if (highesti == 1 && highestj == 3)
+            {
+                if (!placed[0, 3] && !placed[1, 4])
+                {
+                    p03 = true;
+                    p14 = true;
+                }
+                else if (placed[0, 3])
+                {
+                    placed[1, 4] = true;
+                    placement[1, 4].Add(royal);
+                    C14.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[1, 4])
+                {
+                    placed[0, 3] = true;
+                    placement[0, 3].Add(royal);
+                    C03.BackgroundImage = Set(royal.image);
+                }
+            }
+            else if (highesti == 2 && highestj == 1 && !placed[2, 0])
+            {
+                placed[2, 0] = true;
+                placement[2, 0].Add(royal);
+                C20.BackgroundImage = Set(royal.image);
+            }
+            else if (highesti == 2 && highestj == 3 && !placed[2, 4])
+            {
+                placed[2, 4] = true;
+                placement[2, 4].Add(royal);
+                C24.BackgroundImage = Set(royal.image);
+            }
+            else if (highesti == 3 && highestj == 1)
+            {
+                if (!placed[3, 0] && !placed[4, 1])
+                {
+                    p30 = true;
+                    p41 = true;
+                }
+                else if (placed[3, 0])
+                {
+                    placed[4, 1] = true;
+                    placement[4, 1].Add(royal);
+                    C41.BackgroundImage = Set(royal.image);
+                }
+                else if (placed[4, 1])
+                {
+                    placed[3, 0] = true;
+                    placement[3, 0].Add(royal);
+                    C03.BackgroundImage = Set(royal.image);
+                }
+            }
+            else if (highesti == 3 && highestj == 2 && !placed[4, 2])
+            {
+                placed[4, 2] = true;
+                placement[4, 2].Add(royal);
+                C42.BackgroundImage = Set(royal.image);
+            }
+            else if (highesti == 3 && highestj == 3)
             {
                 if (!placed[3, 4] && !placed[4, 3])
                 {
