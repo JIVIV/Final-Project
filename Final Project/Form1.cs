@@ -1297,7 +1297,7 @@ namespace Final_Project
             {
                 for (int j = 1; j < 4; j++)
                 {
-                    if (i != 2 || j != 2)
+                    if ((i != 2 || j != 2) && l < k)
                     {
                         if (placement[i, j][0].suit == royal[l].suit && !suit)
                         {
