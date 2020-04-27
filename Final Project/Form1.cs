@@ -2199,7 +2199,114 @@ namespace Final_Project
                     joker++;
                     Joker.Text = Convert.ToString(joker);
                     Draw();
-                    break;
+                    break;                    
+            }
+            if (armor)
+            {
+                for(int i = 0; i < 4; i++)
+                    for(int j = 0; j < 4; j++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                switch (j)
+                                {
+                                    case 1:
+                                        if (placed[i, j])
+                                        {
+                                            C01.Enabled = true;
+                                        }
+                                        break;
+                                    case 2:
+                                        if (placed[i, j])
+                                        {
+                                            C02.Enabled = true;
+                                        }
+                                        break;
+                                    case 3:
+                                        if (placed[i, j])
+                                        {
+                                            C03.Enabled = true;
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 1:
+                                switch (j)
+                                {
+                                    case 0:
+                                        if (placed[i, j])
+                                        {
+                                            C10.Enabled = true;
+                                        }
+                                        break;
+                                    case 4:
+                                        if (placed[i, j])
+                                        {
+                                            C14.Enabled = true;
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                switch (j)
+                                {
+                                    case 0:
+                                        if (placed[i, j])
+                                        {
+                                            C20.Enabled = true;
+                                        }
+                                        break;
+                                    case 4:
+                                        if (placed[i, j])
+                                        {
+                                            C24.Enabled = true;
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 3:
+                                switch (j)
+                                {
+                                    case 0:
+                                        if (placed[i, j])
+                                        {
+                                            C30.Enabled = true;
+                                        }
+                                        break;
+                                    case 4:
+                                        if (placed[i, j])
+                                        {
+                                            C34.Enabled = true;
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 4:
+                                switch (j)
+                                {
+                                    case 1:
+                                        if (placed[i, j])
+                                        {
+                                            C41.Enabled = true;
+                                        }
+                                        break;
+                                    case 2:
+                                        if (placed[i, j])
+                                        {
+                                            C42.Enabled = true;
+                                        }
+                                        break;
+                                    case 3:
+                                        if (placed[i, j])
+                                        {
+                                            C43.Enabled = true;
+                                        }
+                                        break;
+                                }
+                                break;
+                        }
+                    }
             }
         }
 
