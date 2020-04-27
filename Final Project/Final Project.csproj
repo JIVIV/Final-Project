@@ -251,5 +251,8 @@
   <ItemGroup>
     <None Include="Resources\green_felt.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_felt.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
