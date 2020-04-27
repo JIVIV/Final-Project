@@ -414,7 +414,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[1, 1].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[1,1][0];
@@ -500,7 +500,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[1, 2].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[1,2][0];
@@ -615,7 +615,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[1, 3].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[1,3][0];
@@ -705,7 +705,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[2, 1].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[2,1][0];
@@ -766,7 +766,7 @@ namespace Final_Project
                     C33.Enabled = false;
                     Draw();
                 }
-                else if (usingJoker)
+                else if (usingJoker && placement[2, 2].Count > 1)
                 {
                     deck.Insert(0, inPlay);
                     inPlay = placement[2,2][0];
@@ -870,7 +870,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[2, 3].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[2,3][0];
@@ -985,7 +985,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[3, 1].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[3, 1][0];
@@ -1072,7 +1072,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[3, 2].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[3, 2][0];
@@ -1187,7 +1187,7 @@ namespace Final_Project
                 C33.Enabled = false;
                 Draw();
             }
-            else if (usingJoker)
+            else if (usingJoker && placement[3,3].Count > 1)
             {
                 deck.Insert(0, inPlay);
                 inPlay = placement[3, 3][0];
@@ -1506,6 +1506,24 @@ namespace Final_Project
                 score++;
                 Score.Text = $"Jokers used + Aces used: {score}";
             }
+            else if (usingAce)
+            {
+                usingAce = false;
+                ace++;
+                Ace.Text = $"{ace}";
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                score--;
+                Score.Text = $"Jokers used + Aces used: {score}";
+                Place();
+            }
         }
 
         private void Joker_Click(object sender, EventArgs e)
@@ -1526,6 +1544,24 @@ namespace Final_Project
                 C33.Enabled = true;
                 score++;
                 Score.Text = $"Jokers used + Aces used: {score}";
+            }
+            else if (usingJoker)
+            {
+                usingJoker = false;
+                joker++;
+                Joker.Text = $"{joker}";
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                score--;
+                Score.Text = $"Jokers used + Aces used: {score}";
+                Place();
             }
         }
 
