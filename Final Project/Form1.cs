@@ -107,7 +107,7 @@ namespace Final_Project
             {
                 placed[1, 0] = true;
                 placement[1, 0].Add(royal[l]);
-                C03.BackgroundImage = Set(royal[l].image);
+                C10.BackgroundImage = Set(royal[l].image);
                 l++;
                 C01.Enabled = false;
                 C10.Enabled = false;
@@ -1324,6 +1324,10 @@ namespace Final_Project
             int i, j;
             deck = new List<Card>();
             score = 0;
+            ace = 0;
+            Ace.Text = "0";
+            joker = 0;
+            Joker.Text = "0";
             Score.Text = $"Jokers used + Aces used: 0";
             for (i = 0; i < 5; i++)
                 for (j = 0; j < 5; j++)
@@ -1763,193 +1767,200 @@ namespace Final_Project
         {
             int highest = 0, highesti = 0, highestj = 0;
             bool suit = false, color = false;
-            for (int i = 1; i < 4; i++)
+            
+            if (l < k)
             {
-                for (int j = 1; j < 4; j++)
+                Play.BackgroundImage = Set(royal[l].image);
+                for (int i = 1; i < 4; i++)
                 {
-                    if ((i != 2 || j != 2) && l < k)
+                    for (int j = 1; j < 4; j++)
                     {
-                        if (placement[i, j][0].suit == royal[l].suit && !suit)
+                        if ((i != 2 || j != 2) && l < k)
                         {
-                            suit = true;
-                            highest = 0;
-                            highesti = 0;
-                            highestj = 0;
-                        }
-                        else if (placement[i, j][0].color == royal[l].color && !color && !suit)
-                        {
-                            color = true;
-                            highest = 0;
-                            highesti = 0;
-                            highestj = 0;
-                        }
-                        if (suit)
-                        {
-                            if (placement[i, j][0].suit == royal[l].suit && placed[i, j])
+                            if (placement[i, j][0].suit == royal[l].suit && !suit)
                             {
-                                if (highest < placement[i, j][0].face)
+                                suit = true;
+                                highest = 0;
+                                highesti = 0;
+                                highestj = 0;
+                            }
+                            else if (placement[i, j][0].color == royal[l].color && !color && !suit)
+                            {
+                                color = true;
+                                highest = 0;
+                                highesti = 0;
+                                highestj = 0;
+                            }
+                            if (suit)
+                            {
+                                if (placement[i, j][0].suit == royal[l].suit && placed[i, j])
                                 {
-                                    highest = placement[i, j][0].face;
-                                    highesti = i;
-                                    highestj = j;
+                                    if (highest < placement[i, j][0].face)
+                                    {
+                                        highest = placement[i, j][0].face;
+                                        highesti = i;
+                                        highestj = j;
+                                    }
                                 }
                             }
-                        }
-                        else if (color)
-                        {
-                            if (placement[i, j][0].color == royal[l].color && placed[i, j])
+                            else if (color)
                             {
-                                if (highest < placement[i, j][0].face)
+                                if (placement[i, j][0].color == royal[l].color && placed[i, j])
                                 {
-                                    highest = placement[i, j][0].face;
-                                    highesti = i;
-                                    highestj = j;
+                                    if (highest < placement[i, j][0].face)
+                                    {
+                                        highest = placement[i, j][0].face;
+                                        highesti = i;
+                                        highestj = j;
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            if (placed[i, j])
+                            else
                             {
-                                if (highest < placement[i, j][0].face)
+                                if (placed[i, j])
                                 {
-                                    highest = placement[i, j][0].face;
-                                    highesti = i;
-                                    highestj = j;
+                                    if (highest < placement[i, j][0].face)
+                                    {
+                                        highest = placement[i, j][0].face;
+                                        highesti = i;
+                                        highestj = j;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            if (highesti == 1 && highestj == 1)
-            {
-                if (!placed[0, 1] && !placed[1, 0])
+                if (highesti == 1 && highestj == 1)
                 {
-                    C01.Enabled = true;
-                    C10.Enabled = true;
+                    if (!placed[0, 1] && !placed[1, 0])
+                    {
+                        C01.Enabled = true;
+                        C10.Enabled = true;
+                    }
+                    else if (placed[0, 1])
+                    {
+                        placed[1, 0] = true;
+                        placement[1, 0].Add(royal[l]);
+                        C10.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
+                    else if (placed[1, 0])
+                    {
+                        placed[0, 1] = true;
+                        placement[0, 1].Add(royal[l]);
+                        C01.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
                 }
-                else if (placed[0, 1])
+                else if (highesti == 1 && highestj == 2 && !placed[0, 2])
                 {
-                    placed[1, 0] = true;
-                    placement[1, 0].Add(royal[l]);
-                    C10.BackgroundImage = Set(royal[l].image);
+                    placed[0, 2] = true;
+                    placement[0, 2].Add(royal[l]);
+                    C02.BackgroundImage = Set(royal[l].image);
                     l++;
                     RoyalPlacement();
                 }
-                else if (placed[1, 0])
+                else if (highesti == 1 && highestj == 3)
                 {
-                    placed[0, 1] = true;
-                    placement[0, 1].Add(royal[l]);
-                    C01.BackgroundImage = Set(royal[l].image);
+                    if (!placed[0, 3] && !placed[1, 4])
+                    {
+                        C03.Enabled = true;
+                        C14.Enabled = true;
+                    }
+                    else if (placed[0, 3])
+                    {
+                        placed[1, 4] = true;
+                        placement[1, 4].Add(royal[l]);
+                        C14.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
+                    else if (placed[1, 4])
+                    {
+                        placed[0, 3] = true;
+                        placement[0, 3].Add(royal[l]);
+                        C03.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
+                }
+                else if (highesti == 2 && highestj == 1 && !placed[2, 0])
+                {
+                    placed[2, 0] = true;
+                    placement[2, 0].Add(royal[l]);
+                    C20.BackgroundImage = Set(royal[l].image);
                     l++;
                     RoyalPlacement();
                 }
-            }
-            else if (highesti == 1 && highestj == 2 && !placed[0, 2])
-            {
-                placed[0, 2] = true;
-                placement[0, 2].Add(royal[l]);
-                C02.BackgroundImage = Set(royal[l].image);
-                l++;
-                RoyalPlacement();
-            }
-            else if (highesti == 1 && highestj == 3)
-            {
-                if (!placed[0, 3] && !placed[1, 4])
+                else if (highesti == 2 && highestj == 3 && !placed[2, 4])
                 {
-                    C03.Enabled = true;
-                    C14.Enabled = true;
-                }
-                else if (placed[0, 3])
-                {
-                    placed[1, 4] = true;
-                    placement[1, 4].Add(royal[l]);
-                    C14.BackgroundImage = Set(royal[l].image);
+                    placed[2, 4] = true;
+                    placement[2, 4].Add(royal[l]);
+                    C24.BackgroundImage = Set(royal[l].image);
                     l++;
                     RoyalPlacement();
                 }
-                else if (placed[1, 4])
+                else if (highesti == 3 && highestj == 1)
                 {
-                    placed[0, 3] = true;
-                    placement[0, 3].Add(royal[l]);
-                    C03.BackgroundImage = Set(royal[l].image);
+                    if (!placed[3, 0] && !placed[4, 1])
+                    {
+                        C30.Enabled = true;
+                        C41.Enabled = true;
+                    }
+                    else if (placed[3, 0])
+                    {
+                        placed[4, 1] = true;
+                        placement[4, 1].Add(royal[l]);
+                        C41.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
+                    else if (placed[4, 1])
+                    {
+                        placed[3, 0] = true;
+                        placement[3, 0].Add(royal[l]);
+                        C03.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
+                }
+                else if (highesti == 3 && highestj == 2 && !placed[4, 2])
+                {
+                    placed[4, 2] = true;
+                    placement[4, 2].Add(royal[l]);
+                    C42.BackgroundImage = Set(royal[l].image);
                     l++;
                     RoyalPlacement();
                 }
-            }
-            else if (highesti == 2 && highestj == 1 && !placed[2, 0])
-            {
-                placed[2, 0] = true;
-                placement[2, 0].Add(royal[l]);
-                C20.BackgroundImage = Set(royal[l].image);
-                l++;
-                RoyalPlacement();
-            }
-            else if (highesti == 2 && highestj == 3 && !placed[2, 4])
-            {
-                placed[2, 4] = true;
-                placement[2, 4].Add(royal[l]);
-                C24.BackgroundImage = Set(royal[l].image);
-                l++;
-                RoyalPlacement();
-            }
-            else if (highesti == 3 && highestj == 1)
-            {
-                if (!placed[3, 0] && !placed[4, 1])
+                else if (highesti == 3 && highestj == 3)
                 {
-                    C30.Enabled = true;
-                    C41.Enabled = true;
-                }
-                else if (placed[3, 0])
-                {
-                    placed[4, 1] = true;
-                    placement[4, 1].Add(royal[l]);
-                    C41.BackgroundImage = Set(royal[l].image);
-                    l++;
-                    RoyalPlacement();
-                }
-                else if (placed[4, 1])
-                {
-                    placed[3, 0] = true;
-                    placement[3, 0].Add(royal[l]);
-                    C03.BackgroundImage = Set(royal[l].image);
-                    l++;
-                    RoyalPlacement();
+                    if (!placed[3, 4] && !placed[4, 3])
+                    {
+                        C34.Enabled = true;
+                        C43.Enabled = true;
+                    }
+                    else if (placed[4, 3])
+                    {
+                        placed[3, 4] = true;
+                        placement[3, 4].Add(royal[l]);
+                        C34.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
+                    else if (placed[3, 4])
+                    {
+                        placed[4, 3] = true;
+                        placement[4, 3].Add(royal[l]);
+                        C43.BackgroundImage = Set(royal[l].image);
+                        l++;
+                        RoyalPlacement();
+                    }
                 }
             }
-            else if (highesti == 3 && highestj == 2 && !placed[4, 2])
-            {
-                placed[4, 2] = true;
-                placement[4, 2].Add(royal[l]);
-                C42.BackgroundImage = Set(royal[l].image);
-                l++;
-                RoyalPlacement();
-            }
-            else if (highesti == 3 && highestj == 3)
-            {
-                if (!placed[3, 4] && !placed[4, 3])
-                {
-                    C34.Enabled = true;
-                    C43.Enabled = true;
-                }
-                else if (placed[4, 3])
-                {
-                    placed[3, 4] = true;
-                    placement[3, 4].Add(royal[l]);
-                    C34.BackgroundImage = Set(royal[l].image);
-                    l++;
-                    RoyalPlacement();
-                }
-                else if (placed[3, 4])
-                {
-                    placed[4, 3] = true;
-                    placement[4, 3].Add(royal[l]);
-                    C43.BackgroundImage = Set(royal[l].image);
-                    l++;
-                    RoyalPlacement();
-                }
-            }
+            else
+                Draw();
         }
 
         /* ------------------------------------------------------------------------------------------ */
@@ -1961,6 +1972,7 @@ namespace Final_Project
             switch (inPlay.face)
             {
                 case 1:
+                    armor = false;
                     ace++;
                     Ace.Text = Convert.ToString(ace);
                     Draw();
@@ -2076,9 +2088,11 @@ namespace Final_Project
                 case 11:
                 case 12:
                 case 13:
+                    armor = false;
                     RoyalPlacement(inPlay);
                     break;
                 case 14:
+                    armor = false;
                     joker++;
                     Joker.Text = Convert.ToString(joker);
                     Draw();
@@ -2245,7 +2259,7 @@ namespace Final_Project
         public Form1()
         {
             InitializeComponent();
-            Ace.BackgroundImage = Properties.Resources.ace_of_spades;
+            Ace.BackgroundImage = Properties.Resources.ace_of_spades2;
             Joker.BackgroundImage = Properties.Resources.red_joker;
             SetUp();
         }

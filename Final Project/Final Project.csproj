@@ -245,5 +245,8 @@
   <ItemGroup>
     <None Include="Resources\d594che-212dcb27-a73c-4da5-bccc-6250146355cc.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ace_of_spades2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
