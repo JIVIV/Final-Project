@@ -571,27 +571,27 @@ namespace Final_Project
                             break;
                     }
                 }
-                if (placed[3, 4])
+                if (placed[4, 3])
                 {
-                    switch (placement[3, 4][0].face)
+                    switch (placement[4, 3][0].face)
                     {
                         case 11:
-                            if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                            if (placement[2, 3][0].face + placement[3, 3][0].face >= placement[4, 3][0].face + placement[4, 3][0].armor)
                                 C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                             break;
                         case 12:
-                            if (placement[3, 2][0].color == placement[3, 4][0].color && placement[3, 3][0].color == placement[3, 4][0].color)
+                            if (placement[2, 3][0].color == placement[3, 3][0].color && placement[4, 3][0].color == placement[4, 3][0].color)
                             {
-                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                if (placement[2, 3][0].face + placement[3, 3][0].face >= placement[4, 3][0].face + placement[4, 3][0].armor)
                                 {
                                     C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
                             }
                             break;
                         case 13:
-                            if (placement[3, 2][0].suit == placement[3, 4][0].suit && placement[3, 3][0].suit == placement[3, 4][0].suit)
+                            if (placement[2, 3][0].suit == placement[4, 3][0].suit && placement[3, 3][0].suit == placement[4, 3][0].suit)
                             {
-                                if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
+                                if (placement[2, 3][0].face + placement[3, 3][0].face >= placement[4, 3][0].face + placement[3, 4][0].armor)
                                 {
                                     C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                 }
