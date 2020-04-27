@@ -366,9 +366,10 @@
             // Score
             // 
             this.Score.AutoSize = true;
+            this.Score.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Score.Location = new System.Drawing.Point(332, 60);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(138, 13);
+            this.Score.Size = new System.Drawing.Size(140, 15);
             this.Score.TabIndex = 27;
             this.Score.Text = "Jokers used + Aces used: 0";
             // 
@@ -396,9 +397,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Location = new System.Drawing.Point(662, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 30;
             this.label1.Text = "Shame";
             // 
