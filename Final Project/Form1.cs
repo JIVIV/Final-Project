@@ -1516,7 +1516,6 @@ namespace Final_Project
             shameCount += inPlay.face;
             Shame.Text = $"{shameCount}";
             armor = false;
-            Draw();
             Shame.Enabled = false;
             C01.Enabled = false;
             C02.Enabled = false;
@@ -1530,7 +1529,7 @@ namespace Final_Project
             C41.Enabled = false;
             C42.Enabled = false;
             C43.Enabled = false;
-            
+            Draw();
         }
 
         /* ------------------------------------------------------------------------------------------ */
