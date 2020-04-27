@@ -777,6 +777,7 @@ namespace Final_Project
                 }
                 else if (usingAce)
                 {
+                    usingAce = false;
                     while (placement[2,2].Any())
                     {
                         deck.Add(placement[2,2][0]);
