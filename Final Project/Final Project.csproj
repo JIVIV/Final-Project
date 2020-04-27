@@ -248,5 +248,8 @@
   <ItemGroup>
     <None Include="Resources\ace_of_spades2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_felt.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

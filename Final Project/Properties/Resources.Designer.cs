@@ -493,6 +493,16 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap green_felt {
+            get {
+                object obj = ResourceManager.GetObject("green_felt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jack_of_clubs2 {
             get {
                 object obj = ResourceManager.GetObject("jack_of_clubs2", resourceCulture);
