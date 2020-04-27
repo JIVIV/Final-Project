@@ -141,7 +141,7 @@ namespace Final_Project
             {
                 placed[1, 4] = true;
                 placement[1, 4].Add(royal[l]);
-                C03.BackgroundImage = Set(royal[l].image);
+                C14.BackgroundImage = Set(royal[l].image);
                 l++;
                 C03.Enabled = false;
                 C14.Enabled = false;
@@ -1960,7 +1960,7 @@ namespace Final_Project
                 }
             }
             else
-                Draw();
+                Place();
         }
 
         /* ------------------------------------------------------------------------------------------ */
