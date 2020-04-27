@@ -2018,6 +2018,7 @@ namespace Final_Project
             {
                 case 1:
                     armor = false;
+                    Shame.Enabled = false;
                     ace++;
                     Ace.Text = Convert.ToString(ace);
                     Draw();
@@ -2134,10 +2135,12 @@ namespace Final_Project
                 case 12:
                 case 13:
                     armor = false;
+                    Shame.Enabled = false;
                     RoyalPlacement(inPlay);
                     break;
                 case 14:
                     armor = false;
+                    Shame.Enabled = false;
                     joker++;
                     Joker.Text = Convert.ToString(joker);
                     Draw();
