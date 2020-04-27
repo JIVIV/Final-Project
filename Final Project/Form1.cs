@@ -416,9 +416,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[1,1][0];
                 placement[1,1].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C11.BackgroundImage = Set(placement[1, 1][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -500,9 +502,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[1,2][0];
                 placement[1,2].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C12.BackgroundImage = Set(placement[1, 2][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -613,9 +617,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[1,3][0];
                 placement[1,3].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C13.BackgroundImage = Set(placement[1, 3][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -701,9 +707,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[2,1][0];
                 placement[2,1].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C21.BackgroundImage = Set(placement[2, 1][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -760,9 +768,11 @@ namespace Final_Project
                 }
                 else if (usingJoker)
                 {
-                    deck.Add(inPlay);
+                    deck.Insert(0, inPlay);
                     inPlay = placement[2,2][0];
                     placement[2,2].Remove(inPlay);
+                    Play.BackgroundImage = Set(inPlay.image);
+                    C22.BackgroundImage = Set(placement[2, 2][0].image);
                     usingJoker = false;
                     C11.Enabled = false;
                     C12.Enabled = false;
@@ -862,9 +872,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[2,3][0];
                 placement[2, 3].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C23.BackgroundImage = Set(placement[2, 3][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -975,9 +987,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[3, 1][0];
                 placement[3, 1].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C31.BackgroundImage = Set(placement[3, 1][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -1060,9 +1074,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[3, 2][0];
                 placement[3, 2].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C32.BackgroundImage = Set(placement[3, 2][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
@@ -1173,9 +1189,11 @@ namespace Final_Project
             }
             else if (usingJoker)
             {
-                deck.Add(inPlay);
+                deck.Insert(0, inPlay);
                 inPlay = placement[3, 3][0];
                 placement[3, 3].Remove(inPlay);
+                Play.BackgroundImage = Set(inPlay.image);
+                C33.BackgroundImage = Set(placement[3, 3][0].image);
                 usingJoker = false;
                 C11.Enabled = false;
                 C12.Enabled = false;
