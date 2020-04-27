@@ -19,7 +19,7 @@ namespace Final_Project
         static public Card[] royal = new Card[12];
         static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0, l, k;    //Amounts
         static public bool usingAce = false, usingJoker = false, armor = false;
-        static public bool[,] placed = new bool[5, 5];
+        static public bool[,] placed = new bool[5, 5], fullOfRoyals = new bool[5, 5];
 
 
         /* ------------------------------------------------------------------------------------------ */ 
@@ -51,6 +51,7 @@ namespace Final_Project
                     placed[0, 1] = true;
                     placement[0, 1].Add(inPlay);
                     C01.BackgroundImage = Set(inPlay.image);
+                    Draw();
                 }
                 C01.Enabled = false;
                 C10.Enabled = false;
@@ -1323,6 +1324,27 @@ namespace Final_Project
 
             int i, j;
             deck = new List<Card>();
+            C01.Enabled = false;
+            C02.Enabled = false;
+            C03.Enabled = false;
+            C10.Enabled = false;
+            C11.Enabled = false;
+            C12.Enabled = false;
+            C13.Enabled = false;
+            C14.Enabled = false;
+            C20.Enabled = false;
+            C21.Enabled = false;
+            C22.Enabled = false;
+            C23.Enabled = false;
+            C24.Enabled = false;
+            C30.Enabled = false;
+            C31.Enabled = false;
+            C32.Enabled = false;
+            C33.Enabled = false;
+            C34.Enabled = false;
+            C41.Enabled = false;
+            C42.Enabled = false;
+            C43.Enabled = false;
             score = 0;
             ace = 0;
             Ace.Text = "0";
@@ -1333,6 +1355,7 @@ namespace Final_Project
                 for (j = 0; j < 5; j++)
                 {
                     placed[i, j] = false;
+                    fullOfRoyals[i, j] = false;
                     placement[i, j] = new List<Card>();
                 }
             FillAndShuffle();
@@ -1590,7 +1613,7 @@ namespace Final_Project
             {
                 for (int j = 1; j < 4; j++)
                 {
-                    if (i != 2 || j != 2)
+                    if ((i != 2 || j != 2) && !fullOfRoyals[i,j])
                     {
                         if (placement[i, j][0].suit == royal.suit && !suit)
                         {
@@ -1657,6 +1680,7 @@ namespace Final_Project
                     placed[1, 0] = true;
                     placement[1, 0].Add(royal);
                     C10.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[1, 1] = true;
                     Draw();
                 }
                 else if (placed[1, 0])
@@ -1664,6 +1688,7 @@ namespace Final_Project
                     placed[0, 1] = true;
                     placement[0, 1].Add(royal);
                     C01.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[1, 1] = true;
                     Draw();
                 }
             }
@@ -1672,6 +1697,7 @@ namespace Final_Project
                 placed[0, 2] = true;
                 placement[0, 2].Add(royal);
                 C02.BackgroundImage = Set(royal.image);
+                fullOfRoyals[1, 2] = true;
                 Draw();
             }
             else if (highesti == 1 && highestj == 3)
@@ -1686,6 +1712,7 @@ namespace Final_Project
                     placed[1, 4] = true;
                     placement[1, 4].Add(royal);
                     C14.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[1, 3] = true;
                     Draw();
                 }
                 else if (placed[1, 4])
@@ -1693,6 +1720,7 @@ namespace Final_Project
                     placed[0, 3] = true;
                     placement[0, 3].Add(royal);
                     C03.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[1, 3] = true;
                     Draw();
                 }
             }
@@ -1701,6 +1729,7 @@ namespace Final_Project
                 placed[2,0] = true;
                 placement[2, 0].Add(royal);
                 C20.BackgroundImage = Set(royal.image);
+                fullOfRoyals[2, 1] = true;
                 Draw();
             }
             else if(highesti == 2 && highestj == 3 && !placed[2,4])
@@ -1708,6 +1737,7 @@ namespace Final_Project
                 placed[2, 4] = true;
                 placement[2, 4].Add(royal);
                 C24.BackgroundImage = Set(royal.image);
+                fullOfRoyals[2, 3] = true;
                 Draw();
             }
             else if(highesti == 3 && highestj == 1)
@@ -1722,13 +1752,15 @@ namespace Final_Project
                     placed[4, 1] = true;
                     placement[4, 1].Add(royal);
                     C41.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[3, 1] = true;
                     Draw();
                 }
                 else if (placed[4, 1])
                 {
                     placed[3, 0] = true;
                     placement[3, 0].Add(royal);
-                    C03.BackgroundImage = Set(royal.image);
+                    C30.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[3, 1] = true;
                     Draw();
                 }
             }
@@ -1737,6 +1769,7 @@ namespace Final_Project
                 placed[4, 2] = true;
                 placement[4, 2].Add(royal);
                 C42.BackgroundImage = Set(royal.image);
+                fullOfRoyals[3, 2] = true;
                 Draw();
             }
             else if(highesti == 3 && highestj == 3)
@@ -1751,6 +1784,7 @@ namespace Final_Project
                     placed[3, 4] = true;
                     placement[3, 4].Add(royal);
                     C34.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[3, 3] = true;
                     Draw();
                 }
                 else if (placed[3, 4])
@@ -1758,6 +1792,7 @@ namespace Final_Project
                     placed[4, 3] = true;
                     placement[4, 3].Add(royal);
                     C43.BackgroundImage = Set(royal.image);
+                    fullOfRoyals[3, 3] = true;
                     Draw();
                 }
             }
@@ -1775,7 +1810,7 @@ namespace Final_Project
                 {
                     for (int j = 1; j < 4; j++)
                     {
-                        if ((i != 2 || j != 2) && l < k)
+                        if ((i != 2 || j != 2) && l < k && !fullOfRoyals [i,j])
                         {
                             if (placement[i, j][0].suit == royal[l].suit && !suit)
                             {
@@ -1843,6 +1878,7 @@ namespace Final_Project
                         placement[1, 0].Add(royal[l]);
                         C10.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[1, 1] = true;
                         RoyalPlacement();
                     }
                     else if (placed[1, 0])
@@ -1851,6 +1887,7 @@ namespace Final_Project
                         placement[0, 1].Add(royal[l]);
                         C01.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[1, 1] = true;
                         RoyalPlacement();
                     }
                 }
@@ -1860,6 +1897,7 @@ namespace Final_Project
                     placement[0, 2].Add(royal[l]);
                     C02.BackgroundImage = Set(royal[l].image);
                     l++;
+                    fullOfRoyals[1, 2] = true;
                     RoyalPlacement();
                 }
                 else if (highesti == 1 && highestj == 3)
@@ -1875,6 +1913,7 @@ namespace Final_Project
                         placement[1, 4].Add(royal[l]);
                         C14.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[1, 3] = true;
                         RoyalPlacement();
                     }
                     else if (placed[1, 4])
@@ -1883,6 +1922,7 @@ namespace Final_Project
                         placement[0, 3].Add(royal[l]);
                         C03.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[1, 3] = true;
                         RoyalPlacement();
                     }
                 }
@@ -1892,6 +1932,7 @@ namespace Final_Project
                     placement[2, 0].Add(royal[l]);
                     C20.BackgroundImage = Set(royal[l].image);
                     l++;
+                    fullOfRoyals[2, 1] = true;
                     RoyalPlacement();
                 }
                 else if (highesti == 2 && highestj == 3 && !placed[2, 4])
@@ -1900,6 +1941,7 @@ namespace Final_Project
                     placement[2, 4].Add(royal[l]);
                     C24.BackgroundImage = Set(royal[l].image);
                     l++;
+                    fullOfRoyals[2, 3] = true;
                     RoyalPlacement();
                 }
                 else if (highesti == 3 && highestj == 1)
@@ -1915,6 +1957,7 @@ namespace Final_Project
                         placement[4, 1].Add(royal[l]);
                         C41.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[3, 1] = true;
                         RoyalPlacement();
                     }
                     else if (placed[4, 1])
@@ -1932,6 +1975,7 @@ namespace Final_Project
                     placement[4, 2].Add(royal[l]);
                     C42.BackgroundImage = Set(royal[l].image);
                     l++;
+                    fullOfRoyals[3, 2] = true;
                     RoyalPlacement();
                 }
                 else if (highesti == 3 && highestj == 3)
@@ -1947,6 +1991,7 @@ namespace Final_Project
                         placement[3, 4].Add(royal[l]);
                         C34.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[3, 3] = true;
                         RoyalPlacement();
                     }
                     else if (placed[3, 4])
@@ -1955,6 +2000,7 @@ namespace Final_Project
                         placement[4, 3].Add(royal[l]);
                         C43.BackgroundImage = Set(royal[l].image);
                         l++;
+                        fullOfRoyals[3, 3] = true;
                         RoyalPlacement();
                     }
                 }
