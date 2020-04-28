@@ -1375,8 +1375,8 @@ namespace Final_Project
 
                 inPlay = deck[0];
                 deck.Remove(inPlay);
-                Place();
                 Play.BackgroundImage = Set(inPlay.image);
+                Place();
             }
             else
             {
