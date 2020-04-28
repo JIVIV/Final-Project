@@ -575,7 +575,7 @@ namespace Final_Project
                             }
                             break;
                         case 12:
-                            if (placement[1, 2][0].color == placement[1, 0][0].color && placement[1, 1][0].color == placement[1, 0][0].color)
+                            if (placement[1, 1][0].color == placement[1, 0][0].color && placement[1, 2][0].color == placement[1, 0][0].color)
                             {
                                 if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
@@ -585,9 +585,9 @@ namespace Final_Project
                             }
                             break;
                         case 13:
-                            if (placement[2, 2][0].suit == placement[2, 4][0].suit && placement[2, 3][0].suit == placement[2, 4][0].suit)
+                            if (placement[1, 1][0].suit == placement[1, 0][0].suit && placement[1, 2][0].suit == placement[1, 0][0].suit)
                             {
-                                if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
+                                if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
                                     C10.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
                                     isDead[1, 0] = true;
@@ -1424,6 +1424,28 @@ namespace Final_Project
             C41.Enabled = false;
             C42.Enabled = false;
             C43.Enabled = false;
+            deck = new List<Card>();
+            C01.Text = "";
+            C02.Text = "";
+            C03.Text = "";
+            C10.Text = "";
+            C11.Text = "";
+            C12.Text = "";
+            C13.Text = "";
+            C14.Text = "";
+            C20.Text = "";
+            C21.Text = "";
+            C22.Text = "";
+            C23.Text = "";
+            C24.Text = "";
+            C30.Text = "";
+            C31.Text = "";
+            C32.Text = "";
+            C33.Text = "";
+            C34.Text = "";
+            C41.Text = "";
+            C42.Text = "";
+            C43.Text = "";
             score = 0;
             ace = 0;
             Ace.Text = "0";
