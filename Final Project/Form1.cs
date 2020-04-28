@@ -2067,6 +2067,8 @@ namespace Final_Project
         /* ------------------------ Card Functions -------------------------------------------------- */
         public void Place()
         {
+            int lowest = 100, lowesti = 0, lowestj = 0;
+            bool suit = false, color = false;
             Shame.Enabled = true;
             armor = true;
             switch (inPlay.face)
@@ -2203,30 +2205,167 @@ namespace Final_Project
             }
             if (armor)
             {
-                for(int i = 0; i < 4; i++)
-                    for(int j = 0; j < 4; j++)
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 5; j++)
                     {
+
                         switch (i)
                         {
                             case 0:
                                 switch (j)
                                 {
                                     case 1:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C01.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C01.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 2:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C02.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C02.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 3:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C03.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C03.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                 }
@@ -2235,15 +2374,105 @@ namespace Final_Project
                                 switch (j)
                                 {
                                     case 0:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C10.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C10.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 4:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C14.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C14.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                 }
@@ -2252,15 +2481,105 @@ namespace Final_Project
                                 switch (j)
                                 {
                                     case 0:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C20.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C20.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 4:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C24.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C24.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                 }
@@ -2269,15 +2588,105 @@ namespace Final_Project
                                 switch (j)
                                 {
                                     case 0:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C30.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C30.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 4:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C34.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C34.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                 }
@@ -2286,27 +2695,264 @@ namespace Final_Project
                                 switch (j)
                                 {
                                     case 1:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C41.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C41.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 2:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C42.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C42.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                     case 3:
-                                        if (placed[i, j])
+                                        if (placed[i, j] && C43.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
                                         {
-                                            C43.Enabled = true;
+                                            if (placement[i, j][0].suit == inPlay.suit && !suit)
+                                            {
+                                                suit = true;
+                                                lowest = 100;
+                                            }
+                                            else if (placement[i, j][0].color == inPlay.color && !color && !suit)
+                                            {
+                                                color = true;
+                                                lowest = 100;
+                                            }
+                                            if (suit)
+                                            {
+                                                if (placement[i, j][0].suit == inPlay.suit && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else if (color)
+                                            {
+                                                if (placement[i, j][0].color == inPlay.color && placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                if (placed[i, j])
+                                                {
+                                                    if (lowest > placement[i, j][0].face)
+                                                    {
+                                                        lowest = placement[i, j][0].face;
+                                                        lowesti = i;
+                                                        lowestj = j;
+                                                    }
+                                                }
+                                            }
                                         }
                                         break;
                                 }
                                 break;
                         }
                     }
+                }
+
+                switch (lowesti)
+                {
+                    case 0:
+                        switch (lowestj)
+                        {
+                            case 1:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C01.Enabled = true;
+                                }
+                                break;
+                            case 2:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C02.Enabled = true;
+                                }
+                                break;
+                            case 3:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C03.Enabled = true;
+                                }
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch (lowestj)
+                        {
+                            case 0:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C10.Enabled = true;
+                                }
+                                break;
+                            case 4:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C14.Enabled = true;
+                                }
+                                break;
+                        }
+                        break;
+                    case 2:
+                        switch (lowestj)
+                        {
+                            case 0:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C20.Enabled = true;
+                                }
+                                break;
+                            case 4:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C24.Enabled = true;
+                                }
+                                break;
+                        }
+                        break;
+                    case 3:
+                        switch (lowestj)
+                        {
+                            case 0:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C30.Enabled = true;
+                                }
+                                break;
+                            case 4:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C34.Enabled = true;
+                                }
+                                break;
+                        }
+                        break;
+                    case 4:
+                        switch (lowestj)
+                        {
+                            case 1:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C41.Enabled = true;
+                                }
+                                break;
+                            case 2:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C42.Enabled = true;
+                                }
+                                break;
+                            case 3:
+                                if (placed[lowesti, lowestj])
+                                {
+                                    C43.Enabled = true;
+                                }
+                                break;
+                        }
+                        break;
+                }
             }
         }
 
