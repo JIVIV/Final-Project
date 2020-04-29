@@ -1366,7 +1366,7 @@ namespace Final_Project
             deck.Add(new Card { face = 14 });
             deck.Shuffle();
         }
-        public void Draw()                         //Draws the top card and then removes it from the list (works)
+        public void Draw() //Draws the top card and then removes it from the list (works)
         {
             if (deck.Count != 0)
             {
@@ -1765,7 +1765,10 @@ namespace Final_Project
                 numDeadRoyals++;
 
             if (numDeadRoyals == 12)
+            {
                 MessageBox.Show("You Win!");
+                return false;
+            }
 
             return needRoyals;
         }
