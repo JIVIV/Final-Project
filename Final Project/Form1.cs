@@ -1695,7 +1695,7 @@ namespace Final_Project
 
         private void Ace_Click(object sender, EventArgs e)
         {
-            if (ace > 0 && !usingAce)
+            if (ace > 0 && !usingAce && !usingJoker)
             {
                 usingAce = true;
                 ace--;
@@ -1733,7 +1733,7 @@ namespace Final_Project
         }
         private void Joker_Click(object sender, EventArgs e)
         {
-            if (joker > 0 && !usingJoker)
+            if (joker > 0 && !usingJoker && !usingAce)
             {
                 usingJoker = true;
                 joker--;
