@@ -34,7 +34,12 @@ namespace Final_Project
                 l++;
                 C01.Enabled = false;
                 C10.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -68,7 +73,12 @@ namespace Final_Project
                 l++;
                 C02.Enabled = false;
                 C20.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -102,7 +112,12 @@ namespace Final_Project
                 l++;
                 C03.Enabled = false;
                 C14.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -136,7 +151,12 @@ namespace Final_Project
                 l++;
                 C01.Enabled = false;
                 C10.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -170,7 +190,12 @@ namespace Final_Project
                 l++;
                 C03.Enabled = false;
                 C14.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -204,7 +229,12 @@ namespace Final_Project
                 l++;
                 C20.Enabled = false;
                 C02.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -238,7 +268,12 @@ namespace Final_Project
                 l++;
                 C24.Enabled = false;
                 C42.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -272,7 +307,12 @@ namespace Final_Project
                 l++;
                 C30.Enabled = false;
                 C41.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -306,7 +346,12 @@ namespace Final_Project
                 l++;
                 C34.Enabled = false;
                 C43.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -340,7 +385,12 @@ namespace Final_Project
                 l++;
                 C30.Enabled = false;
                 C41.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -374,7 +424,12 @@ namespace Final_Project
                 l++;
                 C42.Enabled = false;
                 C24.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -408,7 +463,12 @@ namespace Final_Project
                 l++;
                 C34.Enabled = false;
                 C43.Enabled = false;
-                RoyalPlacement();
+                if (l < k)
+                {
+                    RoyalPlacement();
+                }
+                else
+                    Place();
             }
             else
             {
@@ -2140,7 +2200,12 @@ namespace Final_Project
                         C10.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[1, 1] = true;
-                        RoyalPlacement();
+                        if(l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                     else if (placed[1, 0])
                     {
@@ -2149,7 +2214,12 @@ namespace Final_Project
                         C01.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[1, 1] = true;
-                        RoyalPlacement();
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                 }
                 else if (highesti == 1 && highestj == 2 && !placed[0, 2])
@@ -2159,7 +2229,12 @@ namespace Final_Project
                     C02.BackgroundImage = Set(royal[l].image);
                     l++;
                     fullOfRoyals[1, 2] = true;
-                    RoyalPlacement();
+                    if (l < k)
+                    {
+                        RoyalPlacement();
+                    }
+                    else
+                        Place();
                 }
                 else if (highesti == 1 && highestj == 3)
                 {
@@ -2175,7 +2250,12 @@ namespace Final_Project
                         C14.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[1, 3] = true;
-                        RoyalPlacement();
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                     else if (placed[1, 4])
                     {
@@ -2184,7 +2264,12 @@ namespace Final_Project
                         C03.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[1, 3] = true;
-                        RoyalPlacement();
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                 }
                 else if (highesti == 2 && highestj == 1 && !placed[2, 0])
@@ -2194,7 +2279,12 @@ namespace Final_Project
                     C20.BackgroundImage = Set(royal[l].image);
                     l++;
                     fullOfRoyals[2, 1] = true;
-                    RoyalPlacement();
+                    if (l < k)
+                    {
+                        RoyalPlacement();
+                    }
+                    else
+                        Place();
                 }
                 else if (highesti == 2 && highestj == 3 && !placed[2, 4])
                 {
@@ -2203,7 +2293,12 @@ namespace Final_Project
                     C24.BackgroundImage = Set(royal[l].image);
                     l++;
                     fullOfRoyals[2, 3] = true;
-                    RoyalPlacement();
+                    if (l < k)
+                    {
+                        RoyalPlacement();
+                    }
+                    else
+                        Place();
                 }
                 else if (highesti == 3 && highestj == 1)
                 {
@@ -2219,7 +2314,12 @@ namespace Final_Project
                         C41.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[3, 1] = true;
-                        RoyalPlacement();
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                     else if (placed[4, 1])
                     {
@@ -2227,7 +2327,13 @@ namespace Final_Project
                         placement[3, 0].Add(royal[l]);
                         C03.BackgroundImage = Set(royal[l].image);
                         l++;
-                        RoyalPlacement();
+                        fullOfRoyals[3, 1] = true;
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                 }
                 else if (highesti == 3 && highestj == 2 && !placed[4, 2])
@@ -2237,7 +2343,12 @@ namespace Final_Project
                     C42.BackgroundImage = Set(royal[l].image);
                     l++;
                     fullOfRoyals[3, 2] = true;
-                    RoyalPlacement();
+                    if (l < k)
+                    {
+                        RoyalPlacement();
+                    }
+                    else
+                        Place();
                 }
                 else if (highesti == 3 && highestj == 3)
                 {
@@ -2253,7 +2364,12 @@ namespace Final_Project
                         C34.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[3, 3] = true;
-                        RoyalPlacement();
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                     else if (placed[3, 4])
                     {
@@ -2262,12 +2378,15 @@ namespace Final_Project
                         C43.BackgroundImage = Set(royal[l].image);
                         l++;
                         fullOfRoyals[3, 3] = true;
-                        RoyalPlacement();
+                        if (l < k)
+                        {
+                            RoyalPlacement();
+                        }
+                        else
+                            Place();
                     }
                 }
             }
-            else
-                Place();
         }
 
         /* ------------------------------------------------------------------------------------------ */
