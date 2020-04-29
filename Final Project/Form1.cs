@@ -60,12 +60,36 @@ namespace Final_Project
 
         private void C02_Click(object sender, EventArgs e) //Places card in (0, 2)
         {
-            armor = false;
-            placement[0, 2][0].armor += inPlay.face;
-            C02.Text = $"{placement[0, 2][0].face + placement[0, 2][0].armor}";
-            C02.Enabled = false;
-            Shame.Enabled = false;
-            Draw();
+            if (l < k)
+            {
+                placed[0, 2] = true;
+                placement[0, 2].Add(royal[l]);
+                C02.BackgroundImage = Set(royal[l].image);
+                l++;
+                C02.Enabled = false;
+                C20.Enabled = false;
+                RoyalPlacement();
+            }
+            else
+            {
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[0, 2][0].armor += inPlay.face;
+                    C02.Text = $"{placement[0, 2][0].face + placement[0, 2][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[0, 2] = true;
+                    placement[0, 2].Add(inPlay);
+                    C02.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C02.Enabled = false;
+                C20.Enabled = false;
+            }
         }
 
         private void C03_Click(object sender, EventArgs e) //Places card in (0, 3)
@@ -172,22 +196,70 @@ namespace Final_Project
 
         private void C20_Click(object sender, EventArgs e) //Places card in (2, 0)
         {
-            armor = false;
-            placement[2, 0][0].armor += inPlay.face;
-            C20.Text = $"{placement[2, 0][0].face + placement[2, 0][0].armor}";
-            C20.Enabled = false;
-            Shame.Enabled = false;
-            Draw();
+            if (l < k)
+            {
+                placed[2, 0] = true;
+                placement[2, 0].Add(royal[l]);
+                C20.BackgroundImage = Set(royal[l].image);
+                l++;
+                C20.Enabled = false;
+                C02.Enabled = false;
+                RoyalPlacement();
+            }
+            else
+            {
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[2, 0][0].armor += inPlay.face;
+                    C20.Text = $"{placement[2, 0][0].face + placement[2, 0][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[2, 0] = true;
+                    placement[2, 0].Add(inPlay);
+                    C20.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C20.Enabled = false;
+                C02.Enabled = false;
+            }
         }
 
         private void C24_Click(object sender, EventArgs e) //Places card in (2, 4)
         {
-            armor = false;
-            placement[2, 4][0].armor += inPlay.face;
-            C24.Text = $"{placement[2, 4][0].face + placement[2, 4][0].armor}";
-            C24.Enabled = false;
-            Shame.Enabled = false;
-            Draw();
+            if (l < k)
+            {
+                placed[2, 4] = true;
+                placement[2, 4].Add(royal[l]);
+                C24.BackgroundImage = Set(royal[l].image);
+                l++;
+                C24.Enabled = false;
+                C42.Enabled = false;
+                RoyalPlacement();
+            }
+            else
+            {
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[2, 0][0].armor += inPlay.face;
+                    C24.Text = $"{placement[2, 4][0].face + placement[2, 4][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[2, 4] = true;
+                    placement[2, 4].Add(inPlay);
+                    C24.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C24.Enabled = false;
+                C42.Enabled = false;
+            }
         }
 
         private void C30_Click(object sender, EventArgs e) //Places card in (3, 0)
@@ -294,12 +366,36 @@ namespace Final_Project
 
         private void C42_Click(object sender, EventArgs e)//Places card in (4, 2)
         {
-            armor = false;
-            placement[4, 2][0].armor += inPlay.face;
-            C42.Text = $"{placement[4, 2][0].face + placement[4, 2][0].armor}";
-            C42.Enabled = false;
-            Shame.Enabled = false;
-            Draw();
+            if (l < k)
+            {
+                placed[4, 2] = true;
+                placement[4, 2].Add(royal[l]);
+                C42.BackgroundImage = Set(royal[l].image);
+                l++;
+                C42.Enabled = false;
+                C24.Enabled = false;
+                RoyalPlacement();
+            }
+            else
+            {
+                if (armor)
+                {
+                    armor = false;
+                    Shame.Enabled = false;
+                    placement[4, 2][0].armor += inPlay.face;
+                    C42.Text = $"{placement[4, 2][0].face + placement[4, 2][0].armor}";
+                    Draw();
+                }
+                else
+                {
+                    placed[4, 2] = true;
+                    placement[4, 2].Add(inPlay);
+                    C42.BackgroundImage = Set(inPlay.image);
+                    Draw();
+                }
+                C42.Enabled = false;
+                C24.Enabled = false;
+            }
         }
 
         private void C43_Click(object sender, EventArgs e)//Places card in (4, 3)
@@ -1635,7 +1731,6 @@ namespace Final_Project
                 Place();
             }
         }
-
         private void Joker_Click(object sender, EventArgs e)
         {
             if (joker > 0 && !usingJoker)
@@ -1961,7 +2056,6 @@ namespace Final_Project
                 }
             }
         }
-
         public void RoyalPlacement()
         {
             int highest = 0, highesti = 0, highestj = 0;
