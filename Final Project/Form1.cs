@@ -2278,6 +2278,7 @@ namespace Final_Project
             bool suit = false, color = false;
             Shame.Enabled = true;
             armor = true;
+            Play.BackgroundImage = Set(inPlay.image);
             switch (inPlay.face)
             {
                 case 1:
