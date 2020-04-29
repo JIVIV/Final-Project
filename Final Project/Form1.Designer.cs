@@ -322,7 +322,7 @@
             // 
             // Deck
             // 
-            this.Deck.BackgroundImage = global::Final_Project.Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+            this.Deck.BackgroundImage = global::Final_Project.Properties.Resources.deck_back;
             this.Deck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Deck.InitialImage = ((System.Drawing.Image)(resources.GetObject("Deck.InitialImage")));
             this.Deck.Location = new System.Drawing.Point(37, 35);
