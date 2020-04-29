@@ -1679,62 +1679,62 @@ namespace Final_Project
             bool needRoyals = true;
             int numDeadRoyals = 0;
 
-            if (placed[0, 1] && C01.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[0, 1] && !isDead[0, 1])
                 needRoyals = false;
             else if (placed[0, 1])
                 numDeadRoyals++;
 
-            if (placed[0, 2] && C02.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[0, 2] && !isDead[0, 2])
                 needRoyals = false;
             else if (placed[0, 2])
                 numDeadRoyals++;
 
-            if (placed[0, 3] && C03.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[0, 3] && !isDead[0, 3])
                 needRoyals = false;
             else if (placed[0, 3])
                 numDeadRoyals++;
 
-            if (placed[1, 0] && C10.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[1, 0] && !isDead[1, 0])
                 needRoyals = false;
             else if (placed[1, 0])
                 numDeadRoyals++;
 
-            if (placed[1, 4] && C14.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[1, 4] && !isDead[1, 4])
                 needRoyals = false;
             else if (placed[1, 4])
                 numDeadRoyals++;
 
-            if (placed[2, 0] && C20.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[2, 0] && !isDead[2, 0])
                 needRoyals = false;
             else if (placed[2, 0])
                 numDeadRoyals++;
 
-            if (placed[2, 4] && C24.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[2, 4] && !isDead[2, 4])
                 needRoyals = false;
             else if (placed[2, 4])
                 numDeadRoyals++;
 
-            if (placed[3, 0] && C30.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[3, 0] && !isDead[3, 0])
                 needRoyals = false;
             else if (placed[3, 0])
                 numDeadRoyals++;
 
-            if (placed[3, 4] && C34.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[3, 4] && !isDead[3, 4])
                 needRoyals = false;
             else if (placed[3, 4])
                 numDeadRoyals++;
 
-            if (placed[4, 1] && C41.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[4, 1] && !isDead[4, 1])
                 needRoyals = false;
             else if (placed[4, 1])
                 numDeadRoyals++;
 
-            if (placed[4, 2] && C42.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[4, 2] && !isDead[4, 2])
                 needRoyals = false;
             else if (placed[4, 2])
                 numDeadRoyals++;
 
-            if (placed[4, 3] && C43.BackgroundImage != Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc)
+            if (placed[4, 3] && !isDead[4, 3])
                 needRoyals = false;
             else if (placed[4, 3])
                 numDeadRoyals++;
