@@ -17,7 +17,7 @@ namespace Final_Project
         static public List<Card>[,] placement = new List<Card>[5,5]; //List of Cards in each button
         static public Card inPlay;                                   //Current card in play
         static public Card[] royal = new Card[12];
-        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0, l, k;    //Amounts
+        static public int ace = 0, joker = 0, acesUsed = 0, jokersUsed = 0, score = 6, shameCount = 0, l, k, remaining;    //Amounts
         static public bool usingAce = false, usingJoker = false, armor = false;
         static public bool[,] placed = new bool[5, 5], fullOfRoyals = new bool[5, 5], isDead = new bool[5, 5];
 
@@ -1376,6 +1376,8 @@ namespace Final_Project
                 inPlay = deck[0];
                 deck.Remove(inPlay);
                 Play.BackgroundImage = Set(inPlay.image);
+                remaining = deck.Count;
+                RemainingCards.Text = $"Cards left in deck: {remaining}";
                 Place();
             }
             else
@@ -1572,7 +1574,7 @@ namespace Final_Project
 
         private void Ace_Click(object sender, EventArgs e)
         {
-            if (ace > 0)
+            if (ace > 0 && !usingAce)
             {
                 usingAce = true;
                 ace--;
@@ -1611,7 +1613,7 @@ namespace Final_Project
 
         private void Joker_Click(object sender, EventArgs e)
         {
-            if (joker > 0)
+            if (joker > 0 && !usingJoker)
             {
                 usingJoker = true;
                 joker--;

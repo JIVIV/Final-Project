@@ -60,6 +60,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Shame = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.RemainingCards = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Play)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Deck)).BeginInit();
             this.panel1.SuspendLayout();
@@ -404,6 +405,16 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Shame";
             // 
+            // RemainingCards
+            // 
+            this.RemainingCards.AutoSize = true;
+            this.RemainingCards.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.RemainingCards.Location = new System.Drawing.Point(37, 131);
+            this.RemainingCards.Name = "RemainingCards";
+            this.RemainingCards.Size = new System.Drawing.Size(94, 15);
+            this.RemainingCards.TabIndex = 31;
+            this.RemainingCards.Text = "Cards left in deck:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +422,7 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.red_felt;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(788, 638);
+            this.Controls.Add(this.RemainingCards);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Shame);
             this.Controls.Add(this.panel1);
@@ -483,6 +495,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Shame;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label RemainingCards;
     }
 }
 
