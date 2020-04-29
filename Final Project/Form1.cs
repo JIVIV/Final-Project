@@ -246,7 +246,7 @@ namespace Final_Project
                 {
                     armor = false;
                     Shame.Enabled = false;
-                    placement[2, 0][0].armor += inPlay.face;
+                    placement[2, 4][0].armor += inPlay.face;
                     C24.Text = $"{placement[2, 4][0].face + placement[2, 4][0].armor}";
                     Draw();
                 }
