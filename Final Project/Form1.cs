@@ -354,7 +354,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                             {
-                                C41.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C41.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[4, 1] = true;
                             }
                             break;
@@ -363,7 +363,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                                 {
-                                    C41.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C41.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[4, 1] = true;
                                 }
                             }
@@ -373,7 +373,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[3, 1][0].face >= placement[4, 1][0].face + placement[4, 1][0].armor)
                                 {
-                                    C41.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C41.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[4, 1] = true;
                                 }
                             }
@@ -387,7 +387,7 @@ namespace Final_Project
                         case 11:
                             if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                             {
-                                C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C14.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[1, 4] = true;
                             }
                             break;
@@ -396,7 +396,7 @@ namespace Final_Project
                             {
                                 if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                                 {
-                                    C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C14.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[1, 4] = true;
                                 }
                             }
@@ -406,7 +406,7 @@ namespace Final_Project
                             {
                                 if (placement[1, 2][0].face + placement[1, 3][0].face >= placement[1, 4][0].face + placement[1, 4][0].armor)
                                 {
-                                    C14.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C14.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[1, 4] = true;
                                 }
                             }
@@ -478,7 +478,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                             {
-                                C42.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C42.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[4, 2] = true;
                             }
                             break;
@@ -487,7 +487,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                                 {
-                                    C42.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C42.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[4, 2] = true;
                                 }
                             }
@@ -497,7 +497,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[3, 2][0].face >= placement[4, 2][0].face + placement[4, 2][0].armor)
                                 {
-                                    C42.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C42.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[4, 2] = true;
                                 }
                             }
@@ -570,7 +570,7 @@ namespace Final_Project
                         case 11:
                             if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                             {
-                                C10.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C10.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[1, 0] = true;
                             }
                             break;
@@ -579,7 +579,7 @@ namespace Final_Project
                             {
                                 if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
-                                    C10.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C10.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[1, 0] = true;
                                 }
                             }
@@ -589,7 +589,7 @@ namespace Final_Project
                             {
                                 if (placement[1, 2][0].face + placement[1, 1][0].face >= placement[1, 0][0].face + placement[1, 0][0].armor)
                                 {
-                                    C10.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C10.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[1, 0] = true;
                                 }
                             }
@@ -603,7 +603,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 3][0].face + placement[3, 3][0].face >= placement[4, 3][0].face + placement[4, 3][0].armor)
                             {
-                                C43.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C43.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[4, 3] = true;
                             }
                             break;
@@ -612,7 +612,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 3][0].face + placement[3, 3][0].face >= placement[4, 3][0].face + placement[4, 3][0].armor)
                                 {
-                                    C43.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C43.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[4, 3] = true;
                                 }
                             }
@@ -622,7 +622,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 3][0].face + placement[3, 3][0].face >= placement[4, 3][0].face + placement[4, 3][0].armor)
                                 {
-                                    C43.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C43.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[4, 3] = true;
                                 }
                             }
@@ -697,7 +697,7 @@ namespace Final_Project
                             case 11:
                                 if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                 {
-                                    C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C24.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[2, 4] = true;
                                 }
                                 break;
@@ -706,7 +706,7 @@ namespace Final_Project
                                 {
                                     if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                     {
-                                        C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                        C24.BackgroundImage = Properties.Resources.deck_back;
                                         isDead[2, 4] = true;
                                     }
                                 }
@@ -716,7 +716,7 @@ namespace Final_Project
                                 {
                                     if (placement[2, 2][0].face + placement[2, 3][0].face >= placement[2, 4][0].face + placement[2, 4][0].armor)
                                     {
-                                        C24.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                        C24.BackgroundImage = Properties.Resources.deck_back;
                                         isDead[2, 4] = true;
                                     }
                                 }
@@ -868,7 +868,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                             {
-                                C20.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C20.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[2, 0] = true;
                             }
                             break;
@@ -877,7 +877,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                                 {
-                                    C20.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C20.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[2, 0] = true;
                                 }
                             }
@@ -887,7 +887,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[2, 1][0].face >= placement[2, 0][0].face + placement[2, 0][0].armor)
                                 {
-                                    C20.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C20.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[2, 0] = true;
                                 }
                             }
@@ -960,7 +960,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                             {
-                                C01.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C01.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[0, 1] = true;
                             }
                             break;
@@ -969,7 +969,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                                 {
-                                    C01.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C01.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[0, 1] = true;
                                 }
                             }
@@ -979,7 +979,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 1][0].face + placement[1, 1][0].face >= placement[0, 1][0].face + placement[0, 1][0].armor)
                                 {
-                                    C01.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C01.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[0, 1] = true;
                                 }
                             }
@@ -993,7 +993,7 @@ namespace Final_Project
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                             {
-                                C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C34.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[3, 4] = true;
                             }
                             break;
@@ -1002,7 +1002,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C34.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[3, 4] = true;
                                 }
                             }
@@ -1012,7 +1012,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 3][0].face >= placement[3, 4][0].face + placement[3, 4][0].armor)
                                 {
-                                    C34.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C34.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[3, 4] = true;
                                 }
                             }
@@ -1085,7 +1085,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                             {
-                                C02.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C02.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[0, 2] = true;
                             }
                             break;
@@ -1094,7 +1094,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C02.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C02.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[0, 2] = true;
                                 }
                             }
@@ -1104,7 +1104,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 2][0].face + placement[1, 2][0].face >= placement[0, 2][0].face + placement[0, 2][0].armor)
                                 {
-                                    C02.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C02.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[0, 2] = true;
                                 }
                             }
@@ -1140,7 +1140,7 @@ namespace Final_Project
                 C32.Enabled = false;
                 C33.Enabled = false;
                 Place();
-            }
+            } 
             else if (usingAce)
             {
                 usingAce = false;
@@ -1177,7 +1177,7 @@ namespace Final_Project
                         case 11:
                             if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
                             {
-                                C03.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C03.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[0, 3] = true;
                             }
                             break;
@@ -1186,7 +1186,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
                                 {
-                                    C03.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C03.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[0, 3] = true;
                                 }
                             }
@@ -1196,7 +1196,7 @@ namespace Final_Project
                             {
                                 if (placement[2, 3][0].face + placement[1, 3][0].face >= placement[0, 3][0].face + placement[0, 3][0].armor)
                                 {
-                                    C03.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C03.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[0, 3] = true;
                                 }
                             }
@@ -1210,7 +1210,7 @@ namespace Final_Project
                         case 11:
                             if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                             {
-                                C30.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                C30.BackgroundImage = Properties.Resources.deck_back;
                                 isDead[3, 0] = true;
                             }
                             break;
@@ -1219,7 +1219,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                                 {
-                                    C30.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C30.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[3, 0] = true;
                                 }
                             }
@@ -1229,7 +1229,7 @@ namespace Final_Project
                             {
                                 if (placement[3, 2][0].face + placement[3, 1][0].face >= placement[3, 0][0].face + placement[3, 0][0].armor)
                                 {
-                                    C30.BackgroundImage = Properties.Resources.d594che_212dcb27_a73c_4da5_bccc_6250146355cc;
+                                    C30.BackgroundImage = Properties.Resources.deck_back;
                                     isDead[3, 0] = true;
                                 }
                             }
