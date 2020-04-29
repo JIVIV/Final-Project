@@ -776,7 +776,7 @@ namespace Final_Project
                 Place();
             }
         }
-
+        
         private void C22_Click(object sender, EventArgs e) //Places card in (2, 2)
         {
             if (placed[2, 2])
@@ -1382,8 +1382,31 @@ namespace Final_Project
             }
             else
             {
-                MessageBox.Show("You Lose");
                 Play.BackgroundImage = base.BackgroundImage;
+                MessageBox.Show("You Lose");
+                C01.Enabled = false;
+                C02.Enabled = false;
+                C03.Enabled = false;
+                C10.Enabled = false;
+                C11.Enabled = false;
+                C12.Enabled = false;
+                C13.Enabled = false;
+                C14.Enabled = false;
+                C20.Enabled = false;
+                C21.Enabled = false;
+                C22.Enabled = false;
+                C23.Enabled = false;
+                C24.Enabled = false;
+                C30.Enabled = false;
+                C31.Enabled = false;
+                C32.Enabled = false;
+                C33.Enabled = false;
+                C34.Enabled = false;
+                C41.Enabled = false;
+                C42.Enabled = false;
+                C43.Enabled = false;
+                Joker.Enabled = false;
+                Ace.Enabled = false;
             }
         }
 
@@ -1426,6 +1449,8 @@ namespace Final_Project
             C41.Enabled = false;
             C42.Enabled = false;
             C43.Enabled = false;
+            Joker.Enabled = true;
+            Ace.Enabled = true;
             deck = new List<Card>();
             C01.Text = "";
             C02.Text = "";
