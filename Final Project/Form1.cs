@@ -776,7 +776,7 @@ namespace Final_Project
                 Place();
             }
         }
-
+        
         private void C22_Click(object sender, EventArgs e) //Places card in (2, 2)
         {
             if (placed[2, 2])
